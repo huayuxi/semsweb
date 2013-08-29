@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="nav">
 					<ul>
 						<li><a class="index_home" href="index.html"><span>首页</span></a></li>
-						<li><a class="market_dynamics" href="new.html"><span>市场动态</span></a></li>
+						<li><a class="market_dynamics" href="news.html"><span>市场动态</span></a></li>
 						<li><a class="productworld" href="#"><span>产品世界</span></a></li>
 						<li><a class="solution" href="#"><span>解决方案</span></a></li>
 						<li><a class="global_Case" href="#"><span>全球案例</span></a></li>
@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<a class="blue" href="index.html">首页</a>> <a class="blue"
 							href="news.html">市场动态</a>> <span id="about-title">公司新闻</span>
 					</div>
-					<div id="about-title1" class="title">新闻</div>
+					<div id="about-title1" class="title">物联网协会受厦门市经济发展局委托到我司调研</div>
 					<div class="line1"></div>
 					<div class="detail">
 						<div class="share">
@@ -84,46 +84,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								id="bdshare" class="bdshare_b"></span>
 							</span>
 						</div>
-						<div class="list">
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="<%=basePath%>pages/front/news/news_detail.jsp">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-
+						<span style="display:none" class="detail-more"> </span>
+						<div class="new_content">
+							<p>
+								<span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span>
+							</p>
+							<p>
+								<span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span>
+							</p>
 						</div>
-						<!--end list-->
+						<!--end content-->
 						<div class="pager">
 							<span class="active">1</span> <a class="ablue num" href="#">2</a>
 							<a class="ablue num" href="#">3</a> <a class="ablue" href="#">..</a>
