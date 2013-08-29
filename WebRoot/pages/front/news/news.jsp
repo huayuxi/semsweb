@@ -16,6 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link href="css/layout.css" rel="stylesheet" />
+<script type=""/>
+<script type=""/>
 </head>
 
 <body>
@@ -62,10 +64,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="right news">
 					<div class="feature-pic"></div>
+					<!-- 面包屑导航栏 begin-->
 					<div class="page-pos">
-						<a class="blue" href="index.html">首页</a>> <a class="blue"
-							href="news.html">市场动态</a>> <span id="about-title">公司新闻</span>
+						<a class="blue" href="index.html">首页</a>> 
+						<a class="blue" href="news.html">市场动态</a>> 
+						<span id="about-title">公司新闻</span>
 					</div>
+					<!-- 面包屑导航栏 end -->
 					<div id="about-title1" class="title">新闻</div>
 					<div class="line1"></div>
 					<div class="detail">
@@ -124,8 +129,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						<!--end list-->
 						<div class="pager">
-							<span class="active">1</span> <a class="ablue num" href="#">2</a>
-							<a class="ablue num" href="#">3</a> <a class="ablue" href="#">..</a>
+							<span class="active">1</span> 
+							<a class="ablue num" href="#">2</a>
+							<a class="ablue num" href="#">3</a>
+							 <a class="ablue" href="#">..</a>
 							<a class="ablue" href="#">下一页</a>
 						</div>
 					</div>
