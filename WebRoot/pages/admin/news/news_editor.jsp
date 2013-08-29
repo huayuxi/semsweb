@@ -36,7 +36,6 @@
 		<p></p>
 		新闻内容：
 		<textarea rows="5" cols="20" id="myEditor" name="newsContent.xwnr00">
-			${}
 		</textarea>
 		<script type="text/javascript">
 		    UE.getEditor('myEditor',{
