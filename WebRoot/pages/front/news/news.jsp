@@ -7,17 +7,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="<%=basePath%>"/>
 <title>智联信通-市场动态</title>
 
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
-<link href="css/layout.css" rel="stylesheet" />
-<script type=""/>
-<script type=""/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="cache-control" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
+<meta http-equiv="description" content="This is my page"/>
+<link href="<%=basePath%>css/layout.css" rel="stylesheet" />
+<link href="<%=basePath%>js/commom/pagination/pagination.css" rel="stylesheet" />
+
+
+<script type="text/javascript" src="<%=basePath%>js/commom/jquery-1.8.3.js"/>
+<script type="text/javascript" src="<%=basePath%>js/commom/pagination/jquery.pagination.js"/>
+<script type="text/javascript" src="<%=basePath%>js/front/news.js"/>
 </head>
 
 <body>
@@ -88,47 +93,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								id="bdshare" class="bdshare_b"></span>
 							</span>
 						</div>
-						<div class="list">
+						<div class="list" id="news_list">
 							<div class="item">
-								<span class="date">2013-07-19</span> <a href="<%=basePath%>pages/front/news/news_detail.jsp">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-							</div>
-							<div class="item">
-								<span class="date">2013-07-19</span> <a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
+								 <a href="<%=basePath%>pages/front/news/news_detail.jsp">物联网协会受厦门市经济发展局委托到我司调研</a>
+								 <span class="date">2013-07-19</span>
 							</div>
 
 						</div>
 						<!--end list-->
-						<div class="pager">
+						<div class="pager" id="Pagination">
 							<span class="active">1</span> 
 							<a class="ablue num" href="#">2</a>
 							<a class="ablue num" href="#">3</a>
