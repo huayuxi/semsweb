@@ -21,6 +21,7 @@
 	window.UEDITOR_HOME_URL = "<%=basePath%>js/common/ueditor-1.2.6.1/";
 	window.BASE_PATH = "<%=basePath%>";
 </script>
+
 <script type="text/javascript" src="js/common/ueditor-1.2.6.1/ueditor.config.js"></script>
 <script type="text/javascript" src="js/common/ueditor-1.2.6.1/ueditor.all.js"></script>
 </head>
