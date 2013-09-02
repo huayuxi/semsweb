@@ -5,6 +5,7 @@
  */
 package com.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -12,6 +13,7 @@ import org.hibernate.Query;
 import com.dao.SysUserDao;
 import com.model.SysUser;
 import com.util.BasicHibernateDao;
+import com.util.DateUtil;
 
 /**
  * @description: 系统用户管理Dao实现类
@@ -28,6 +30,7 @@ public class SysUserDaoImpl extends BasicHibernateDao implements SysUserDao{
 	 * @return true or false
 	 */
 	public boolean addSysUser(SysUser sysUser){
+		sysUser.setCjsj00(DateUtil.dateToString14(new Date()));
 		try {
 	        this.getSession().save(sysUser);
         } catch (Exception e) {

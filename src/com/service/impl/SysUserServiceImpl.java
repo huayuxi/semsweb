@@ -28,6 +28,7 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @return true or false
 	 */
 	public boolean addSysUser(SysUser sysUser) {
+		sysUser.setDlmm00(SecurityUtil.getPassword(sysUser.getDlmm00()));
 		return sysUserDao.addSysUser(sysUser);
 	}
 	
@@ -52,7 +53,18 @@ public class SysUserServiceImpl implements SysUserService {
 	public boolean updateSysUser(SysUser sysUser) {
 		return sysUserDao.updateSysUser(sysUser);
 	}
-	
+	/**
+	 * @description: 更新系统用户密码
+	 * @date: 2013-8-23 下午4:59:47
+	 * @author： lintz
+	 * @param sysUser 系统用户
+	 * @param dlmm00 登录密码
+	 * @return true or false
+	 */
+	public boolean updatePassword(SysUser sysUser,String dlmm00){
+		sysUser.setDlmm00(SecurityUtil.getPassword(dlmm00));
+		return sysUserDao.updateSysUser(sysUser);
+	}
 	/**
 	 * @description: 查询全部的系统用户
 	 * @date: 2013-8-23 下午5:00:51
@@ -71,15 +83,24 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @param dlmm00 登陆密码
 	 * @return true or false
 	 */
-	public boolean login(String dlzh00, String dlmm00) {
+	public SysUser login(String dlzh00, String dlmm00) {
 		SysUser sysUser=sysUserDao.querySysUser(dlzh00);
 		if(sysUser!=null){
-			if(sysUser.getDlmm00()==SecurityUtil.getPassword(dlmm00))
-				return true;
+			if(sysUser.getDlmm00().equals(SecurityUtil.getPassword(dlmm00)))
+				return sysUser;
 		}
-		return false;
+		return null;
 	}
-	
+	/**
+	 * @description: 根据帐号密码验证用户
+	 * @date: 2013-8-23 下午5:00:51
+	 * @author： lintz
+	 * @param dlzh00 登陆帐号
+	 * @return true or false
+	 */
+	public SysUser querySysUser(String dlzh00){
+		return sysUserDao.querySysUser(dlzh00);
+	}
 	/*----------------------------------------set and get method----------------------------*/
 	public SysUserDao getSysUserDao() {
 		return sysUserDao;

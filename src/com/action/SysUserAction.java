@@ -5,6 +5,9 @@
  */
 package com.action;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import com.model.SysUser;
 import com.service.SysUserService;
 import com.util.BaseAction;
@@ -21,7 +24,9 @@ public class SysUserAction extends BaseAction {
 	private SysUser sysUser;
 	private SysUserService sysUserService;
 	private String msg;
-	
+	private String oldPwd;
+	private String newPwd;
+
 	/**
 	 * @description: 登陆验证
 	 * @date: 2013-9-2 下午2:36:21
@@ -29,18 +34,22 @@ public class SysUserAction extends BaseAction {
 	 * @return
 	 */
 	public String login() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
 		if (dlzh00 != null && dlmm00 != null) {
-			if (sysUserService.login(dlzh00, dlmm00)) {
-				return SUCCESS;
-			}else{
-				msg="error_again";
-				return AGAIN;
+			SysUser sysUserRs = sysUserService.login(dlzh00, dlmm00);
+			if (sysUserRs != null) {
+				msg = "success";
+				session.setAttribute("sysUser", sysUserRs);
+			} else {
+				msg = "error_again";
 			}
+		} else {
+			msg = "error_none";
 		}
-		msg="error_none";
-		return AGAIN;
+		return SUCCESS;
 	}
-	
+
 	/**
 	 * @description:添加用户
 	 * @date: 2013-9-2 下午2:45:57
@@ -49,11 +58,22 @@ public class SysUserAction extends BaseAction {
 	 */
 	public String addSysUser() {
 		if (sysUser != null) {
-			return sysUserService.addSysUser(sysUser) ? SUCCESS : AGAIN;
+			if (sysUserService.querySysUser(sysUser.getDlzh00()) != null) {
+				msg = "error_have";
+			} else {
+				if (sysUserService.addSysUser(sysUser)) {
+					msg = "success";
+				} else {
+					msg = "error_error";
+				}
+			}
+
+		} else {
+			msg = "error_none";
 		}
-		return AGAIN;
+		return SUCCESS;
 	}
-	
+
 	/**
 	 * @description:修改密码
 	 * @date: 2013-9-2 下午2:36:34
@@ -61,10 +81,28 @@ public class SysUserAction extends BaseAction {
 	 * @return
 	 */
 	public String updatePassword() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
 		
-		return null;
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
+		if (oldPwd != null && newPwd != null) {
+			SysUser sysUserRs = sysUserService.login(sysUserSession.getDlzh00(), oldPwd);
+			if (sysUserRs != null) {
+				if (sysUserService.updatePassword(sysUserRs, newPwd)) {
+					msg = "success";
+				} else {
+					msg = "error_sys";
+				}
+			}else{
+				msg="error_pwd";
+			}
+
+		} else {
+			msg = "error_none";
+		}
+		return SUCCESS;
 	}
-	
+
 	/**
 	 * @description: 更新用户信息
 	 * @date: 2013-9-2 下午2:44:15
@@ -74,7 +112,7 @@ public class SysUserAction extends BaseAction {
 	public String updateSysUser() {
 		return null;
 	}
-	
+
 	/**
 	 * @description: 删除用户
 	 * @date: 2013-9-2 下午2:44:29
@@ -84,7 +122,7 @@ public class SysUserAction extends BaseAction {
 	public String deleteSysUser() {
 		return null;
 	}
-	
+
 	/**
 	 * @description: 查询用户
 	 * @date: 2013-9-2 下午2:44:47
@@ -94,47 +132,63 @@ public class SysUserAction extends BaseAction {
 	public String querySysUser() {
 		return null;
 	}
-	
+
 	/*-----------------------------set and get method--------------------------------------*/
-	
+
 	public String getDlzh00() {
 		return dlzh00;
 	}
-	
+
 	public void setDlzh00(String dlzh00) {
 		this.dlzh00 = dlzh00;
 	}
-	
+
 	public String getDlmm00() {
 		return dlmm00;
 	}
-	
+
 	public void setDlmm00(String dlmm00) {
 		this.dlmm00 = dlmm00;
 	}
-	
+
 	public SysUser getSysUser() {
 		return sysUser;
 	}
-	
+
 	public void setSysUser(SysUser sysUser) {
 		this.sysUser = sysUser;
 	}
-	
+
 	public SysUserService getSysUserService() {
 		return sysUserService;
 	}
-	
+
 	public void setSysUserService(SysUserService sysUserService) {
 		this.sysUserService = sysUserService;
 	}
-	
+
 	public String getMsg() {
 		return msg;
 	}
-	
+
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	
+
+	public String getOldPwd() {
+		return oldPwd;
+	}
+
+	public void setOldPwd(String oldPwd) {
+		this.oldPwd = oldPwd;
+	}
+
+	public String getNewPwd() {
+		return newPwd;
+	}
+
+	public void setNewPwd(String newPwd) {
+		this.newPwd = newPwd;
+	}
+
 }

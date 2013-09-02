@@ -25,6 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <body class="login">
 	<div class="container g-container980">
+		<input type="hidden" value="<%=basePath%>" id="basePath"/>
 		<form class="form-signin">
 			<h2 class="form-signin-heading">智联信通官网后台</h2>
 			<div class="input-prepend">

@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <ul class="nav"></ul>
                   <ul class="nav g-nav-login pull-right">
                     <li>
-                      <a href="#">Iotcomm@163.com</a>
+                      <a href="#">${sysUser.dlzh00}</a>
                     </li>
                     <li>
                       <a href="login.html">注销</a>

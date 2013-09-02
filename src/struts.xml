@@ -17,10 +17,19 @@
 		</action>
 		
 		<action name="login" class="sysUserAction" method="login">
-			<result name="success">
-				pages/admin/news/news.jsp
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
 			</result>
-			<result name="again" type="json">
+		</action>	
+		
+		<action name="addSysUser" class="sysUserAction" method="addSysUser">
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>
+			
+		<action name="updatePwd" class="sysUserAction" method="updatePassword">
+			<result name="success" type="json">
 				<param name="excludeProperties">sysUserService</param>
 			</result>
 		</action>		

@@ -22,7 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="<%=basePath%>bootstrap/js/action.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/admin/sysuser/pwd_update.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -45,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <ul class="nav"></ul>
                   <ul class="nav g-nav-login pull-right">
                     <li>
-                      <a href="#">Iotcomm@163.com</a>
+                      <a href="#">${sysUser.dlzh00}</a>
                     </li>
                     <li>
                       <a href="login.html">注销</a>
@@ -82,6 +83,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			     <li>
                 <a href="<%=basePath%>pages/admin/recruitment/recruitment.jsp">招聘管理</a>
               </li>
+			<li>
+				<a href="<%=basePath%>pages/admin/sysuser/sysuser.jsp">用户管理</a>
+			</li>              
 			<li class="nav-header">
               	个人中心
             </li>
@@ -110,25 +114,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <!--tips-->
               <h3 class="title">密码修改</h3>
               <!--userdata-->
-              <form id="userdata-form">
+              <form id="user-form">
                 <ul>
 
                   <li>
                     <label class="lb-title"><span class="im">*</span>原密码：</label>
-                    <input class="input-large" type="text">
+                    <input class="input-large" type="password" id="j-ui-old" name="oldPwd">
                     <span class="input-tip"></span>
                   </li>
                   <li>
                     <label class="lb-title"><span class="im">*</span>新密码：</label>
-                    <input class="input-large" type="text">
+                    <input class="input-large" type="password" id="j-ui-pwd" name="newPwd">
                     <span class="input-tip"></span>
                   </li>   
 				<li>
                     <label class="lb-title"><span class="im">*</span>确认密码：</label>
-                    <input class="input-large" type="text">
+                    <input class="input-large" type="password" id="j-ui-check" name="checkPwd">
                     <span class="input-tip"></span>
                   </li> 				  
-                  <li><button class="btn btn-warning g-btn-submit">确认修改</button></li>
+                  <li><button class="btn btn-warning g-btn-submit" type="button" id="userdata-form">确认修改</button></li>
                 </ul>
               </form>
               <!--/userdata-->

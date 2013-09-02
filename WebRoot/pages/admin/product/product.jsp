@@ -6,9 +6,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <head>
- <base href="<%=basePath%>">    
-    <title>产品管理</title>
+  <head>
+    <base href="<%=basePath%>">    
+    <title>新闻管理</title>
     <meta charset="utf-8">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="产品管理">
+	<meta http-equiv="description" content="新闻管理">
     <!-- Bootstrap -->
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-        <!--container980-->
+     <!--container980-->
     <div class="container container-full">
       <!--topbar row-->
       <div class="row row-fluid">
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <ul class="nav"></ul>
                   <ul class="nav g-nav-login pull-right">
                     <li>
-                      <a href="#">Iotcomm@163.com</a>
+                      <a href="#">${sysUser.dlzh00}</a>
                     </li>
                     <li>
                       <a href="login.html">注销</a>
@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="row row-fluid-sidefixed">
         <!--sidebar-->
         <div class="col-sidebar">
-		<!--side nav-->
+          <!--side nav-->
             <ul class="nav nav-list g-nav">
 			<li class="nav-header">
               	功能列表
@@ -82,17 +82,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			     <li>
                 <a href="<%=basePath%>pages/admin/recruitment/recruitment.jsp">招聘管理</a>
               </li>
+			<li>
+				<a href="<%=basePath%>pages/admin/sysuser/sysuser.jsp">用户管理</a>
+			</li>              
 			<li class="nav-header">
               	个人中心
             </li>
-              <li class="">
+              <li>
                 <a href="<%=basePath%>pages/admin/sysuser/sysuser_detail.jsp">个人信息</a>
               </li>
-			   <li class="">
+			   <li>
                 <a href="<%=basePath%>pages/admin/sysuser/pwd_update.jsp">密码修改</a>
               </li>
             </ul>
             <!--/side nav-->
+        </div>
+        <!--/sidebar-->
         <!--main-->
         <div class="col-main">
           <div class="g-main-box">
@@ -106,13 +111,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <table class="table g-table">
               <thead>
                 <tr>
-                  <th class="g-tl" width="30%">
-					<input class="g-checkbox" id="j-ad-all" type="checkbox">产品名称
+                  <th class="g-tl" width="40%">
+					<input class="g-checkbox" id="j-ad-all" type="checkbox">新闻标题
 				  </th> 
-				  <th width="30%">产品类型</th>
+				  <th width="10%">新闻栏目</th>
 				  <th width="10%">排序号</th>
                   <th width="10%">发布者</th>
-                  <th width="10%">发布时间</th>  
+                  <th width="20%">发布时间</th>
 				  <th width="10%">相关操作</th>
                 </tr>
               </thead>
@@ -123,125 +128,145 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
                 </tr>
-                  <tr class="g-app-row">
+                        <tr class="g-app-row">
                   <td>
                     <label class="g-ad-title">
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
                 </tr>
-				  <tr class="g-app-row">
+				        <tr class="g-app-row">
                   <td>
                     <label class="g-ad-title">
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
                 </tr>
-				  <tr class="g-app-row">
+				        <tr class="g-app-row">
                   <td>
                     <label class="g-ad-title">
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
                 </tr>
-				  <tr class="g-app-row">
+				        <tr class="g-app-row">
                   <td>
                     <label class="g-ad-title">
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
                 </tr>
-				  <tr class="g-app-row">
+				        <tr class="g-app-row">
                   <td>
                     <label class="g-ad-title">
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
                 </tr>
-				  <tr class="g-app-row">
+				        <tr class="g-app-row">
                   <td>
                     <label class="g-ad-title">
                       <input class="g-checkbox" type="checkbox">
                       <a href="news_detail.html">
 						<img class="g-appimg" src="bootstrap/img/new.gif">
-						SEMS-RTU05B单灯控制器
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
 					  </a>
                     </label>
                   </td>
                   <td>
-					照明设备控制终端
+					公司新闻
 				  </td>
                   <td>999</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
+                </tr>
+				        <tr class="g-app-row">
+                  <td>
+                    <label class="g-ad-title">
+                      <input class="g-checkbox" type="checkbox">
+                      <a href="news_detail.html">
+						<img class="g-appimg" src="bootstrap/img/new.gif">
+						智联信通盛大亮相2013广州光亚展（全球最大照明展）
+					  </a>
+                    </label>
+                  </td>
+                  <td>
+					公司新闻
+				  </td>
+                  <td>999</td>
+                  <td><span class="g-col-org">超级管理员</span></td>
+                  <td><span class="g-col-grn">2013-08-29</span></td>
+				  <td>
+					<a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a>
+				  </td>
                 </tr>
               </tbody>
             </table>

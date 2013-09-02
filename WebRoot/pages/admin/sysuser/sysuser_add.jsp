@@ -23,6 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
+     <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
     <script src="<%=basePath%>js/admin/sysuser/sysuser_add.js" type="text/javascript"></script>
   </head>
   
@@ -46,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <ul class="nav"></ul>
                   <ul class="nav g-nav-login pull-right">
                     <li>
-                      <a href="#">Iotcomm@163.com</a>
+                      <a href="#">${sysUser.dlzh00}</a>
                     </li>
                     <li>
                       <a href="login.html">注销</a>
@@ -114,38 +115,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <!--tips-->
               <h3 class="title">新增用户</h3>
               <!--userdata-->
-              <form >
+              <form id="user-form">
                 <ul>
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户帐号：</label>
-                    <input class="input-large" id="j-ui-username" type="text">
+                    <input class="input-large" id="j-ui-username" type="text" name="sysUser.dlzh00">
                     <span class="input-tip"></span>
                   </li>
                   <li>
                     <label class="lb-title"><span class="im">*</span>真实姓名：</label>
-                    <input class="input-large" id="j-ui-name" type="text">
+                    <input class="input-large" id="j-ui-name" type="text" name="sysUser.yhxm00">
                     <span class="input-tip"></span>
                   </li>
 
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户邮箱：</label>
-                    <input class="input-large" id="j-ui-email" type="text">
+                    <input class="input-large" id="j-ui-email" type="text" name="sysUser.yhyx00">
                     <span class="input-tip"></span>
                   </li>
                  
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户性别：</label>
+                    <input id="j-ui-sex" type="hidden" name="sysUser.yhxb00"/>
                     <div class="btn-group dropdown" id="province-dropdown">
                       <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="value">请选择</span><span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                        <li><a href="#">男</a></li>
-                        <li><a href="#">女</a></li>
+                        <li class="100000"><a href="javascript:void();">男</a></li>
+                        <li class="100001"><a href="javascript:void();">女</a></li>
                       </ul>
                     </div>                  
                   </li>
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户密码：</label>
-                    <input class="input-large" id="j-ui-pwd" type="password">
+                    <input class="input-large" id="j-ui-pwd" type="password" name="sysUser.dlmm00">
                     <span class="input-tip"></span>
                   </li>
                   <li><button class="btn btn-warning g-btn-submit" id="userdata-form" type="button">确认保存</button></li>

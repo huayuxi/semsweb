@@ -19,29 +19,44 @@ public interface SysUserService {
 	 * @description: 新增系统用户
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param sysUser 系统用户
+	 * @param sysUser
+	 *            系统用户
 	 * @return true or false
 	 */
 	public boolean addSysUser(SysUser sysUser);
-	
+
 	/**
 	 * @description: 删除系统用户
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param sysUser 系统用户
+	 * @param sysUser
+	 *            系统用户
 	 * @return true or false
 	 */
 	public boolean delSysUser(SysUser sysUser);
-	
+
 	/**
 	 * @description: 更新系统用户
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param sysUser 系统用户
+	 * @param sysUser
+	 *            系统用户
 	 * @return true or false
 	 */
 	public boolean updateSysUser(SysUser sysUser);
-	
+
+	/**
+	 * @description: 更新系统用户密码
+	 * @date: 2013-8-23 下午4:59:47
+	 * @author： lintz
+	 * @param sysUser
+	 *            系统用户
+	 * @param dlmm00
+	 *            登录密码
+	 * @return true or false
+	 */
+	public boolean updatePassword(SysUser sysUser, String dlmm00);
+
 	/**
 	 * @description: 查询全部的系统用户
 	 * @date: 2013-8-23 下午5:00:51
@@ -49,14 +64,26 @@ public interface SysUserService {
 	 * @return 全部系统用户
 	 */
 	public List<SysUser> querySysUser();
-	
+
 	/**
 	 * @description: 根据帐号密码验证用户
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
-	 * @param dlzh00 登陆帐号
-	 * @param dlmm00 登陆密码
+	 * @param dlzh00
+	 *            登陆帐号
+	 * @param dlmm00
+	 *            登陆密码
 	 * @return true or false
 	 */
-	public boolean login(String dlzh00, String dlmm00);
+	public SysUser login(String dlzh00, String dlmm00);
+
+	/**
+	 * @description: 根据帐号密码验证用户
+	 * @date: 2013-8-23 下午5:00:51
+	 * @author： lintz
+	 * @param dlzh00
+	 *            登陆帐号
+	 * @return true or false
+	 */
+	public SysUser querySysUser(String dlzh00);
 }

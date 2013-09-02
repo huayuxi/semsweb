@@ -24,7 +24,7 @@
 		<param-value>classpath:log4j.properties</param-value>
 	</context-param>
 	<welcome-file-list>
-		<welcome-file>pages/admin/sysuser/sysuser.jsp</welcome-file>
+		<welcome-file>pages/admin/login.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<error-page>

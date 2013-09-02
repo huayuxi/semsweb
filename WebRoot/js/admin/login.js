@@ -1,6 +1,6 @@
 $(function() {
 	var COOKIE_NAME = 'username';
-	
+	var basePath=$("#basePath").val();
 	if ($.cookie(COOKIE_NAME)) {
 		$("#userInput").val($.cookie(COOKIE_NAME));
 	}
@@ -27,8 +27,10 @@ $(function() {
 				success : function(data) {
 					if(data.msg=="error_again"){
 						$("#j-log-tip").removeClass("input-tip-success").addClass("input-tip-warning").text("用户名或者密码错误").fadeIn(100);
-					}else{
+					}else if(data.msg=="error_none"){
 						$("#j-log-tip").removeClass("input-tip-success").addClass("input-tip-warning").text("用户名或密码为空").fadeIn(100);
+					}else{
+						window.location.href=basePath+"pages/admin/news/news.jsp";
 					}
 				}
 			});
@@ -54,3 +56,5 @@ $(function() {
 		$("#j-log-tip").fadeOut(100);
 	});
 });
+
+
