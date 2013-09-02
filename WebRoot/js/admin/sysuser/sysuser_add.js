@@ -1,5 +1,4 @@
-(function(){ 
-	
+$(function() {
 	$(".dropdown .dropdown-menu li").bind("click",function(){
 		var val= $(this).find("a").text();
 		$(this).parent().parent().find(".value").html(val);
@@ -78,4 +77,4 @@
  		};
 	};
 
-})()
+});
