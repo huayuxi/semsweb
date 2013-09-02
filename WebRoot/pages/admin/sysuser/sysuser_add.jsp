@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="<%=basePath%>bootstrap/js/action.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/admin/sysuser/sysuser_add.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -83,13 +83,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li>
 				<a href="<%=basePath%>pages/admin/recruitment/recruitment.jsp">招聘管理</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="<%=basePath%>pages/admin/sysuser/sysuser.jsp">用户管理</a>
 			</li>
 			<li class="nav-header">
               	个人中心
             </li>
-              <li  class="active">
+              <li class="">
                 <a href="<%=basePath%>pages/admin/sysuser/sysuser_detail.jsp">个人信息</a>
               </li>
 			   <li class="">
@@ -112,13 +112,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <p>我们会保护用户隐私资料，绝不会向第三方透露用户的个人资料。</p>
               </div>
               <!--tips-->
-              <h3 class="title">个人信息</h3>
+              <h3 class="title">新增用户</h3>
               <!--userdata-->
-              <form id="userdata-form">
+              <form >
                 <ul>
-  				 <li>
-                    <label class="lb-title">用户帐号：</label>
-                    <span class="lb-txt">iotcomm2013</span>
+                  <li>
+                    <label class="lb-title"><span class="im">*</span>用户帐号：</label>
+                    <input class="input-large" id="j-ui-username" type="text">
+                    <span class="input-tip"></span>
                   </li>
                   <li>
                     <label class="lb-title"><span class="im">*</span>真实姓名：</label>
@@ -128,7 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户邮箱：</label>
-                    <input class="input-large" id="j-ui-tel" type="text">
+                    <input class="input-large" id="j-ui-email" type="text">
                     <span class="input-tip"></span>
                   </li>
                  
@@ -142,7 +143,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                       </ul>
                     </div>                  
                   </li>
-                  <li><button class="btn btn-warning g-btn-submit">确认保存</button></li>
+                  <li>
+                    <label class="lb-title"><span class="im">*</span>用户密码：</label>
+                    <input class="input-large" id="j-ui-pwd" type="password">
+                    <span class="input-tip"></span>
+                  </li>
+                  <li><button class="btn btn-warning g-btn-submit" id="userdata-form" type="button">确认保存</button></li>
                 </ul>
               </form>
               <!--/userdata-->

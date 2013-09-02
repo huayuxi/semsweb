@@ -7,8 +7,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-  <base href="<%=basePath%>">    
-    <title>个人信息</title>
+    <base href="<%=basePath%>">    
+    <title>系统用户管理</title>
     <meta charset="utf-8">
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,20 +16,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="个人信息">
+	<meta http-equiv="description" content="系统用户管理">
     <!-- Bootstrap -->
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
-    
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/action.js" type="text/javascript"></script>
   </head>
   
   <body>
-        <!--container980-->
+     <!--container980-->
     <div class="container container-full">
-    <!--topbar row-->
+      <!--topbar row-->
       <div class="row row-fluid">
         <div class="span12">
           <div class="navbar g-navbar">
@@ -61,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <!--/topbar-->
       <!--main row-->
       <div class="row row-fluid-sidefixed">
-       <!--sidebar-->
+        <!--sidebar-->
         <div class="col-sidebar">
           <!--side nav-->
             <ul class="nav nav-list g-nav">
@@ -83,13 +82,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li>
 				<a href="<%=basePath%>pages/admin/recruitment/recruitment.jsp">招聘管理</a>
 			</li>
-			<li>
+			<li class="active">
 				<a href="<%=basePath%>pages/admin/sysuser/sysuser.jsp">用户管理</a>
 			</li>
 			<li class="nav-header">
               	个人中心
             </li>
-              <li  class="active">
+              <li class="">
                 <a href="<%=basePath%>pages/admin/sysuser/sysuser_detail.jsp">个人信息</a>
               </li>
 			   <li class="">
@@ -102,52 +101,76 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!--main-->
         <div class="col-main">
           <div class="g-main-box">
-            <!--create info-->
-            <div class="g-create-info">
-              <!--tips-->
-              <div class="alert pw-tips">
-                  <button type="button" class="close" data-dismiss="alert">×</button>
-                  <h4>小贴士：</h4>
-                  <p>为了给您提供更好的服务，请填写真实资料。</p> 
-                  <p>我们会保护用户隐私资料，绝不会向第三方透露用户的个人资料。</p>
-              </div>
-              <!--tips-->
-              <h3 class="title">个人信息</h3>
-              <!--userdata-->
-              <form id="userdata-form">
-                <ul>
-  				 <li>
-                    <label class="lb-title">用户帐号：</label>
-                    <span class="lb-txt">iotcomm2013</span>
-                  </li>
-                  <li>
-                    <label class="lb-title"><span class="im">*</span>真实姓名：</label>
-                    <input class="input-large" id="j-ui-name" type="text">
-                    <span class="input-tip"></span>
-                  </li>
-
-                  <li>
-                    <label class="lb-title"><span class="im">*</span>用户邮箱：</label>
-                    <input class="input-large" id="j-ui-tel" type="text">
-                    <span class="input-tip"></span>
-                  </li>
-                 
-                  <li>
-                    <label class="lb-title"><span class="im">*</span>用户性别：</label>
-                    <div class="btn-group dropdown" id="province-dropdown">
-                      <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="value">请选择</span><span class="caret"></span></button>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">男</a></li>
-                        <li><a href="#">女</a></li>
-                      </ul>
-                    </div>                  
-                  </li>
-                  <li><button class="btn btn-warning g-btn-submit">确认保存</button></li>
-                </ul>
-              </form>
-              <!--/userdata-->
+            <!--action panel-->
+            <div class="g-action-panel">
+              <a href="<%=basePath%>pages/admin/sysuser/sysuser_add.jsp" class="btn btn-success pull-right" type="button">新增用户</a>
+              <button class="btn btn-danger" type="button">批量删除</button>
             </div>
-            <!--/create info-->
+            <!--/action panel-->
+            <!--table-->
+            <table class="table g-table">
+              <thead>
+                <tr>
+                  <th class="g-tl" width="40%">
+					<input class="g-checkbox" id="j-ad-all" type="checkbox">用户帐号
+				  </th> 
+				  <th width="10%">用户姓名</th>
+				  <th width="10%">用户性别</th>
+                  <th width="20%">用户邮箱</th>
+                  <th width="10%">创建时间</th>
+				  <th width="10%">相关操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="g-app-row">
+                  <td>
+                    <label class="g-ad-title">
+                      <input class="g-checkbox" type="checkbox">
+                      <a href="news_detail.html">
+						<img class="g-appimg" src="bootstrap/img/new.gif">
+						iotcomm2013
+					  </a>
+                    </label>
+                  </td>
+                  <td>
+					张三
+				  </td>
+                  <td>男</td>
+                  <td><span class="g-col-org">iotcomm2013@163.com</span></td>
+                  <td><span class="g-col-grn">2013-08-29</span></td>
+				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
+                </tr>
+            
+              </tbody>
+            </table>
+            <!--/table-->
+            <!--page-->
+            <div class="pagination pagination-centered">
+              <ul>
+                <li class="disabled">
+                  <a href="#">上一页</a>
+                </li>
+                <li class="active">
+                  <a href="#">1</a>
+                </li>
+                <li>
+                  <a href="#">2</a>
+                </li>
+                <li>
+                  <a href="#">3</a>
+                </li>
+                <li>
+                  <a href="#">4</a>
+                </li>
+                <li>
+                  <a href="#">5</a>
+                </li>
+                <li>
+                  <a href="#">下一页</a>
+                </li>
+              </ul>
+            </div>
+            <!--/page-->
           </div>
         </div>
         <!--/main-->
