@@ -47,7 +47,7 @@ body{
 
 .g-sub td{ background:#d9edf7;}
 
-.g-ad-title, .g-ad-subtitle{ width:128px; line-height:30px; padding-left:25px; margin:0; text-align:left; white-space:nowrap; text-overflow:ellipsis; overflow:hidden;} 
+.g-ad-title, .g-ad-subtitle{ width:128px; line-height:30px; padding-left:25px; margin:0; text-align:left; white-space:nowrap; text-overflow:ellipsis;} 
 .g-ad-subtitle{ font-size:12px; color:#777; cursor:text!important; }
 
 .g-checkbox{ float:left; }
@@ -128,10 +128,16 @@ body{
 .g-create-info .g-btn-dlsdk{ margin-top:10px;}
 .g-hero-unit{ margin:0; padding:10px 20px 20px;}
 .g-hero-unit p{ color:#777; line-height:24px; font-size:12px; margin:0;}
+
 .uinfo-tips{ width:240px; padding:10px; position:absolute; top:276px; right:20px;}
 .uinfo-tips .close{ top:-6px; right:0;}
 .uinfo-tips h4{ font-size:14px; padding-bottom:4px;}
 .uinfo-tips p{ line-height:24px; font-size:12px; margin-bottom:0;}
+
+.pw-tips{ width:240px; padding:10px; position:absolute; top:100px; right:20px;}
+.pw-tips .close{ top:-6px; right:0;}
+.pw-tips h4{ font-size:14px; padding-bottom:4px;}
+.pw-tips p{ line-height:24px; font-size:12px; margin-bottom:0;}
 
 .g-table .label{ *vertical-align:-7px;}
 /* login page */
