@@ -4,10 +4,25 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<constant name="struts.action.extension" value="shtml" />
+	
 	<package name="/" extends="struts-default">
+	
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		
 		<action name="addNews" class="newsAction" method="addNews">
-			<result name="success">index.jsp</result>
-			<result name="lost">login.jsp</result>
+			<result name="success">pages/admin/news/news.jsp</result>
+			<result name="again">pages/admin/news/news_add.jsp</result>
 		</action>
+		
+		<action name="login" class="sysUserAction" method="login">
+			<result name="success">
+				pages/admin/news/news.jsp
+			</result>
+			<result name="again" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>		
 	</package>
 </struts>

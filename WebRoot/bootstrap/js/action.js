@@ -82,6 +82,7 @@
 			$("#ad-type-dropdown").find(".value").text("请选择");
 		};
 	});
+	
 	$("#addModal .close").bind("click",function(){
 		$(".input-tip").hide();
 		$("#add-ad-name").val("");
@@ -101,6 +102,7 @@
 		!loginCheck("userInput","pwdInput","用户名或密码为空") && (valid = false);
 		return valid;
 	});
+	
 	$("#userdata-form").bind("submit",function(){
 		var valid = true;
 		!userInfoCheck("j-ui-name","name") && (valid = false);
@@ -108,15 +110,19 @@
 		!userInfoCheck("j-ui-qq","qq") && (valid = false);
 		return valid;
 	});
+	
 	$("#j-ui-name").bind("blur",function(){
 		userInfoCheck("j-ui-name","name");
 	});
+	
 	$("#j-ui-tel").bind("blur",function(){
 		userInfoCheck("j-ui-tel","tel");
 	});
+	
 	$("#j-ui-qq").bind("blur",function(){
 		userInfoCheck("j-ui-qq","qq");
 	});
+	
 	function textCheck(selector,tiptext){
 		var text_selector = $("#"+selector);
 		if($.trim(text_selector.val())==""){

@@ -78,13 +78,21 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
 	</aop:config>
 	<!-- 配置Hibernate end -->
-
+	
+	<!-- Action配置 -->
 	<bean id="newsAction" class="com.action.NewsAction">
 		<property name="newsService">
 			<ref bean="newsService" />
 		</property>
 	</bean>
 	
+	<bean id="sysUserAction" class="com.action.SysUserAction">
+		<property name="sysUserService">
+			<ref bean="sysUserService" />
+		</property>
+	</bean>
+	
+	<!-- Service配置 -->
 	<bean id="newsService" class="com.service.impl.NewsServiceImpl">
 		<property name="newsDao">
 			<ref bean="newsDao" />
@@ -94,7 +102,20 @@
 		</property>
 	</bean>
 	
+	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
+		<property name="sysUserDao">
+			<ref bean="sysUserDao" />
+		</property>
+	</bean>
+	
+	<!-- DAO配置 -->
 	<bean id="newsDao" class="com.dao.impl.NewsDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="sysUserDao" class="com.dao.impl.SysUserDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

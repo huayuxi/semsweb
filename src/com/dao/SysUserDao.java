@@ -46,4 +46,12 @@ public interface SysUserDao {
 	 * @return 全部系统用户
 	 */
 	public List<SysUser> querySysUser();
+	/**
+	 * @description: 根据登陆帐号查询系统用户
+	 * @date: 2013-8-23 下午5:00:51
+	 * @author： lintz
+	 * @param dlzh00 登陆帐号
+	 * @return 系统用户
+	 */
+	public SysUser querySysUser(String dlzh00);
 }
