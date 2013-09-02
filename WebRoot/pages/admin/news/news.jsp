@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               	个人中心
             </li>
               <li class="">
-                <a href="<%=basePath%>pages/admin/sysuser/Sysuser_detail.jsp">个人信息</a>
+                <a href="<%=basePath%>pages/admin/sysuser/sysuser_detail.jsp">个人信息</a>
               </li>
 			   <li class="">
                 <a href="<%=basePath%>pages/admin/sysuser/pwd_update.jsp">密码修改</a>

@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+ <head>
  <base href="<%=basePath%>">    
     <title>产品管理</title>
     <meta charset="utf-8">
@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div class="row row-fluid-sidefixed">
         <!--sidebar-->
         <div class="col-sidebar">
-<!--side nav-->
+		<!--side nav-->
             <ul class="nav nav-list g-nav">
 			<li class="nav-header">
               	功能列表
@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               	个人中心
             </li>
               <li class="">
-                <a href="<%=basePath%>pages/admin/sysuser/Sysuser_detail.jsp">个人信息</a>
+                <a href="<%=basePath%>pages/admin/sysuser/sysuser_detail.jsp">个人信息</a>
               </li>
 			   <li class="">
                 <a href="<%=basePath%>pages/admin/sysuser/pwd_update.jsp">密码修改</a>
