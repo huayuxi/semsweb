@@ -110,7 +110,16 @@ public class SysUserAction extends BaseAction {
 	 * @return
 	 */
 	public String updateSysUser() {
-		return null;
+		 if(sysUser!=null){
+			if(sysUserService.updateSysUser(sysUser)){
+				msg="success";
+			}else{
+				msg="error_sys";
+			}
+		 }else{
+			 msg="error_none";
+		 }
+		return SUCCESS;
 	}
 
 	/**

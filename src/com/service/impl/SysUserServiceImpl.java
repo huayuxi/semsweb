@@ -51,7 +51,11 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @return true or false
 	 */
 	public boolean updateSysUser(SysUser sysUser) {
-		return sysUserDao.updateSysUser(sysUser);
+		SysUser queryRs=sysUserDao.querySysUser(sysUser.getDlzh00());
+		queryRs.setYhxm00(sysUser.getYhxm00());
+		queryRs.setYhxb00(sysUser.getYhxb00());
+		queryRs.setYhyx00(sysUser.getYhyx00());
+		return sysUserDao.updateSysUser(queryRs);
 	}
 	/**
 	 * @description: 更新系统用户密码
