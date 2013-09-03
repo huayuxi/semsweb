@@ -1,5 +1,10 @@
+$(function() {
+	getData(0);
+});
+
+
 //分页显示
-function getJsData(pageNo){
+function getData(pageNo){
 	var param="pageNo="+(pageNo+1)+"&pageSize=10";
 	$.ajax( {
 		type : "POST",
@@ -19,7 +24,7 @@ function getJsData(pageNo){
 				"<th width=\"10%\">相关操作</th></tr></thead><tbody>";
 				$.each(myData, function(i, n) {
 						div=div+"<tr class=\"g-app-row\"><td><label class=\"g-ad-title\">" +
-								"<input class=\"g-checkbox\" type=\checkbox\"><a href=\"news_detail.html\">" +
+								"<input class=\"g-checkbox\" type=\"checkbox\"><a href=\"news_detail.html\">" +
 								"<img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
 								n.dlzh00
 								+"</a></label></td><td>"+
@@ -30,22 +35,21 @@ function getJsData(pageNo){
 								n.yhyx00
 								+"</span></td><td><span class=\"g-col-grn\">" +
 								n.cjsj00
-								+"</span></td><td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td></tr>"
+								+"</span></td><td><a href=\"\">编辑</a>&nbsp;|&nbsp;<a href=\"\">删除</a></td></tr>";
 				});
 				div=div+"</tbody>";
 				$("#user_lists").html(div);
 				// 分页-只初始化一次
 				$("#Pagination").pagination(totalcount, {
-					callback : pageselectJsCallback,
-					prev_text : "<上一页",
-					next_text : "下一页 >",
+					callback : pageselectCallback,
+					prev_text : "上一页",
+					next_text : "下一页 ",
 					items_per_page : pagesize,
 					prev_show_always : true,
 					next_show_always : true,
 					current_page : pageNo,
 					link_to : "javascript:void(0)"
 				});
-				parent.autoHeight();
 			}else{
 				$("#user_lists").html("<span style=\"color:red\">很遗憾未找到相关记录！</span>");
 				$("#Pagination").html("");
@@ -54,7 +58,7 @@ function getJsData(pageNo){
 	});
 }
 //翻页调用
-function pageselectJsCallback(page_id,jq){
+function pageselectCallback(page_id,jq){
 	scroll(0,0);
-	getJsData(page_id);
+	getData(page_id);
 }

@@ -1,5 +1,2 @@
 /WebRoot/WEB-INF/classes
-
-classes
-
-/WebRoot/WEB-INF/classes
+*.class

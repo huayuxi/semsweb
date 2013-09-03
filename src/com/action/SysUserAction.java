@@ -5,10 +5,14 @@
  */
 package com.action;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.model.SysUser;
 import com.service.SysUserService;
@@ -146,7 +150,27 @@ public class SysUserAction extends BaseAction {
 	 * @return
 	 */
 	public String querySysUser() {
-		return null;
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String pageindex = req.getParameter("pageNo");
+		String pagesize = req.getParameter("pageSize");
+		Map properties = req.getParameterMap();
+		if (pageindex != null && !pageindex.equals("")) {
+			pageNo = Integer.valueOf(pageindex).intValue();
+		} else {
+			pageNo = 1;
+		}
+		if (pagesize != null && !pagesize.equals("")) {
+			pageSize = Integer.valueOf(pagesize).intValue();
+		} else {
+			pageSize = 10;
+		}
+		totalRecords = this.sysUserService.countSysUser(properties);
+		if(totalRecords !=0 ){
+			list=sysUserService.querySysUser(properties, pageNo, pageSize);
+		}else{
+			list=new ArrayList();
+		}
+		return SUCCESS;
 	}
 	
 	/*-----------------------------set and get method--------------------------------------*/

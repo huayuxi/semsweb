@@ -99,5 +99,5 @@ public interface SysUserService {
 	 * @param properties 条件
 	 * @return 统计数
 	 */
-	public int countNews(Map properties);
+	public int countSysUser(Map properties);
 }

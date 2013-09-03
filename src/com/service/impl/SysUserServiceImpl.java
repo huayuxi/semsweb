@@ -131,8 +131,8 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @param properties 条件
 	 * @return 统计数
 	 */
-	public int countNews(Map properties) {
-		return sysUserDao.countNews(properties);
+	public int countSysUser(Map properties) {
+		return sysUserDao.countSysUser(properties);
 	}
 	
 	/*----------------------------------------set and get method----------------------------*/

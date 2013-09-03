@@ -1,4 +1,5 @@
 $(function() {
+	var basePath=$("#basePath").val();
 	$(".dropdown .dropdown-menu li").bind("click",function(){
 		var val= $(this).find("a").text();
 		$("#j-ui-sex").val($(this).attr('class'));
@@ -27,6 +28,8 @@ $(function() {
 										   .addClass("input-tip-warning")
 										   .text("用户帐号已经存在")
 										   .fadeIn(100);
+					}else if(data.msg=="success"){
+						window.location.href=basePath+"pages/admin/sysuser/sysuser.jsp";
 					}
 				}
 			});

@@ -79,20 +79,20 @@ jQuery.fn.pagination = function(maxentries, opts){
 				page_id = page_id<0?0:(page_id<np?page_id:np-1); // Normalize page id to sane value
 				appendopts = jQuery.extend({text:page_id+1, classes:""}, appendopts||{});
 				if(page_id == current_page){
-					var lnk = jQuery("<span class='current'>"+(appendopts.text)+"</span>");
+					var lnk = jQuery("<li class=\"active\"><a>"+(appendopts.text)+"</a></li>");
 				}
 				else
 				{
-					var lnk = jQuery("<a>"+(appendopts.text)+"</a>")
-						.bind("click", getClickHandler(page_id))
-						.attr('href', opts.link_to.replace(/__id__/,page_id+1));//--这个我自己改的，因为它的page_id从0开始，我用起来不习惯
+					var lnk = jQuery("<li><a>"+(appendopts.text)+"</a></li>");
+					lnk.children("a").bind("click", getClickHandler(page_id))
+					.attr('href', opts.link_to.replace(/__id__/,page_id+1));//--这个我自己改的，因为它的page_id从0开始，我用起来不习惯
 				}
 				if(appendopts.classes){lnk.addClass(appendopts.classes);}
 				panel.append(lnk);
 			}
 			// Generate "Previous"-Link
 			if(opts.prev_text && (current_page > 0 || opts.prev_show_always)){
-				appendItem(current_page-1,{text:opts.prev_text, classes:"prev"});
+				appendItem(current_page-1,{text:opts.prev_text, classes:""});
 			}
 			// Generate starting points
 			if (interval[0] > 0 && opts.num_edge_entries > 0)
@@ -103,7 +103,7 @@ jQuery.fn.pagination = function(maxentries, opts){
 				}
 				if(opts.num_edge_entries < interval[0] && opts.ellipse_text)
 				{
-					jQuery("<span>"+opts.ellipse_text+"</span>").appendTo(panel);
+					jQuery("<li><a>"+opts.ellipse_text+"</a></li>").appendTo(panel);
 				}
 			}
 			// Generate interval links
@@ -115,7 +115,7 @@ jQuery.fn.pagination = function(maxentries, opts){
 			{
 				if(np-opts.num_edge_entries > interval[1]&& opts.ellipse_text)
 				{
-					jQuery("<span>"+opts.ellipse_text+"</span>").appendTo(panel);
+					jQuery("<li><a>"+opts.ellipse_text+"</a></li>").appendTo(panel);
 				}
 				var begin = Math.max(np-opts.num_edge_entries, interval[1]);
 				for(var i=begin; i<np; i++) {
@@ -125,7 +125,7 @@ jQuery.fn.pagination = function(maxentries, opts){
 			}
 			// Generate "Next"-Link
 			if(opts.next_text && (current_page < np-1 || opts.next_show_always)){
-				appendItem(current_page+1,{text:opts.next_text, classes:"next"});
+				appendItem(current_page+1,{text:opts.next_text, classes:""});
 			}
 		}
 		

@@ -125,7 +125,7 @@ public class SysUserDaoImpl extends BasicHibernateDao implements SysUserDao {
 	 * @param properties 条件
 	 * @return 统计数
 	 */
-	public int countNews(Map properties) {
+	public int countSysUser(Map properties) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
 		String sql = "select count(*) from sys_user where 1=1" + like;
 		String countStr = this.getSession().createSQLQuery(sql).uniqueResult().toString();
