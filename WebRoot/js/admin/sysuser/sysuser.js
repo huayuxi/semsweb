@@ -35,7 +35,8 @@ function getData(pageNo){
 								n.yhyx00
 								+"</span></td><td><span class=\"g-col-grn\">" +
 								n.cjsj00
-								+"</span></td><td><a href=\"\">编辑</a>&nbsp;|&nbsp;<a href=\"\">删除</a></td></tr>";
+								+"</span></td><td><a href=\"javascript:goUpdate('" +n.dlzh00+"')\">编辑</a>&nbsp;|&nbsp;" +
+								"<a href=\"javascript:goDel(" +n.yhid00+");\">删除</a></td></tr>";
 				});
 				div=div+"</tbody>";
 				$("#user_lists").html(div);
@@ -61,4 +62,26 @@ function getData(pageNo){
 function pageselectCallback(page_id,jq){
 	scroll(0,0);
 	getData(page_id);
+}
+
+function goUpdate(dlzh00){
+	var basePath=$("#basePath").val();
+	window.location.href=basePath+"system/goUpdateSysUser.shtml?dlzh00="+dlzh00;
+}
+
+function goDel(yhid00){
+	var param = "yhid00="+yhid00;
+	$.ajax( {
+		type : "POST",
+		dataType : "json",
+		url : 'system/delSysUser.shtml',
+		data:param,
+		success : function(data) {
+			if(data.msg=="error_sys"){
+				
+			}else if(data.msg=="success"){
+				getData(0);
+			}
+		}
+	});
 }

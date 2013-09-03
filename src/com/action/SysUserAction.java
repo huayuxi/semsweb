@@ -151,13 +151,47 @@ public class SysUserAction extends BaseAction {
 	}
 	
 	/**
+	 * @description: 前往更新界面
+	 * @date: 2013-9-2 下午2:44:15
+	 * @author： lintz
+	 * @return
+	 */
+	public String goUpdateSysUser() {
+		HttpServletRequest req = getRequest();
+		String dlzh00 = (String) req.getAttribute("dlzh00");
+		if(dlzh00!=null){
+			sysUser = sysUserService.querySysUser(dlzh00);
+			if (sysUser != null) {
+				return SUCCESS;
+			} else {
+				msg="error_none";
+			}
+		}
+		msg="error_novalue";
+		return AGAIN;
+	}
+	
+	/**
 	 * @description: 删除用户
 	 * @date: 2013-9-2 下午2:44:29
 	 * @author： lintz
 	 * @return
 	 */
 	public String deleteSysUser() {
-		return null;
+		HttpServletRequest req = getRequest();
+		int yhid00 = (Integer) req.getAttribute("yhid00");
+		if (yhid00 != 0) {
+			SysUser delObj = new SysUser();
+			delObj.setYhid00(yhid00);
+			if (sysUserService.delSysUser(delObj)) {
+				msg = "success";
+			} else {
+				msg = "error_sys";
+			}
+		} else {
+			msg = "error_none";
+		}
+		return SUCCESS;
 	}
 	
 	/**

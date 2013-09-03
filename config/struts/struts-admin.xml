@@ -21,11 +21,24 @@
 			</result>
 		</action>
 		
+		<action name="goUpdateSysUser" class="sysUserAction" method="goUpdateSysUser">
+			<result name="success">/pages/admin/sysuser/sysuser_detail.jsp</result>
+			<result name="again" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>	
+			
 		<action name="updateSysUser" class="sysUserAction" method="updateSysUser">
 			<result name="success" type="json">
 				<param name="excludeProperties">sysUserService</param>
 			</result>
 		</action>	
+		
+		<action name="delSysUser" class="sysUserAction" method="delSysUser">
+			<result name="success" type="json">
+				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>
 		
 		<action name="querySysUser" class="sysUserAction" method="querySysUser">
 			<result name="success" type="json">
