@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-     <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
     <script src="<%=basePath%>js/admin/sysuser/sysuser_add.js" type="text/javascript"></script>
   </head>
   

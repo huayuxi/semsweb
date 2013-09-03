@@ -23,7 +23,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="<%=basePath%>bootstrap/js/action.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/admin/sysuser/sysuser_detail.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -114,35 +115,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <!--tips-->
               <h3 class="title">个人信息</h3>
               <!--userdata-->
-              <form id="userdata-form">
+              <form id="user-form">
                 <ul>
   				 <li>
                     <label class="lb-title">用户帐号：</label>
+                     <input class="input-large"  type="hidden" name="sysUser.dlzh00" value="${sysUser.dlzh00}">
                     <span class="lb-txt">${sysUser.dlzh00}</span>
                   </li>
                   <li>
                     <label class="lb-title"><span class="im">*</span>真实姓名：</label>
-                    <input class="input-large" id="j-ui-name" type="text">
+                    <input class="input-large" id="j-ui-name" type="text" name="sysUser.yhxm00">
                     <span class="input-tip"></span>
                   </li>
 
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户邮箱：</label>
-                    <input class="input-large" id="j-ui-tel" type="text">
+                    <input class="input-large" id="j-ui-email" type="text" name="sysUser.yhyx00">
                     <span class="input-tip"></span>
                   </li>
                  
                   <li>
                     <label class="lb-title"><span class="im">*</span>用户性别：</label>
+                    <input id="j-ui-sex" type="hidden" name="sysUser.yhxb00"/>
                     <div class="btn-group dropdown" id="province-dropdown">
                       <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="value">请选择</span><span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                        <li><a href="#">男</a></li>
-                        <li><a href="#">女</a></li>
+                        <li class="100000"><a href="javascript:void();">男</a></li>
+                        <li class="100001"><a href="javascript:void();">女</a></li>
                       </ul>
                     </div>                  
                   </li>
-                  <li><button class="btn btn-warning g-btn-submit">确认保存</button></li>
+                  <li><button class="btn btn-warning g-btn-submit" type="button" id="userdata-form">确认保存</button></li>
                 </ul>
               </form>
               <!--/userdata-->

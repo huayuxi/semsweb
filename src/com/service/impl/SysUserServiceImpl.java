@@ -6,6 +6,7 @@
 package com.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import com.dao.SysUserDao;
 import com.model.SysUser;
@@ -17,6 +18,7 @@ import com.util.SecurityUtil;
  * @date: 2013-9-2 上午11:52:10
  * @author: lintz
  */
+@SuppressWarnings({ "rawtypes" })
 public class SysUserServiceImpl implements SysUserService {
 	private SysUserDao sysUserDao;
 	
@@ -51,12 +53,13 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @return true or false
 	 */
 	public boolean updateSysUser(SysUser sysUser) {
-		SysUser queryRs=sysUserDao.querySysUser(sysUser.getDlzh00());
+		SysUser queryRs = sysUserDao.querySysUser(sysUser.getDlzh00());
 		queryRs.setYhxm00(sysUser.getYhxm00());
 		queryRs.setYhxb00(sysUser.getYhxb00());
 		queryRs.setYhyx00(sysUser.getYhyx00());
 		return sysUserDao.updateSysUser(queryRs);
 	}
+	
 	/**
 	 * @description: 更新系统用户密码
 	 * @date: 2013-8-23 下午4:59:47
@@ -65,10 +68,11 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @param dlmm00 登录密码
 	 * @return true or false
 	 */
-	public boolean updatePassword(SysUser sysUser,String dlmm00){
+	public boolean updatePassword(SysUser sysUser, String dlmm00) {
 		sysUser.setDlmm00(SecurityUtil.getPassword(dlmm00));
 		return sysUserDao.updateSysUser(sysUser);
 	}
+	
 	/**
 	 * @description: 查询全部的系统用户
 	 * @date: 2013-8-23 下午5:00:51
@@ -88,13 +92,14 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @return true or false
 	 */
 	public SysUser login(String dlzh00, String dlmm00) {
-		SysUser sysUser=sysUserDao.querySysUser(dlzh00);
-		if(sysUser!=null){
-			if(sysUser.getDlmm00().equals(SecurityUtil.getPassword(dlmm00)))
+		SysUser sysUser = sysUserDao.querySysUser(dlzh00);
+		if (sysUser != null) {
+			if (sysUser.getDlmm00().equals(SecurityUtil.getPassword(dlmm00)))
 				return sysUser;
 		}
 		return null;
 	}
+	
 	/**
 	 * @description: 根据帐号密码验证用户
 	 * @date: 2013-8-23 下午5:00:51
@@ -102,9 +107,34 @@ public class SysUserServiceImpl implements SysUserService {
 	 * @param dlzh00 登陆帐号
 	 * @return true or false
 	 */
-	public SysUser querySysUser(String dlzh00){
+	public SysUser querySysUser(String dlzh00) {
 		return sysUserDao.querySysUser(dlzh00);
 	}
+	
+	/**
+	 * @description:查询全部用户
+	 * @date: 2013-8-23 下午5:03:52
+	 * @author： lintz
+	 * @param properties 条件
+	 * @param pageNo 页数
+	 * @param pageSize 每页记录数
+	 * @return 全部用户
+	 */
+	public List<SysUser> querySysUser(Map properties, int pageNo, int pageSize) {
+		return sysUserDao.querySysUser(properties, pageNo, pageSize);
+	}
+	
+	/**
+	 * @description:统计全部用户
+	 * @date: 2013-8-28 上午10:21:09
+	 * @author： lintz
+	 * @param properties 条件
+	 * @return 统计数
+	 */
+	public int countNews(Map properties) {
+		return sysUserDao.countNews(properties);
+	}
+	
 	/*----------------------------------------set and get method----------------------------*/
 	public SysUserDao getSysUserDao() {
 		return sysUserDao;

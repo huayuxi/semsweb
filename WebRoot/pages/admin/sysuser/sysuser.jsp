@@ -108,19 +108,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <!--/action panel-->
             <!--table-->
-            <table class="table g-table">
-              <thead>
-                <tr>
-                  <th class="g-tl" width="40%">
-					<input class="g-checkbox" id="j-ad-all" type="checkbox">用户帐号
-				  </th> 
-				  <th width="10%">用户姓名</th>
-				  <th width="10%">用户性别</th>
-                  <th width="20%">用户邮箱</th>
-                  <th width="10%">创建时间</th>
-				  <th width="10%">相关操作</th>
-                </tr>
-              </thead>
+            <table class="table g-table" id="user_lists">
+              
               <tbody>
                 <tr class="g-app-row">
                   <td>
@@ -145,7 +134,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </table>
             <!--/table-->
             <!--page-->
-            <div class="pagination pagination-centered">
+            <div class="pagination pagination-centered" id="Pagination">
               <ul>
                 <li class="disabled">
                   <a href="#">上一页</a>
