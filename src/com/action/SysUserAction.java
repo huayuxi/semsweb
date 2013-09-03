@@ -33,7 +33,7 @@ public class SysUserAction extends BaseAction {
 	private String msg;
 	private String oldPwd;
 	private String newPwd;
-    private List list;
+	private List list;
 	private int totalRecords;
 	private int pageSize;
 	private int pageNo;
@@ -59,6 +59,23 @@ public class SysUserAction extends BaseAction {
 			msg = "error_none";
 		}
 		return SUCCESS;
+	}
+	
+	/**
+	 * @description: 登陆验证
+	 * @date: 2013-9-2 下午2:36:21
+	 * @author： lintz
+	 * @return
+	 */
+	public String loginOut() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		try {
+			session.setAttribute("sysUser", null);
+			return SUCCESS;
+		} catch (Exception e) {
+			return ERROR;
+		}
 	}
 	
 	/**
@@ -165,10 +182,10 @@ public class SysUserAction extends BaseAction {
 			pageSize = 10;
 		}
 		totalRecords = this.sysUserService.countSysUser(properties);
-		if(totalRecords !=0 ){
-			list=sysUserService.querySysUser(properties, pageNo, pageSize);
-		}else{
-			list=new ArrayList();
+		if (totalRecords != 0) {
+			list = sysUserService.querySysUser(properties, pageNo, pageSize);
+		} else {
+			list = new ArrayList();
 		}
 		return SUCCESS;
 	}

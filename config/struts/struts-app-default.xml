@@ -8,9 +8,16 @@
 		<result-types>
 			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
 		</result-types>
+		
 		<action name="login" class="sysUserAction" method="login">
 			<result name="success" type="json">
 				<param name="excludeProperties">sysUserService</param>
+			</result>
+		</action>
+		
+		<action name="loginOut" class="sysUserAction" method="loginOut">
+			<result name="success">
+				pages/admin/login.jsp
 			</result>
 		</action>	
 	</package>

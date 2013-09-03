@@ -45,10 +45,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                   <ul class="nav"></ul>
                   <ul class="nav g-nav-login pull-right">
                     <li>
-                      <a href="#">${sysUser.dlzh00}</a>
+                      <a href="#">${sysUser.yhxm00}</a>
                     </li>
                     <li>
-                      <a href="login.html">注销</a>
+                      <a href="<%=basePath%>loginOut.shtml">注销</a>
                     </li>
                   </ul>
                 </div>
