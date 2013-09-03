@@ -8,7 +8,7 @@ function getData(pageNo){
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
-		url : 'queryNews.shtml',
+		url : 'system/queryNews.shtml',
 		data:param,
 		success : function(data) {
 			var totalcount = data.totalRecords;

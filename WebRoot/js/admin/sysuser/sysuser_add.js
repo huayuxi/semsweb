@@ -19,7 +19,7 @@ $(function() {
 			$.ajax( {
 				type : "POST",
 				dataType : "json",
-				url : 'addSysUser.shtml',
+				url : 'system/addSysUser.shtml',
 				data:param,
 				success : function(data) {
 					if(data.msg=="error_have"){

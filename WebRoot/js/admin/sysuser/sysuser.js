@@ -9,7 +9,7 @@ function getData(pageNo){
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
-		url : 'querySysUser.shtml',
+		url : 'system/querySysUser.shtml',
 		data:param,
 		success : function(data) {
 			var totalcount = data.totalRecords;

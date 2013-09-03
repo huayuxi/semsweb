@@ -16,7 +16,7 @@ $(function() {
 			$.ajax( {
 				type : "POST",
 				dataType : "json",
-				url : 'updateSysUser.shtml',
+				url : 'system/updateSysUser.shtml',
 				data:param,
 				success : function(data) {
 					

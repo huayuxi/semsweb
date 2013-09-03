@@ -10,7 +10,7 @@ $(function() {
 			$.ajax( {
 				type : "POST",
 				dataType : "json",
-				url : 'updatePwd.shtml',
+				url : 'system/updatePwd.shtml',
 				data:param,
 				success : function(data) {
 					if(data.msg=="error_pwd"){
