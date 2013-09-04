@@ -179,7 +179,7 @@ public class SysUserAction extends BaseAction {
 	 */
 	public String deleteSysUser() {
 		HttpServletRequest req = getRequest();
-		int yhid00 = (Integer) req.getAttribute("yhid00");
+		int yhid00 =Integer.parseInt(req.getParameter("yhid00"));
 		if (yhid00 != 0) {
 			SysUser delObj = new SysUser();
 			delObj.setYhid00(yhid00);

@@ -52,6 +52,22 @@ public class DateUtil {
 	/**
 	 * @param date 日期
 	 * @return String
+	 * @description: 将如期格式化为8位的字符串形式，如：20110415
+	 * @date: 2013-8-27 下午4:04:26
+	 * @author： lintz
+	 */
+	public static String String8ToString10(String date) {
+		if (date == null) {
+			return null;
+		}
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String rs=sdf.format(string14ToDate(date));
+		return rs;
+	}
+	
+	/**
+	 * @param date 日期
+	 * @return String
 	 * @description: 将如期格式化为14位的字符串形式，如：20110415101112
 	 * @date: 2013-8-27 下午4:04:26
 	 * @author：lintz

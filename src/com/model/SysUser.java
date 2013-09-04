@@ -5,6 +5,8 @@
  */
 package com.model;
 
+import com.util.DateUtil;
+
 /**
  * @description: 系统用户
  * @date: 2013-8-23 下午12:48:13
@@ -65,6 +67,10 @@ public class SysUser implements java.io.Serializable {
 	
 	public String getCjsj00() {
 		return cjsj00;
+	}
+	
+	public String getCjsj00Str() {
+		return DateUtil.String8ToString10(cjsj00);
 	}
 	
 	public void setCjsj00(String cjsj00) {

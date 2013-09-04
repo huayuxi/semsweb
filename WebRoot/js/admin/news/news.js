@@ -9,7 +9,7 @@ function getData(pageNo){
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
-		url : 'system/querySysUser.shtml',
+		url : 'system/queryNews.shtml',
 		data:param,
 		success : function(data) {
 			var totalcount = data.totalRecords;
@@ -18,28 +18,31 @@ function getData(pageNo){
 			var div ="";
 			if(totalcount!=0){
 				div= "<thead><tr><th class=\"g-tl\" width=\"40%\">" +
-				"<input class=\"g-checkbox\" id=\"j-ad-all\" type=\"checkbox\">用户帐号</th>" +
-				"<th width=\"10%\">用户姓名</th><th width=\"10%\">用户性别</th>" +
-				"<th width=\"20%\">用户邮箱</th><th width=\"10%\">创建时间</th>" +
+				"<input class=\"g-checkbox\" id=\"j-ad-all\" type=\"checkbox\">新闻标题</th>" +
+				"<th width=\"10%\">新闻栏目</th>" +
+				"<th width=\"10%\">排序号</th>" +
+				"<th width=\"20%\">发布者</th>" +
+				"<th width=\"10%\">发布时间</th>" +
 				"<th width=\"10%\">相关操作</th></tr></thead><tbody>";
 				$.each(myData, function(i, n) {
 						div=div+"<tr class=\"g-app-row\"><td><label class=\"g-ad-title\">" +
-								"<input class=\"g-checkbox\" type=\"checkbox\"><a href=\"news_detail.html\">" +
-								"<img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
-								n.dlzh00
+								"<input class=\"g-checkbox\" type=\"checkbox\">" +
+								"<a href=\"news_detail.html\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
+								n.xwbt00
 								+"</a></label></td><td>"+
-								n.yhxm00
+								n.xwlx00
 								+"</td><td>" +
-								n.yhxb00
+								n.pxqz00
 								+"</td><td><span class=\"g-col-org\">" +
-								n.yhyx00
+								n.xwzz00
 								+"</span></td><td><span class=\"g-col-grn\">" +
-								n.cjsj00Str
-								+"</span></td><td><a href=\"javascript:goUpdate('" +n.dlzh00+"')\">编辑</a>&nbsp;|&nbsp;" +
-								"<a href=\"javascript:goDel(" +n.yhid00+");\">删除</a></td></tr>";
+								n.fbsj00
+								+"</span></td><td>" +
+								"<a href=\"javascript:goUpdate('" +n.xwid00+"')\">编辑</a>&nbsp;|&nbsp;" +
+								"<a href=\"javascript:goDel(" +n.xwid00+");\">删除</a></td></tr>";
 				});
 				div=div+"</tbody>";
-				$("#user_lists").html(div);
+				$("#news_list").html(div);
 				// 分页-只初始化一次
 				$("#Pagination").pagination(totalcount, {
 					callback : pageselectCallback,
@@ -52,7 +55,7 @@ function getData(pageNo){
 					link_to : "javascript:void(0)"
 				});
 			}else{
-				$("#user_lists").html("<span style=\"color:red\">很遗憾未找到相关记录！</span>");
+				$("#news_list").html("<span style=\"color:red\">很遗憾未找到相关记录！</span>");
 				$("#Pagination").html("");
 			}
 		}
@@ -63,18 +66,18 @@ function pageselectCallback(page_id,jq){
 	scroll(0,0);
 	getData(page_id);
 }
-
-function goUpdate(dlzh00){
+//前往编辑页面
+function goUpdate(xwid00){
 	var basePath=$("#basePath").val();
-	window.location.href=basePath+"system/goUpdateSysUser.shtml?dlzh00="+dlzh00;
+	window.location.href=basePath+"system/goUpdateNews.shtml?xwid00="+xwid00;
 }
-
-function goDel(yhid00){
-	var param = "yhid00="+yhid00;
+//删除新闻
+function goDel(xwid00){
+	var param = "xwid00="+xwid00;
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
-		url : 'system/delSysUser.shtml',
+		url : 'system/delNews.shtml',
 		data:param,
 		success : function(data) {
 			if(data.msg=="error_sys"){

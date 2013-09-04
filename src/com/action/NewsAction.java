@@ -5,7 +5,9 @@
  */
 package com.action;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -36,6 +38,7 @@ public class NewsAction extends BaseAction {
 	private int totalRecords;
 	private int pageSize;
 	private int pageNo;
+	private String msg;
 	
 	/**
 	 * @description:新增新闻
@@ -44,7 +47,13 @@ public class NewsAction extends BaseAction {
 	 * @return
 	 */
 	public String addNews() {
-		newsService.addNews(news, newsContent);
+		if(news!=null&&newsContent!=null){
+			if (newsService.addNews(news, newsContent)) {
+				msg = "success";
+			} else {
+				msg = "error_error";
+			}
+		}		
 		return SUCCESS;
 	}
 	
@@ -77,6 +86,26 @@ public class NewsAction extends BaseAction {
 	 * @return
 	 */
 	public String queryNews() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String pageindex = req.getParameter("pageNo");
+		String pagesize = req.getParameter("pageSize");
+		Map properties = req.getParameterMap();
+		if (pageindex != null && !pageindex.equals("")) {
+			pageNo = Integer.valueOf(pageindex).intValue();
+		} else {
+			pageNo = 1;
+		}
+		if (pagesize != null && !pagesize.equals("")) {
+			pageSize = Integer.valueOf(pagesize).intValue();
+		} else {
+			pageSize = 10;
+		}
+		totalRecords = this.newsService.countNews(properties);
+		if (totalRecords != 0) {
+			list = newsService.queryNews(properties, pageNo, pageSize);
+		} else {
+			list = new ArrayList();
+		}
 		return SUCCESS;
 	}
 	
@@ -166,6 +195,14 @@ public class NewsAction extends BaseAction {
 	
 	public void setPageNo(int pageNo) {
 		this.pageNo = pageNo;
+	}
+	
+	public String getMsg() {
+		return msg;
+	}
+	
+	public void setMsg(String msg) {
+		this.msg = msg;
 	}
 	
 }
