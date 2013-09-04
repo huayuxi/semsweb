@@ -77,7 +77,7 @@ function goDel(xwid00){
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
-		url : 'system/delNews.shtml',
+		url : 'system/deleteNews.shtml',
 		data:param,
 		success : function(data) {
 			if(data.msg=="error_sys"){

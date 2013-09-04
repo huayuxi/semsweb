@@ -10,12 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
 import com.model.News;
 import com.model.NewsContent;
 import com.model.NewsDetail;
+import com.model.SysUser;
 import com.service.NewsDetailService;
 import com.service.NewsService;
 import com.util.BaseAction;
@@ -47,7 +49,11 @@ public class NewsAction extends BaseAction {
 	 * @return
 	 */
 	public String addNews() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
 		if(news!=null&&newsContent!=null){
+			news.setXwzz00(sysUserSession.getYhid00());
 			if (newsService.addNews(news, newsContent)) {
 				msg = "success";
 			} else {
@@ -64,7 +70,19 @@ public class NewsAction extends BaseAction {
 	 * @return
 	 */
 	public String deleteNews() {
-		newsService.delNews(news);
+		HttpServletRequest req = getRequest();
+		int xwid00 =Integer.parseInt(req.getParameter("xwid00"));
+		if (xwid00 != 0) {
+			News newsObj = new News();
+			newsObj.setXwid00(xwid00);
+			if (newsService.delNews(newsObj)) {
+				msg = "success";
+			} else {
+				msg = "error_sys";
+			}
+		} else {
+			msg = "error_none";
+		}
 		return SUCCESS;
 	}
 	

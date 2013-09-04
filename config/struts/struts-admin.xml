@@ -51,8 +51,7 @@
 			<result name="again" type="json"><param name="excludeProperties">newsService</param></result>
 		</action>
 		<action name="deleteNews" class="newsAction" method="deleteNews">
-			<result name="success">pages/admin/news/news.jsp</result>
-			<result name="again" type="json"><param name="excludeProperties">newsService</param></result>
+			<result name="success" type="json"><param name="excludeProperties">newsService</param></result>
 		</action>
 		<action name="queryNews" class="newsAction" method="queryNews">
 			<result name="success" type="json"><param name="excludeProperties">newsService</param></result>
