@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -34,10 +34,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<ul>
 					<li><a  href="<%=basePath%>index.jsp" class="index_home"><span>首页</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/news/news.jsp" class="market_dynamics" ><span>市场动态</span></a></li>
-					<li class="active"><a  href="<%=basePath%>pages/front/product/product.jsp" class="productworld" ><span>产品世界</span></a></li>
+					<li><a  href="<%=basePath%>pages/front/product/product.jsp" class="productworld" ><span>产品世界</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/solution/solution.jsp" class="solution" ><span>解决方案</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/cases/cases.jsp" class="global_Case" ><span>全球案例</span></a></li>
-					<li><a  href="<%=basePath%>pages/front/support/support.jsp" class="online_Support" ><span>在线支持</span></a></li>
+					<li class="active"><a  href="<%=basePath%>pages/front/support/support.jsp" class="online_Support" ><span>在线支持</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/jobs/jobs.jsp" class="recruitment" ><span>人才招聘</span></a></li>
 					<li ><a href="<%=basePath%>pages/front/about/company.jsp" class="aboutus" ><span>关于我们</span></a></li>
 				</ul>
@@ -50,17 +50,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div class="content-wrapper">
         	<div class="content">
                 <ul class="menus">
-                	<li class="menu active">
-                    	<a href="product.html">核心价值</a>
+                	<li class="menu">
+                    	<a href="<%=basePath%>pages/front/support/support.jsp">常见问题</a>
                     </li>
-					<li class="menu">
-                    	<a href="#">产品目录</a>
+					 <li class="menu active">
+                    	<a href="<%=basePath%>pages/front/support/support_cs.jsp">客户服务</a>
                     </li>
-                    <li class="menu">
-                    	<a href="#">管理平台</a>
-                    </li>
-                    <li class="menu">
-                    	<a href="#">软件功能</a>
+                     <li class="menu">
+                    	<a href="<%=basePath%>pages/front/support/support.jsp">在线留言</a>
                     </li>
                 </ul>
             </div>
@@ -68,10 +65,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<div class="feature-pic"></div>
                 <div class="page-pos">
                 	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">产品世界</a>>
-                    <span id="about-title">核心价值</span>
-                </div>
-                <div id="about-title1" class="title">核心价值</div>
+					<a class="blue" href="news.html">在线支持</a>>常见问题</div>
+                <div id="about-title1" class="title">常见问题</div>
                 <div class="line1"></div>
                 <div class="detail">
                 	<div class="share">
@@ -87,43 +82,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </span>
                     </div>
                     <span style="display:none" class="detail-more">			                    </span>
-                   <div class="product_content">
-                  		<div class="box">
-							<div class="pic">
-                            	<img src="images/msw_pro_01.png" />
-                            </div>
-                            节能环保。实现按需照明，节省30％的照明用电，创造城市低碳生活;  
-						</div>
-                        
-                        <div class="box">
-							<div class="pic">
-                            	<img src="images/msw_pro_02.png" />
-                            </div>
-                            安全防护。线路破损或设施被盗即时报警，防止出现财产损失及公共安全事件。
-						</div>
-                        <div class="box">
-							<div class="pic">
-                            	<img src="images/msw_pro_03.png" />
-                            </div>
-                            节能环保。实现按需照明，节省30％的照明用电，创造城市低碳生活;  
-						</div>
-                        <div class="divcenter">
-                        <div class="box">
-							<div class="pic">
-                            	<img src="images/msw_pro_04.png" />
-                            </div>
-                            智慧管理。采用监控中心、平板电脑及手机即可随时随地对每盏灯进行监控管理，实现能耗分析、资产管理的决策系统;
-						</div>
-                        <div class="box">
-							<div class="pic">
-                            	<img src="images/msw_pro_05.png" />
-                            </div>
-                            便捷维护。单灯故障报警，免人工巡线，节省维护成本，提高运维效率。
-						</div>
-                       </div>
-                        <div class="clear"></div>
+                   <div class="new_content">
+                   	 <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
+					 <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
+                    <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
+                    <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
+                   <div class="clear"></div>
                    </div>
 					<!--end content-->
+                    <div class="pager">
+                    	<span class="active">1</span>
+                            <a class="ablue num" href="#">2</a>
+                            <a class="ablue num" href="#">3</a>
+                            <a class="ablue" href="#">..</a>
+                            <a class="ablue" href="#">下一页</a>
+                    </div>
                 </div>
 				<!--end detail-->
             </div>
