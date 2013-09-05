@@ -85,7 +85,7 @@ public class JobAction extends BaseAction {
 	 * @author： lintz
 	 * @return
 	 */
-	public String delJob() {
+	public String deleteJob() {
 		HttpServletRequest req = getRequest();
 		int zpid00 =Integer.parseInt(req.getParameter("zpid00"));
 		if (zpid00 != 0) {

@@ -29,7 +29,7 @@
 	</script>
 	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.config.js" type="text/javascript" ></script>
 	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.all.js" type="text/javascript" ></script>
-	<script src="<%=basePath%>js/admin/news/news_add.js" type="text/javascript"></script>
+	<script src="<%=basePath%>js/admin/job/job_add.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -111,39 +111,68 @@
             <!--create info-->
             <div class="g-create-info">
               <h3 class="title">发布职位</h3>
-              <form id="news-form">
+              <form id="job-form">
                  <ul>                
                     <li>
-                      <label class="lb-title">新闻标题：</label>
-                      <input id="j-ui-title" class="input-large" type="text" name=news.xwbt00>
+                      <label class="lb-title">招聘岗位：</label>
+                      <input id="j-ui-title" class="input-large" type="text" name=job.zpgw00>
                       <span class="input-tip input-tip-warning"></span>
                     </li>
                     <li>
-                      <label class="lb-title">新闻栏目：</label>
-                      <input id="j-ui-type" type="hidden" name="news.xwlx00"/>
+                      <label class="lb-title">招聘类型：</label>
+                      
                       <div class="btn-group dropdown" id="create-type-dropdown">
+                     	 <input id="j-ui-type" type="hidden" name="job.zplx00" class="data_value"/>
                         <button data-toggle="dropdown" class="btn dropdown-toggle">
 							<span class="value" id="create-app-type">请选择</span>
 							<span class="caret"></span>
 						</button>
                         <ul class="dropdown-menu">
-                          <li class="100000"><a href="javascript:void(0)">公司新闻</a></li>
-                          <li class="100001"><a href="javascript:void(0)">行业新闻</a></li>
+                          <li class="100000"><a href="javascript:void(0)">社会招聘</a></li>
+                          <li class="100001"><a href="javascript:void(0)">校园招聘</a></li>
                         </ul>
                       </div>
                       <span class="input-tip input-tip-warning"></span>
                     </li>
-					<li>
-                      <label class="lb-title">排序权值：</label>
-                      <input  id="j-ui-sno" class="input-large" type="text" name="news.pxqz00">
+                    
+                    <li>
+                      <label class="lb-title">工作类别：</label>
+                     
+                      <div class="btn-group dropdown" id="create-type-dropdown">
+                       <input id="j-ui-kind" type="hidden" name="job.gzlb00" class="data_value"/>
+                        <button data-toggle="dropdown" class="btn dropdown-toggle">
+							<span class="value" id="create-app-type">请选择</span>
+							<span class="caret"></span>
+						</button>
+                        <ul class="dropdown-menu">
+                          <li class="100000"><a href="javascript:void(0)">技术类</a></li>
+                          <li class="100001"><a href="javascript:void(0)">行政类</a></li>
+                        </ul>
+                      </div>
+                      <span class="input-tip input-tip-warning"></span>
+                    </li>
+                   
+                    <li>
+                      <label class="lb-title">工作地点：</label>
+                      <input  id="j-ui-address" class="input-large" type="text" name="job.gzdd00">
                       <span class="input-tip input-tip-warning"></span>
                     </li>
 					<li>
-						<label class="lb-title">新闻内容：</label>					  
-						<textarea rows="5" cols="20" id="j-ui-content" name="newsContent.xwnr00"></textarea>
+                      <label class="lb-title">招聘人数：</label>
+                      <input  id="j-ui-num" class="input-large" type="text" name="job.zprs00">
+                      <span class="input-tip input-tip-warning"></span>
+                    </li>
+                    <li>
+                      <label class="lb-title">排序权值：</label>
+                      <input  id="j-ui-sno" class="input-large" type="text" name="job.pxqz00">
+                      <span class="input-tip input-tip-warning"></span>
+                    </li>
+					<li>
+						<label class="lb-title">招聘内容：</label>					  
+						<textarea rows="5" cols="20" id="j-ui-content" name="job.zpnr00"></textarea>
 						<span class="input-tip input-tip-warning"></span>
                     </li>
-                    <li><button type="button" id="newsdata-form" class="btn btn-success btn-large g-btn-add">确认发布</button></li>
+                    <li><button type="button" id="jobdata-form" class="btn btn-success btn-large g-btn-add">确认发布</button></li>
                   </ul>
               </form>
             </div>

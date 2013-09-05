@@ -44,7 +44,7 @@ function getData(pageNo){
 								"<a href=\"javascript:goDel(" +n.zpid00+");\">删除</a></td></tr>";
 				});
 				div=div+"</tbody>";
-				$("#news_list").html(div);
+				$("#job_list").html(div);
 				// 分页-只初始化一次
 				$("#Pagination").pagination(totalcount, {
 					callback : pageselectCallback,

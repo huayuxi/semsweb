@@ -95,7 +95,7 @@ public class AuthFilter implements Filter {
 		authAll.add(2, "pages/admin/product/.*");
 		authAll.add(3, "pages/admin/solution/.*");
 		authAll.add(4, "pages/admin/sysuser/.*");
-		authAll.add(5, "pages/admin/recruitment/.*");
+		authAll.add(5, "pages/admin/job/.*");
 		authAll.add(6, "system/.*");
 		Boolean rs = false;
 		for (int i = 0; i < authAll.size(); i++) {
