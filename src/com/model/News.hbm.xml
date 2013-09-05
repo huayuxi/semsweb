@@ -15,11 +15,6 @@
                 <comment>新闻类型</comment>
             </column>
         </property>
-        <property name="lmlx00" type="java.lang.String">
-            <column name="lmlx00" length="6">
-                <comment>栏目类型</comment>
-            </column>
-        </property>
         <property name="xwbt00" type="java.lang.String">
             <column name="xwbt00" length="1000">
                 <comment>新闻标题</comment>

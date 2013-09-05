@@ -10,12 +10,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<base href="<%=basePath%>">
-	<title>新闻发布</title>
+	<title>智联信通-发布职位</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="新闻发布">
+	<meta http-equiv="description" content="发布职位">
 
     <!-- Bootstrap -->
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -42,8 +42,7 @@
           <div class="navbar g-navbar">
             <div class="navbar-inner">
               <div class="container-fluid">
-                 <a data-target=".navbar-responsive-collapse" 
-				 data-toggle="collapse" class="btn btn-navbar">
+                 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar">
 				 <span class="icon-bar"></span>
 				 <span class="icon-bar"></span>
 				 <span class="icon-bar"></span>
@@ -111,7 +110,7 @@
           <div class="g-main-box">
             <!--create info-->
             <div class="g-create-info">
-              <h3 class="title">新闻发布</h3>
+              <h3 class="title">发布职位</h3>
               <form id="news-form">
                  <ul>                
                     <li>

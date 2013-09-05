@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<a href="<%=basePath%>pages/admin/solution/solution.jsp">解决方案管理</a>
 			</li>
 			<li>
-				<a href="<%=basePath%>pages/admin/recruitment/recruitment.jsp">招聘管理</a>
+                <a href="<%=basePath%>pages/admin/job/job.jsp">招聘管理</a>
 			</li>
 			<li class="active">
 				<a href="<%=basePath%>pages/admin/sysuser/sysuser.jsp">用户管理</a>

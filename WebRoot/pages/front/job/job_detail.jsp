@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
   
   <body>
-    <div class="bgsTabTop_cn">
+<div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
    </div>
@@ -37,8 +37,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a  href="<%=basePath%>pages/front/product/product.jsp" class="productworld" ><span>产品世界</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/solution/solution.jsp" class="solution" ><span>解决方案</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/cases/cases.jsp" class="global_Case" ><span>全球案例</span></a></li>
-					<li class="active"><a  href="<%=basePath%>pages/front/support/support.jsp" class="online_Support" ><span>在线支持</span></a></li>
-					<li><a  href="<%=basePath%>pages/front/job/job.jsp" class="recruitment" ><span>人才招聘</span></a></li>
+					<li><a  href="<%=basePath%>pages/front/support/support.jsp" class="online_Support" ><span>在线支持</span></a></li>
+					<li class="active"><a  href="<%=basePath%>pages/front/job/job.jsp" class="recruitment" ><span>人才招聘</span></a></li>
 					<li ><a href="<%=basePath%>pages/front/about/company.jsp" class="aboutus" ><span>关于我们</span></a></li>
 				</ul>
 			</div>
@@ -49,24 +49,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main">
     	<div class="content-wrapper">
         	<div class="content">
+            	<h2 class="blue">人才招聘</h2>
                 <ul class="menus">
-                	<li class="menu">
-                    	<a href="<%=basePath%>pages/front/support/support.jsp">常见问题</a>
+                	<li class="menu active">
+                    	<a href="job.html">社会招聘</a>
                     </li>
-					 <li class="menu active">
-                    	<a href="<%=basePath%>pages/front/support/support_cs.jsp">客户服务</a>
+					 <li class="menu">
+                    	<a href="job.html">校团招聘</a>
                     </li>
                      <li class="menu">
-                    	<a href="<%=basePath%>pages/front/support/support.jsp">在线留言</a>
+                    	<a href="job.html">职位搜索</a>
                     </li>
                 </ul>
             </div>
-            <div class="right product">
+            <div class="right jobs">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
                 	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">在线支持</a>>常见问题</div>
-                <div id="about-title1" class="title">常见问题</div>
+					<a class="blue" href="news.html">人才招聘</a>>社会招聘</div>
+                <div id="about-title1" class="title">社会招聘</div>
                 <div class="line1"></div>
                 <div class="detail">
                 	<div class="share">
@@ -82,21 +83,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </span>
                     </div>
                     <span style="display:none" class="detail-more">			                    </span>
-                   <div class="new_content">
-                   	 <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-					 <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-                    <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-                    <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-                   <div class="clear"></div>
+                   <div class="joblist">
+                   		<div class="head">
+                            职位详情：软件研发工程师　
+                            <span class="s">2013-04-17</span>
+                         </div>
+                         <div class="items">
+                            <div class="hd">
+                            <span class="blue">招聘类型：</span>
+                            社会招聘
+                            </div>
+                            <div class="hd">
+                                <span class="blue">工作类别：</span>
+                                技术类
+                            </div>
+                            <div class="hd">
+                                <span class="blue">工作地点：</span>
+                                福建省
+                            </div>
+                           <div class="hd">
+                                <span class="blue">招聘人数：</span>
+                                10
+                            </div>
+                            <div class="text">
+                                <p>
+                                    <span style="font-size:12px;line-height:1.75em;">1、熟悉两门以上编程语言，有JAVA开发经验，熟悉J2EE架构和WEB开发流程者优先（C++特别精通者亦可考虑）；</span>
+                                    </p>
+                                    <p>
+                                    <span style="font-size:12px;line-height:1.75em;">2、熟悉数据库SQL编程以及MIS软件开发；能提供个人代表软件作品，且独立完成者佳。</span>
+                                    </p>
+                                </div>
+                                <div class="hd blue">任职要求：</div>
+                                <div class="text">
+    <p style="line-height:1.75em;">
+    <span style="font-size:12px;">1、本科及以上学历，计算机软件等相关专业（能力或资质特别突出者，可适当放宽条件）；</span>
+    </p>
+    <p style="line-height:1.75em;">
+    <span style="font-size:12px;line-height:1.75em;">2、能适应出差，有吃苦精神，善于沟通，具备良好的团队意识；</span>
+    </p>
+    <p style="line-height:1.75em;">
+    <span style="font-size:12px;line-height:1.75em;">3、</span>
+    <span style="font-size:12px;line-height:1.75em;">一年工作经验；</span>
+    </p>
+    <p style="line-height:1.75em;">
+    <span style="font-size:12px;line-height:1.75em;">4、性别：男。</span>
+    </p>
+</div>
+<div class="hd">
+联系邮箱：
+<span class="orange">hr@iotcomm.com.cn</span>
+</div>
+                        </div>
                    </div>
-					<!--end content-->
-                    <div class="pager">
-                    	<span class="active">1</span>
-                            <a class="ablue num" href="#">2</a>
-                            <a class="ablue num" href="#">3</a>
-                            <a class="ablue" href="#">..</a>
-                            <a class="ablue" href="#">下一页</a>
-                    </div>
+					<!--end joblist-->
                 </div>
 				<!--end detail-->
             </div>

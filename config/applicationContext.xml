@@ -41,6 +41,7 @@
 		<property name="mappingLocations">
 			<list>
 				<value>classpath:com/model/SysUser.hbm.xml</value>
+				<value>classpath:com/model/Job.hbm.xml</value>
 				<value>classpath:com/model/News.hbm.xml</value>
 				<value>classpath:com/model/NewsContent.hbm.xml</value>
 				<value>classpath:com/model/NewsDetail.hbm.xml</value>
@@ -87,6 +88,12 @@
 		</property>
 	</bean>
 	
+	<bean id="jobAction" class="com.action.JobAction">
+		<property name="jobService">
+			<ref bean="jobService" />
+		</property>
+	</bean>
+	
 	<bean id="sysUserAction" class="com.action.SysUserAction">
 		<property name="sysUserService">
 			<ref bean="sysUserService" />
@@ -106,6 +113,12 @@
 		</property>
 	</bean>
 	
+	<bean id="jobService" class="com.service.impl.JobServiceImpl">
+		<property name="jobDao">
+			<ref bean="jobDao" />
+		</property>
+	</bean>
+	
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
 		<property name="sysUserDao">
 			<ref bean="sysUserDao" />
@@ -113,6 +126,12 @@
 	</bean>
 	
 	<!-- DAO配置 -->
+	<bean id="jobDao" class="com.dao.impl.JobDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
 	<bean id="newsDao" class="com.dao.impl.NewsDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />

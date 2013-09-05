@@ -63,6 +63,26 @@
 			<result name="success" type="json"><param name="excludeProperties">newsService,list,msg,totalRecords,pageSize,pageNo</param></result>
 		</action>
 	<!--新闻模块end  -->
+	<!--招聘模块begin  -->
+		<action name="addJob" class="jobAction" method="addJob">
+			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
+		</action>
 		
+		<action name="updateJob" class="jobAction" method="updateJob">
+			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
+		</action>
+		
+		<action name="deleteJob" class="jobAction" method="deleteJob">
+			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
+		</action>
+		
+		<action name="queryJob" class="jobAction" method="queryJob">
+			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
+		</action>
+		
+		<action name="queryJobDetail" class="jobAction" method="queryJobDetail">
+			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
+		</action>
+	<!--招聘模块end  -->	
 	</package>
 	</struts>

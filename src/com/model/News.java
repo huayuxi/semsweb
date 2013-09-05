@@ -22,7 +22,6 @@ public class News implements java.io.Serializable {
 	private static final long serialVersionUID = 5144195383495655820L;
 	private Integer xwid00;
 	private String xwlx00;
-	private String lmlx00;
 	private String xwbt00;
 	private Integer xwzz00;
 	private String fbsj00;
@@ -44,14 +43,6 @@ public class News implements java.io.Serializable {
 	
 	public void setXwlx00(String xwlx00) {
 		this.xwlx00 = xwlx00;
-	}
-	
-	public String getLmlx00() {
-		return lmlx00;
-	}
-	
-	public void setLmlx00(String lmlx00) {
-		this.lmlx00 = lmlx00;
 	}
 	
 	public String getXwbt00() {
@@ -77,6 +68,7 @@ public class News implements java.io.Serializable {
 	public String getFbsj00Str() {
 		return DateUtil.String8ToString10(fbsj00);
 	}
+	
 	public void setFbsj00(String fbsj00) {
 		this.fbsj00 = fbsj00;
 	}

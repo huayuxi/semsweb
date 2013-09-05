@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li><a  href="<%=basePath%>pages/front/solution/solution.jsp" class="solution" ><span>解决方案</span></a></li>
 					<li class="active"><a  href="<%=basePath%>pages/front/cases/cases.jsp" class="global_Case active" ><span>全球案例</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/support/support.jsp" class="online_Support" ><span>在线支持</span></a></li>
-					<li><a  href="<%=basePath%>pages/front/jobs/jobs.jsp" class="recruitment" ><span>人才招聘</span></a></li>
+					<li><a  href="<%=basePath%>pages/front/job/job.jsp" class="recruitment" ><span>人才招聘</span></a></li>
 					<li ><a href="<%=basePath%>pages/front/about/company.jsp" class="aboutus" ><span>关于我们</span></a></li>
 				</ul>
 			</div>

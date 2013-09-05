@@ -82,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="<%=basePath%>pages/admin/solution/solution.jsp">解决方案管理</a>
               </li>
 			     <li>
-                <a href="<%=basePath%>pages/admin/recruitment/recruitment.jsp">招聘管理</a>
+                <a href="<%=basePath%>pages/admin/job/job.jsp">招聘管理</a>
               </li>
 			<li>
 				<a href="<%=basePath%>pages/admin/sysuser/sysuser.jsp">用户管理</a>
@@ -110,40 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <!--/action panel-->
             <!--table-->
-            <table class="table g-table" id="news_list">
-              <thead>
-                <tr>
-                  <th class="g-tl" width="40%">
-					<input class="g-checkbox" id="j-ad-all" type="checkbox">新闻标题
-				  </th> 
-				  <th width="10%">新闻栏目</th>
-				  <th width="10%">排序号</th>
-                  <th width="10%">发布者</th>
-                  <th width="20%">发布时间</th>
-				  <th width="10%">相关操作</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-              </tbody>
-            </table>
+            <table class="table g-table" id="news_list"></table>
             <!--/table-->
             <!--page-->
             <div class="pagination pagination-centered">
