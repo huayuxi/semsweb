@@ -17,10 +17,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
+<link href="<%=basePath%>js/common/pagination/pagination.css" rel="stylesheet" />
+
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/common/pagination/jquery.pagination-front.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/front/news/news.js" type="text/javascript"></script>
 
 </head>
 
 <body>
+    <input type="hidden" value="<%=basePath%>" id="basePath"/>
 <div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -60,11 +66,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right news">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">市场动态</a>>
+                	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/news/news.jsp">市场动态</a>>
                     <span id="about-title">公司新闻</span>
                 </div>
-                <div id="about-title1" class="title">新闻</div>
+                <div id="about-title1" class="title">公司新闻</div>
                 <div class="line1"></div>
                 <div class="detail">
                 	<div class="share">
@@ -75,69 +81,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         	<a class="blue noprint shareto_button" href="javascript:void(0);"><span></span>分享</a>
                         </div>
                         <span class="r noprint">
-                        	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
+                        	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);"></a>
 							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
-                    <div class="list">
-                    	<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="news/news_detail.html">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="news/news_detail.html">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="news/news_detail.html">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="news/news_detail.html">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="news/news_detail.html">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="news/news_detail.html">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						<div class="item">
-							<span class="date">2013-07-19</span>
-								<a href="#">物联网协会受厦门市经济发展局委托到我司调研</a>
-</div>
-						
-                    </div>
+                    <div class="list" id="news_list"></div>
 					<!--end list-->
-                    <div class="pager">
-                    	<span class="active">1</span>
-                            <a class="ablue num" href="#">2</a>
-                            <a class="ablue num" href="#">3</a>
-                            <a class="ablue" href="#">..</a>
-                            <a class="ablue" href="#">下一页</a>
-                    </div>
+                    <div class="pager pagination" id="Pagination"></div>
                 </div>
 				<!--end detail-->
             </div>

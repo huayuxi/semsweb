@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="front" extends="struts-app-default" namespace="/front">
+	<!--新闻模块begin  -->
+		<action name="queryNews" class="newsAction" method="queryNews">
+			<result name="success" type="json"><param name="excludeProperties">newsService</param></result>
+		</action>
+		<action name="queryNewsDetail" class="newsAction" method="queryNewsDetail">
+			<result name="success" type="json"><param name="excludeProperties">newsService,list,msg,totalRecords,pageSize,pageNo</param></result>
+		</action>
+	<!--新闻模块end  -->
+		
+	</package>
+	</struts>

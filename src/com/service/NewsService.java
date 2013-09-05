@@ -10,6 +10,7 @@ import java.util.Map;
 
 import com.model.News;
 import com.model.NewsContent;
+import com.model.NewsDetail;
 
 /**
  * @description: 新闻管理Service接口
@@ -66,4 +67,13 @@ public interface NewsService {
 	 * @return 统计数
 	 */
 	public int countNews(Map properties);
+	
+	/**
+	 * @description: 根据新闻ID查询新闻详情
+	 * @date: 2013-8-28 上午9:47:38
+	 * @author： lintz
+	 * @param xwid00 新闻ID
+	 * @return 新闻详情
+	 */
+	public NewsDetail queryNewsDetail(Integer xwid00);
 }

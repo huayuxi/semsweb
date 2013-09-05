@@ -45,6 +45,14 @@ public interface NewsDao {
 	public boolean updateNews(News news);
 	
 	/**
+	 * @description:根据新闻ID查询新闻
+	 * @date: 2013-8-23 下午5:03:52
+	 * @author： lintz
+	 * @param xwid00 新闻ID
+	 * @return 新闻
+	 */
+	public News queryNews(int xwid00);
+	/**
 	 * @description:查询全部新闻
 	 * @date: 2013-8-23 下午5:03:52
 	 * @author： lintz

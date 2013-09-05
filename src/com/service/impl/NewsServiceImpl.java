@@ -10,8 +10,10 @@ import java.util.Map;
 
 import com.dao.NewsContentDao;
 import com.dao.NewsDao;
+import com.dao.NewsDetailDao;
 import com.model.News;
 import com.model.NewsContent;
+import com.model.NewsDetail;
 import com.service.NewsService;
 
 /**
@@ -23,6 +25,7 @@ import com.service.NewsService;
 public class NewsServiceImpl implements NewsService {
 	private NewsDao newsDao;
 	private NewsContentDao newsContentDao;
+	private NewsDetailDao newsDetailDao;
 	
 	/**
 	 * @description: 新增新闻
@@ -65,8 +68,13 @@ public class NewsServiceImpl implements NewsService {
 	 * @param newsContent 新闻内容
 	 * @return true or false
 	 */
-	public boolean updateNews(News news,NewsContent newsContent) {
-		return newsDao.updateNews(news)&&newsContentDao.updateNewsContent(newsContent);
+	public boolean updateNews(News news, NewsContent newsContent) {
+		News newsRs=newsDao.queryNews(news.getXwid00());
+		newsRs.setXwlx00(news.getXwlx00());
+		newsRs.setPxqz00(news.getPxqz00());
+		newsRs.setXwbt00(news.getXwbt00());
+		newsContent.setXwnrid(news.getXwid00());
+		return newsDao.updateNews(newsRs) && newsContentDao.updateNewsContent(newsContent);
 	}
 	
 	/**
@@ -93,6 +101,17 @@ public class NewsServiceImpl implements NewsService {
 		return newsDao.countNews(properties);
 	}
 	
+	/**
+	 * @description: 根据新闻ID查询新闻详情
+	 * @date: 2013-8-28 上午9:47:38
+	 * @author： lintz
+	 * @param xwid00 新闻ID
+	 * @return 新闻详情
+	 */
+	public NewsDetail queryNewsDetail(Integer xwid00) {
+		return newsDetailDao.queryNewsDetail(xwid00);
+	}
+	
 	/*-----------------------------set and get method-----------------------------------------*/
 	public NewsDao getNewsDao() {
 		return newsDao;
@@ -108,6 +127,14 @@ public class NewsServiceImpl implements NewsService {
 	
 	public void setNewsContentDao(NewsContentDao newsContentDao) {
 		this.newsContentDao = newsContentDao;
+	}
+	
+	public NewsDetailDao getNewsDetailDao() {
+		return newsDetailDao;
+	}
+	
+	public void setNewsDetailDao(NewsDetailDao newsDetailDao) {
+		this.newsDetailDao = newsDetailDao;
 	}
 	
 }

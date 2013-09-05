@@ -7,4 +7,5 @@
 	
 	<include file="struts/struts-app-default.xml" />
 	<include file="struts/struts-admin.xml" />
+	<include file="struts/struts-front.xml" />
 </struts>

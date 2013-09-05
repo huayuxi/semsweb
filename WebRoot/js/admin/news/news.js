@@ -25,10 +25,13 @@ function getData(pageNo){
 				"<th width=\"10%\">发布时间</th>" +
 				"<th width=\"10%\">相关操作</th></tr></thead><tbody>";
 				$.each(myData, function(i, n) {
+					var xwbt=n.xwbt00;
 						div=div+"<tr class=\"g-app-row\"><td><label class=\"g-ad-title\">" +
 								"<input class=\"g-checkbox\" type=\"checkbox\">" +
-								"<a href=\"news_detail.html\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
-								n.xwbt00
+								"<a href=\""+
+								$("#basePath").val()+"pages/admin/news/news_detail.jsp?xwid00="+n.xwid00
+								+"\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
+								xwbt.substr(0,20)
 								+"</a></label></td><td>"+
 								n.xwlx00
 								+"</td><td>" +
@@ -36,7 +39,7 @@ function getData(pageNo){
 								+"</td><td><span class=\"g-col-org\">" +
 								n.xwzz00
 								+"</span></td><td><span class=\"g-col-grn\">" +
-								n.fbsj00
+								n.fbsj00Str
 								+"</span></td><td>" +
 								"<a href=\"javascript:goUpdate('" +n.xwid00+"')\">编辑</a>&nbsp;|&nbsp;" +
 								"<a href=\"javascript:goDel(" +n.xwid00+");\">删除</a></td></tr>";
@@ -69,7 +72,7 @@ function pageselectCallback(page_id,jq){
 //前往编辑页面
 function goUpdate(xwid00){
 	var basePath=$("#basePath").val();
-	window.location.href=basePath+"system/goUpdateNews.shtml?xwid00="+xwid00;
+	window.location.href=basePath+"pages/admin/news/news_editor.jsp?xwid00="+xwid00;
 }
 //删除新闻
 function goDel(xwid00){

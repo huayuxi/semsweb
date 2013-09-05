@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 
 import com.dao.NewsDao;
@@ -78,7 +79,19 @@ public class NewsDaoImpl extends BasicHibernateDao implements NewsDao {
 		}
 		return true;
 	}
-	
+	/**
+	 * @description:根据新闻ID查询新闻
+	 * @date: 2013-8-23 下午5:03:52
+	 * @author： lintz
+	 * @param xwid00 新闻ID
+	 * @return 新闻
+	 */
+	public News queryNews(int xwid00){
+		Query query = this.getSession().createQuery("from News where xwid00=?");
+		query.setLong(0, xwid00);
+		List<News> list = query.list();
+		return list.size() == 0 ? null : list.get(0);
+	}
 	/**
 	 * @description:查询全部新闻
 	 * @date: 2013-8-23 下午5:03:52

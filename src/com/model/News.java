@@ -5,6 +5,8 @@
  */
 package com.model;
 
+import com.util.DateUtil;
+
 /**
  * @description:新闻
  * @date: 2013-8-23 下午12:53:32
@@ -72,6 +74,9 @@ public class News implements java.io.Serializable {
 		return fbsj00;
 	}
 	
+	public String getFbsj00Str() {
+		return DateUtil.String8ToString10(fbsj00);
+	}
 	public void setFbsj00(String fbsj00) {
 		this.fbsj00 = fbsj00;
 	}

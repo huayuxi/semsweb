@@ -43,6 +43,7 @@
 				<value>classpath:com/model/SysUser.hbm.xml</value>
 				<value>classpath:com/model/News.hbm.xml</value>
 				<value>classpath:com/model/NewsContent.hbm.xml</value>
+				<value>classpath:com/model/NewsDetail.hbm.xml</value>
 				<value>classpath:com/model/Product.hbm.xml</value>
 				<value>classpath:com/model/ProductRes.hbm.xml</value>
 				<value>classpath:com/model/SysCode.hbm.xml</value>
@@ -100,6 +101,9 @@
 		<property name="newsContentDao">
 			<ref bean="newsContentDao" />
 		</property>
+		<property name="newsDetailDao">
+			<ref bean="newsDetailDao" />
+		</property>
 	</bean>
 	
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
@@ -122,6 +126,12 @@
 	</bean>
 	
 	<bean id="newsContentDao" class="com.dao.impl.NewsContentDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="newsDetailDao" class="com.dao.impl.NewsDetailDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

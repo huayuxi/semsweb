@@ -64,7 +64,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="bound">
     	<div class="latest-news">
         	<div class="title">
-            	<h3>头条新闻<span>&gt;&nbsp;more</span></h3>
+            	<h3>头条新闻<span><a href="<%=basePath%>pages/front/news/news.jsp">&gt;&nbsp;more</a></span></h3>
             </div>
             <div class="content">
             	<a href="#" class="image">

@@ -1,4 +1,4 @@
-$(document).ready(function() {	
+$(function() {
 	getData(0);
 });
 
@@ -8,24 +8,26 @@ function getData(pageNo){
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
-		url : 'system/queryNews.shtml',
+		url : 'front/queryNews.shtml',
 		data:param,
 		success : function(data) {
 			var totalcount = data.totalRecords;
 			var pagesize = data.pageSize;
 			var myData = data.list;
-			var div = "";
+			var div ="";
 			if(totalcount!=0){
 				$.each(myData, function(i, n) {
-					div=div+"<div class=\"item\"><a href=\"\">"+n.xwbt00+"</a><span class=\"date\">"+n.xwfbsj+"</span>";
+						div=div+"<div class=\"item\"><span class=\"date\">" +n.fbsj00Str
+						+"</span><a href=\""+
+						$("#basePath").val()+"pages/front/news/news_detail.jsp?xwid00="+n.xwid00
+						+"\">"+n.xwbt00+"</a></div>";
 				});
 				$("#news_list").html(div);
-			
 				// 分页-只初始化一次
 				$("#Pagination").pagination(totalcount, {
 					callback : pageselectCallback,
-					prev_text : "<上一页",
-					next_text : "下一页 >",
+					prev_text : "上一页",
+					next_text : "下一页 ",
 					items_per_page : pagesize,
 					prev_show_always : true,
 					next_show_always : true,
@@ -42,5 +44,7 @@ function getData(pageNo){
 
 //翻页调用
 function pageselectCallback(page_id,jq){
+	scroll(0,0);
 	getData(page_id);
 }
+

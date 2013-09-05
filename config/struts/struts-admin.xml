@@ -46,15 +46,21 @@
 		<action name="addNews" class="newsAction" method="addNews">
 			<result name="success" type="json"><param name="excludeProperties">newsService</param></result>
 		</action>
+		
 		<action name="updateNews" class="newsAction" method="updateNews">
-			<result name="success">pages/admin/news/news.jsp</result>
-			<result name="again" type="json"><param name="excludeProperties">newsService</param></result>
+			<result name="success" type="json"><param name="excludeProperties">newsService,list,newsDetail,totalRecords,pageSize,pageNo</param></result>
 		</action>
+		
 		<action name="deleteNews" class="newsAction" method="deleteNews">
 			<result name="success" type="json"><param name="excludeProperties">newsService</param></result>
 		</action>
+		
 		<action name="queryNews" class="newsAction" method="queryNews">
 			<result name="success" type="json"><param name="excludeProperties">newsService</param></result>
+		</action>
+		
+		<action name="queryNewsDetail" class="newsAction" method="queryNewsDetail">
+			<result name="success" type="json"><param name="excludeProperties">newsService,list,msg,totalRecords,pageSize,pageNo</param></result>
 		</action>
 	<!--新闻模块end  -->
 		

@@ -13,6 +13,9 @@
 			<result name="success" type="json">
 				<param name="excludeProperties">sysUserService</param>
 			</result>
+			<result name="error">
+				pages/admin/login.jsp
+			</result>
 		</action>
 		
 		<action name="loginOut" class="sysUserAction" method="loginOut">

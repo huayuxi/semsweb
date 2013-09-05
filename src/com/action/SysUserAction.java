@@ -56,7 +56,7 @@ public class SysUserAction extends BaseAction {
 				msg = "error_again";
 			}
 		} else {
-			msg = "error_none";
+			return ERROR;
 		}
 		return SUCCESS;
 	}

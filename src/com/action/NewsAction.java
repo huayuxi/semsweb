@@ -18,7 +18,6 @@ import com.model.News;
 import com.model.NewsContent;
 import com.model.NewsDetail;
 import com.model.SysUser;
-import com.service.NewsDetailService;
 import com.service.NewsService;
 import com.util.BaseAction;
 
@@ -35,7 +34,6 @@ public class NewsAction extends BaseAction {
 	private NewsContent newsContent;
 	private NewsDetail newsDetail;
 	private NewsService newsService;
-	private NewsDetailService newsDetailService;
 	private List list;
 	private int totalRecords;
 	private int pageSize;
@@ -93,7 +91,18 @@ public class NewsAction extends BaseAction {
 	 * @return
 	 */
 	public String updateNews() {
-		newsService.updateNews(news, newsContent);
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
+		if(news!=null&&newsContent!=null){
+			news.setXwzz00(sysUserSession.getYhid00());
+			if (newsService.updateNews(news, newsContent)) {
+				msg = "success";
+			} else {
+				msg = "error_error";
+			}
+		}		
 		return SUCCESS;
 	}
 	
@@ -135,8 +144,9 @@ public class NewsAction extends BaseAction {
 	 */
 	public String queryNewsDetail() {
 		HttpServletRequest req = ServletActionContext.getRequest();
-		String xwid00 = req.getParameter("xwid00");
-		newsDetail = newsDetailService.queryNewsDetail(Integer.getInteger(xwid00));
+		String xwid = req.getParameter("xwid00");
+		int xwid00=Integer.parseInt(xwid);
+		newsDetail = newsService.queryNewsDetail(xwid00);
 		if (newsDetail != null)
 			return SUCCESS;
 		return ERROR;
@@ -175,13 +185,6 @@ public class NewsAction extends BaseAction {
 		this.newsService = newsService;
 	}
 	
-	public NewsDetailService getNewsDetailService() {
-		return newsDetailService;
-	}
-	
-	public void setNewsDetailService(NewsDetailService newsDetailService) {
-		this.newsDetailService = newsDetailService;
-	}
 	
 	public List getList() {
 		return list;
