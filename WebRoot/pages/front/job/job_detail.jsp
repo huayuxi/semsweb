@@ -17,7 +17,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
-
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/front/job/job_detail.js" type="text/javascript"></script>
 </head>
   
   <body>
@@ -65,8 +66,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right jobs">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">人才招聘</a>>社会招聘</div>
+                	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/job/job.jsp">人才招聘</a>>社会招聘</div>
                 <div id="about-title1" class="title">社会招聘</div>
                 <div class="line1"></div>
                 <div class="detail">
@@ -85,54 +86,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <span style="display:none" class="detail-more">			                    </span>
                    <div class="joblist">
                    		<div class="head">
-                            职位详情：软件研发工程师　
-                            <span class="s">2013-04-17</span>
+                            	职位详情：<span  id="data-zpgw"></span>
+                            <span class="s" id="data-fbsj">2013-04-17</span>
                          </div>
                          <div class="items">
                             <div class="hd">
                             <span class="blue">招聘类型：</span>
-                            社会招聘
+                            <span id="data-zplx"></span>
                             </div>
                             <div class="hd">
                                 <span class="blue">工作类别：</span>
-                                技术类
+                   				<span id="data-gzlb"></span>
                             </div>
                             <div class="hd">
-                                <span class="blue">工作地点：</span>
-                                福建省
+                                <span class="blue" >工作地点：</span>
+                   				<span id="data-gzdd"></span>
                             </div>
                            <div class="hd">
                                 <span class="blue">招聘人数：</span>
-                                10
+                               <span id="data-zprs">10</span>
                             </div>
-                            <div class="text">
-                                <p>
-                                    <span style="font-size:12px;line-height:1.75em;">1、熟悉两门以上编程语言，有JAVA开发经验，熟悉J2EE架构和WEB开发流程者优先（C++特别精通者亦可考虑）；</span>
-                                    </p>
-                                    <p>
-                                    <span style="font-size:12px;line-height:1.75em;">2、熟悉数据库SQL编程以及MIS软件开发；能提供个人代表软件作品，且独立完成者佳。</span>
-                                    </p>
-                                </div>
                                 <div class="hd blue">任职要求：</div>
-                                <div class="text">
-    <p style="line-height:1.75em;">
-    <span style="font-size:12px;">1、本科及以上学历，计算机软件等相关专业（能力或资质特别突出者，可适当放宽条件）；</span>
-    </p>
-    <p style="line-height:1.75em;">
-    <span style="font-size:12px;line-height:1.75em;">2、能适应出差，有吃苦精神，善于沟通，具备良好的团队意识；</span>
-    </p>
-    <p style="line-height:1.75em;">
-    <span style="font-size:12px;line-height:1.75em;">3、</span>
-    <span style="font-size:12px;line-height:1.75em;">一年工作经验；</span>
-    </p>
-    <p style="line-height:1.75em;">
-    <span style="font-size:12px;line-height:1.75em;">4、性别：男。</span>
-    </p>
-</div>
-<div class="hd">
-联系邮箱：
-<span class="orange">hr@iotcomm.com.cn</span>
-</div>
+                                <div class="text" id="data-zpnr">
+								</div>
                         </div>
                    </div>
 					<!--end joblist-->

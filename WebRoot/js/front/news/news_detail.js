@@ -10,8 +10,6 @@ $(function() {
 	getNewsData();
 });
 
-
-
 function getNewsData() {
 	var xwid00=getQueryString("xwid00");
 	if(xwid00!=null){

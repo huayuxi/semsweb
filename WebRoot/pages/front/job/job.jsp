@@ -9,18 +9,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <base href="<%=basePath%>"/>
-<title>智联信通-市场动态</title>
+<title>智联信通-人才招聘</title>
 
 <meta http-equiv="pragma" content="no-cache"/>
 <meta http-equiv="cache-control" content="no-cache"/>
 <meta http-equiv="expires" content="0"/>
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
-<meta http-equiv="description" content="This is my page"/>
+<meta http-equiv="description" content="人才招聘"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
+<link href="<%=basePath%>js/common/pagination/pagination.css" rel="stylesheet" />
+
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/common/pagination/jquery.pagination-front.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/front/job/job.js" type="text/javascript"></script>
 
 </head>
   
   <body>
+   <input type="hidden" value="<%=basePath%>" id="basePath"/>
     <div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -51,24 +57,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="job.html">社会招聘</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp">社会招聘</a>
                     </li>
 					 <li class="menu">
-                    	<a href="job.html">校团招聘</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp">校团招聘</a>
                     </li>
                      <li class="menu">
-                    	<a href="job.html">职位搜索</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp">职位搜索</a>
                     </li>
                 </ul>
             </div>
             <div class="right jobs">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">人才招聘</a>>社会招聘</div>
-                <div id="about-title1" class="title">社会招聘</div>
-                <div class="line1"></div>
-                <div class="detail">
+                	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/job/job.jsp">人才招聘</a>>社会招聘</div>
+					
+	                <div id="about-title1" class="title">社会招聘</div>
+	                <div class="line1"></div>
+	                <div class="detail">
                 	<div class="share">
                     	<div class="print-btn">
                         	<a class="blue noprint" onclick="window.print();" href="javascript:void(0);"><span></span>打印</a>
@@ -78,98 +85,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </div>
                         <span class="r noprint">
                         	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-<span id="bdshare" class="bdshare_b"></span>
+							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
                     <span style="display:none" class="detail-more">			                    </span>
-                   <div class="joblist">
-                   		<div class="head">
-                            <div class="name">职位名称</div>
-                            <div class="jobclass">招聘类型</div>
-                            <div class="city">工作地点</div>
-                            <div class="date">发布时间</div>
-                           </div>
-                  	 <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="jobs/job_detail.html">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                      <div class="item">
-                        <div class="name">
-                        <a class="ablue" href="#">软件研发工程师</a>
-                        </div>
-                        <div class="jobclass">社会招聘</div>
-                        <div class="city">福建省</div>
-                        <div class="date">2013-04-17</div>
-                     </div>
-                   </div>
+                   	<div class="joblist" id="job_list"></div>
 					<!--end joblist-->
                     <div class="pager" id="Pagination"></div>
                 </div>

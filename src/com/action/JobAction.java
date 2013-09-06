@@ -35,7 +35,7 @@ public class JobAction extends BaseAction {
 	private int pageSize;
 	private int pageNo;
 	private String msg;
-	
+	 
 	/**
 	 * @description: 新增招聘
 	 * @date: 2013-9-5 下午3:34:34
@@ -137,7 +137,13 @@ public class JobAction extends BaseAction {
 	 * @return
 	 */
 	public String queryJobDetail() {
-		return SUCCESS;
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String zpid = req.getParameter("zpid00");
+		int zpid00=Integer.parseInt(zpid);
+		job = jobService.queryJob(zpid00);
+		if (job != null)
+			return SUCCESS;
+		return ERROR;
 	}
 	
 	/*----------------------------------set and get method--------------------------------*/
