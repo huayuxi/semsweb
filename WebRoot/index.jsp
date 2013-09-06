@@ -75,14 +75,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
                 <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
                 <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
+                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
+				<p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
+                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
+                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
+                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
             </div>
         </div>
         <div class="video_media">
         	<div class="content">
-            	<a href="#">
-                	<img src="images/videobg.gif"  />
-                </a>
-            </div>
+        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="682" height="423"> 
+				<param name="movie" value="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" /> 
+				<!--[if !IE]>--> 
+				<object type="application/x-shockwave-flash" 
+				data="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" 
+				width="682" height="423"> 
+				<!--<![endif]--> 
+				<p>Alternative content</p> 
+				<!--[if !IE]>--> 
+				</object> 
+				<!--<![endif]--> 
+			</object> 
+          </div>
         </div>
         <div class="clear"></div>
     </div>
@@ -112,7 +126,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <p><span></span>甘肃兰州隧道LED灯智能控制项目</p>
                 <p><span></span>青海西宁全城景观亮化智能控制项目</p>
                 <div class="case_title">
-                	<span style="padding-right:20px;">全球案例</span>
+                	<a href=<%=basePath%>pages/front/cases/cases.jsp"><span style="padding-right:20px;">全球案例</span></a>
                 </div>
             </div>
         </div>

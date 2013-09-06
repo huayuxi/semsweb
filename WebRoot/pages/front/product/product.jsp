@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="product.html">核心价值</a>
+                    	<a href="<%=basePath%>pages/front/product/product.jsp">核心价值</a>
                     </li>
 					<li class="menu">
                     	<a href="#">产品目录</a>

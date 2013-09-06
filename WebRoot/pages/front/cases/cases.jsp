@@ -51,7 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="case.html">国内案例</a>
+                    	<a href="<%=basePath%>pages/front/cases/cases.jsp">国内案例</a>
                     </li>
                     <li class="menu">
                     	<a href="case.html">海外案例</a>
@@ -61,8 +61,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">全球案例</a>>
+                	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/cases/cases.jsp">全球案例</a>>
                     <span id="about-title">国外案例</span>
                 </div>
                 <div id="about-title1" class="title">国内案例</div>
