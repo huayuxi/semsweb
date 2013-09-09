@@ -4,7 +4,7 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{88086B01-C9E1-11D4-9552-0090277716A9}" Name="semsweb" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="semsweb.PDM"/>
+		<Model Expanded="Yes" ID="{459CB0DD-B5FE-4CBA-82FF-59E5F0F0068F}" Name="semsweb" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="sems.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
