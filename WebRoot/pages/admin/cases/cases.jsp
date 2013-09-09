@@ -112,10 +112,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <thead>
                 <tr>
                   <th class="g-tl" width="40%">
-					<input class="g-checkbox" id="j-ad-all" type="checkbox">岗位名称
+					<input class="g-checkbox" id="j-ad-all" type="checkbox">案例名称
 				  </th> 
-				  <th width="10%">岗位类型</th>
-				  <th width="10%">招聘部门</th>
                   <th width="10%">发布者</th>
                   <th width="20%">发布时间</th>
 				  <th width="10%">相关操作</th>
