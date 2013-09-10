@@ -8,16 +8,16 @@
     <class name="com.model.CasesRes" table="tab_cases_res">
         <id name="alzyid" type="java.lang.Integer">
             <column name="alzyid" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="alid00" type="java.lang.Integer">
             <column name="alid00">
                 <comment>案例ID</comment>
             </column>
         </property>
-        <property name="zyid00" type="java.lang.Integer">
-            <column name="zyid00">
-                <comment>资源ID</comment>
+        <property name="zylj00" type="java.lang.String">
+            <column name="zylj00">
+                <comment>资源路径</comment>
             </column>
         </property>
     </class>

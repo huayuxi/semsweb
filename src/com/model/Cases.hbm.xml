@@ -15,9 +15,19 @@
                 <comment>案例名称</comment>
             </column>
         </property>
-        <property name="alnr00" type="java.lang.String">
-            <column name="alnr00">
-                <comment>案例内容</comment>
+        <property name="albj00" type="java.lang.String">
+            <column name="albj00">
+                <comment>案例背景</comment>
+            </column>
+        </property>
+         <property name="algm00" type="java.lang.String">
+            <column name="algm00">
+                <comment>案例规模</comment>
+            </column>
+        </property>
+         <property name="alcx00" type="java.lang.String">
+            <column name="alcx00">
+                <comment>案例成效</comment>
             </column>
         </property>
         <property name="fbsj00" type="java.lang.String">

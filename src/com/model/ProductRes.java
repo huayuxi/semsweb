@@ -10,7 +10,7 @@ public class ProductRes implements java.io.Serializable {
 	private static final long serialVersionUID = -5558068632338302522L;
 	private Integer cpzyid;
 	private Integer cpid00;
-	private Integer zyid00;
+	private String zylj00;
 	
 	public Integer getCpzyid() {
 		return cpzyid;
@@ -28,12 +28,12 @@ public class ProductRes implements java.io.Serializable {
 		this.cpid00 = cpid00;
 	}
 	
-	public Integer getZyid00() {
-		return zyid00;
+	public String getZylj00() {
+		return zylj00;
 	}
 	
-	public void setZyid00(Integer zyid00) {
-		this.zyid00 = zyid00;
+	public void setZylj00(String zylj00) {
+		this.zylj00 = zylj00;
 	}
 	
 }

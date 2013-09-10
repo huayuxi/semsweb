@@ -7,10 +7,12 @@ package com.model;
  */
 public class Cases implements java.io.Serializable {
 	
-    private static final long serialVersionUID = -7095069299960394727L;
+	private static final long serialVersionUID = -7095069299960394727L;
 	private Integer alid00;
 	private String almc00;
-	private String alnr00;
+	private String albj00;
+	private String algm00;
+	private String alcx00;
 	private String fbsj00;
 	private Integer fbz000;
 	private Integer pxqz00;
@@ -31,12 +33,28 @@ public class Cases implements java.io.Serializable {
 		this.almc00 = almc00;
 	}
 	
-	public String getAlnr00() {
-		return alnr00;
+	public String getAlbj00() {
+		return albj00;
 	}
 	
-	public void setAlnr00(String alnr00) {
-		this.alnr00 = alnr00;
+	public void setAlbj00(String albj00) {
+		this.albj00 = albj00;
+	}
+	
+	public String getAlgm00() {
+		return algm00;
+	}
+	
+	public void setAlgm00(String algm00) {
+		this.algm00 = algm00;
+	}
+	
+	public String getAlcx00() {
+		return alcx00;
+	}
+	
+	public void setAlcx00(String alcx00) {
+		this.alcx00 = alcx00;
 	}
 	
 	public String getFbsj00() {

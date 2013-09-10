@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.dao.CasesDao;
+import com.dao.CasesResDao;
 import com.model.Cases;
 import com.service.CasesService;
 
@@ -20,6 +21,7 @@ import com.service.CasesService;
 @SuppressWarnings("rawtypes")
 public class CasesServiceImpl implements CasesService {
 	private CasesDao casesDao;
+	private CasesResDao casesResDao;
 	
 	/**
 	 * @description: 新增案例
@@ -40,6 +42,7 @@ public class CasesServiceImpl implements CasesService {
 	 * @return true or false
 	 */
 	public boolean delCases(Cases cases) {
+		
 		return casesDao.delCases(cases);
 	}
 	
@@ -99,4 +102,11 @@ public class CasesServiceImpl implements CasesService {
 		this.casesDao = casesDao;
 	}
 	
+	public CasesResDao getCasesResDao() {
+		return casesResDao;
+	}
+	
+	public void setCasesResDao(CasesResDao casesResDao) {
+		this.casesResDao = casesResDao;
+	}	
 }

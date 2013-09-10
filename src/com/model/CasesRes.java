@@ -1,4 +1,5 @@
 package com.model;
+
 /**
  * @description: 案例资源
  * @date: 2013-9-9 下午12:00:54
@@ -6,10 +7,10 @@ package com.model;
  */
 public class CasesRes implements java.io.Serializable {
 	
-    private static final long serialVersionUID = 6374272470888684591L;
+	private static final long serialVersionUID = 6374272470888684591L;
 	private Integer alzyid;
 	private Integer alid00;
-	private Integer zyid00;
+	private String zylj00;
 	
 	public Integer getAlzyid() {
 		return alzyid;
@@ -27,12 +28,12 @@ public class CasesRes implements java.io.Serializable {
 		this.alid00 = alid00;
 	}
 	
-	public Integer getZyid00() {
-		return zyid00;
+	public String getZylj00() {
+		return zylj00;
 	}
 	
-	public void setZyid00(Integer zyid00) {
-		this.zyid00 = zyid00;
+	public void setZylj00(String zylj00) {
+		this.zylj00 = zylj00;
 	}
 	
 }

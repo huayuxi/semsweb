@@ -22,7 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="<%=basePath%>bootstrap/js/action.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/common/pagination/jquery.pagination.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/admin/cases/cases.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -103,15 +104,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <div class="g-main-box">
             <!--action panel-->
             <div class="g-action-panel">
-              <a href="news_add.html" class="btn btn-success pull-right" type="button">发布职位</a>
+              <a href="<%=basePath%>pages/admin/cases/cases_add.jsp" class="btn btn-success pull-right" type="button">发布案例</a>
               <button class="btn btn-danger" type="button">批量删除</button>
             </div>
             <!--/action panel-->
             <!--table-->
-            <table class="table g-table">
+            <table class="table g-table" id="cases_list">
               <thead>
                 <tr>
-                  <th class="g-tl" width="40%">
+                  <th class="g-tl" width="60%">
 					<input class="g-checkbox" id="j-ad-all" type="checkbox">案例名称
 				  </th> 
                   <th width="10%">发布者</th>
@@ -130,149 +131,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  </a>
                     </label>
                   </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
                   <td><span class="g-col-org">超级管理员</span></td>
                   <td><span class="g-col-grn">2013-08-29</span></td>
 				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-                  <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-  				<tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-  				<tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-  				<tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-  				<tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-  				<tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					研发工程师
-				  </td>
-                  <td>系统研发部</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>				
+                </tr>	
               </tbody>
             </table>
             <!--/table-->
             <!--page-->
             <div class="pagination pagination-centered">
-              <ul>
-                <li class="disabled">
-                  <a href="#">上一页</a>
-                </li>
-                <li class="active">
-                  <a href="#">1</a>
-                </li>
-                <li>
-                  <a href="#">2</a>
-                </li>
-                <li>
-                  <a href="#">3</a>
-                </li>
-                <li>
-                  <a href="#">4</a>
-                </li>
-                <li>
-                  <a href="#">5</a>
-                </li>
-                <li>
-                  <a href="#">下一页</a>
-                </li>
+              <ul id="Pagination">
               </ul>
             </div>
             <!--/page-->

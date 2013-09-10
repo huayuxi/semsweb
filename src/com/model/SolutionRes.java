@@ -7,10 +7,10 @@ package com.model;
  */
 public class SolutionRes implements java.io.Serializable {
 	
-    private static final long serialVersionUID = -1564221090788015309L;
+	private static final long serialVersionUID = -1564221090788015309L;
 	private Integer jjzyid;
 	private Integer jjfaid;
-	private Integer zyid00;
+	private String zylj00;
 	
 	public Integer getJjzyid() {
 		return jjzyid;
@@ -28,12 +28,12 @@ public class SolutionRes implements java.io.Serializable {
 		this.jjfaid = jjfaid;
 	}
 	
-	public Integer getZyid00() {
-		return zyid00;
+	public String getZylj00() {
+		return zylj00;
 	}
 	
-	public void setZyid00(Integer zyid00) {
-		this.zyid00 = zyid00;
+	public void setZylj00(String zylj00) {
+		this.zylj00 = zylj00;
 	}
 	
 }

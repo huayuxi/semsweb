@@ -5,7 +5,13 @@
  */
 package com.action;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.model.Cases;
 import com.model.CasesRes;
@@ -57,6 +63,19 @@ public class CasesAction extends BaseAction {
 	 * @return
 	 */
 	public String deleteCases() {
+		HttpServletRequest req = getRequest();
+		int alid00 =Integer.parseInt(req.getParameter("alid00"));
+		if (alid00 != 0) {
+			Cases casesObj = new Cases();
+			casesObj.setAlid00(alid00);
+			if (casesService.delCases(casesObj)) {
+				msg = "success";
+			} else {
+				msg = "error_sys";
+			}
+		} else {
+			msg = "error_none";
+		}
 		return SUCCESS;
 	}
 	
@@ -67,6 +86,26 @@ public class CasesAction extends BaseAction {
 	 * @return
 	 */
 	public String queryCases() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String pageindex = req.getParameter("pageNo");
+		String pagesize = req.getParameter("pageSize");
+		Map properties = req.getParameterMap();
+		if (pageindex != null && !pageindex.equals("")) {
+			pageNo = Integer.valueOf(pageindex).intValue();
+		} else {
+			pageNo = 1;
+		}
+		if (pagesize != null && !pagesize.equals("")) {
+			pageSize = Integer.valueOf(pagesize).intValue();
+		} else {
+			pageSize = 10;
+		}
+		totalRecords = this.casesService.countCases(properties);
+		if (totalRecords != 0) {
+			list = casesService.queryCases(properties, pageNo, pageSize);
+		} else {
+			list = new ArrayList();
+		}
 		return SUCCESS;
 	}
 	
