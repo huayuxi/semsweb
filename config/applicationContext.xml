@@ -81,6 +81,8 @@
 	<!-- 配置Hibernate end -->
 	
 	<!-- Action配置 -->
+	<bean id="imageUpload" class="com.util.ImageUpload"></bean>
+	
 	<bean id="newsAction" class="com.action.NewsAction">
 		<property name="newsService">
 			<ref bean="newsService" />

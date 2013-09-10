@@ -1,3 +1,8 @@
+/**
+ * Copyright:Copyright(c)2013-2014
+ * Company:厦门市智联信通物联网科技有限公司
+ * @version 1.0
+ */
 package com.util;
 
 import java.io.*;

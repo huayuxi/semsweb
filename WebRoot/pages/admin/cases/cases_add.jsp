@@ -20,20 +20,17 @@
     <!-- Bootstrap -->
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
+    <link href="<%=basePath%>js/common/uploadify/uploadify.css" rel="stylesheet"  type="text/css" >
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		window.UEDITOR_HOME_URL = "<%=basePath%>js/common/ueditor-1.2.6.1/";
-		window.BASE_PATH = "<%=basePath%>";
-	</script>
-	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.config.js" type="text/javascript" ></script>
-	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.all.js" type="text/javascript" ></script>
-	<script src="<%=basePath%>js/admin/job/job_add.js" type="text/javascript"></script>
+	<script src="<%=basePath%>js/common/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+	<script src="<%=basePath%>js/admin/cases/cases_add.js" type="text/javascript"></script>
 </head>
 
 <body>
-  <input type="hidden" value="<%=basePath%>" id="basePath"/>
+   <input type="hidden" value="<%=basePath%>" id="basePath"/>
+   <input type="hidden" value="<%=session.getId()%>" id="jsessionId"/>
     <!--container980-->
     <div class="container container-full">
       <!--topbar row-->
@@ -74,13 +71,13 @@
 			<li class="nav-header">
               	功能列表
             </li>
-              <li class="active">
+              <li >
                 <a href="<%=basePath%>pages/admin/news/news.jsp">新闻管理</a>
               </li>
               <li>
                 <a href="<%=basePath%>pages/admin/product/product.jsp">产品管理</a>
               </li>
-			     <li>
+			     <li class="active">
                 <a href="<%=basePath%>pages/admin/cases/cases.jsp">案例管理</a>
               </li>
 			     <li>
@@ -110,70 +107,45 @@
           <div class="g-main-box">
             <!--create info-->
             <div class="g-create-info">
-              <h3 class="title">发布职位</h3>
+              <h3 class="title">发布案例</h3>
               <form id="job-form">
-                 <ul>                
+              
+                 <ul style="width:60%">                
                     <li>
-                      <label class="lb-title">招聘岗位：</label>
-                      <input id="j-ui-title" class="input-large" type="text" name=job.zpgw00>
+                      <label class="lb-title">案例名称：</label>
+                      <input id="j-ui-title" class="input-large" type="text" name="">
                       <span class="input-tip input-tip-warning"></span>
                     </li>
                     <li>
-                      <label class="lb-title">招聘类型：</label>
-                      
-                      <div class="btn-group dropdown" id="create-type-dropdown">
-                     	 <input id="j-ui-type" type="hidden" name="job.zplx00" class="data_value"/>
-                        <button data-toggle="dropdown" class="btn dropdown-toggle">
-							<span class="value" id="create-app-type">请选择</span>
-							<span class="caret"></span>
-						</button>
-                        <ul class="dropdown-menu">
-                          <li class="100000"><a href="javascript:void(0)">社会招聘</a></li>
-                          <li class="100001"><a href="javascript:void(0)">校园招聘</a></li>
-                        </ul>
-                      </div>
+                      <label class="lb-title">案例背景：</label>
+                      <textarea rows="3" cols="40" ></textarea>
                       <span class="input-tip input-tip-warning"></span>
                     </li>
                     
                     <li>
-                      <label class="lb-title">工作类别：</label>
-                     
-                      <div class="btn-group dropdown" id="create-type-dropdown">
-                       <input id="j-ui-kind" type="hidden" name="job.gzlb00" class="data_value"/>
-                        <button data-toggle="dropdown" class="btn dropdown-toggle">
-							<span class="value" id="create-app-type">请选择</span>
-							<span class="caret"></span>
-						</button>
-                        <ul class="dropdown-menu">
-                          <li class="100000"><a href="javascript:void(0)">技术类</a></li>
-                          <li class="100001"><a href="javascript:void(0)">行政类</a></li>
-                        </ul>
-                      </div>
+                      <label class="lb-title">案例规模：</label>
+                      <textarea rows="3" cols="40" ></textarea>
                       <span class="input-tip input-tip-warning"></span>
                     </li>
                    
                     <li>
-                      <label class="lb-title">工作地点：</label>
-                      <input  id="j-ui-address" class="input-large" type="text" name="job.gzdd00">
+                      <label class="lb-title">案例成效：</label>
+                      <textarea rows="3" cols="40" ></textarea>
                       <span class="input-tip input-tip-warning"></span>
                     </li>
-					<li>
-                      <label class="lb-title">招聘人数：</label>
-                      <input  id="j-ui-num" class="input-large" type="text" name="job.zprs00">
+                    
+                    <li>
+                      <label class="lb-title">案例例图：</label>
+                      <input id="fileInput" name="fileInput" type="file" multiple="true">
+                      <input id="j-ui-images" class="input-large" type="hidden" name="">
                       <span class="input-tip input-tip-warning"></span>
                     </li>
                     <li>
-                      <label class="lb-title">排序权值：</label>
-                      <input  id="j-ui-sno" class="input-large" type="text" name="job.pxqz00">
-                      <span class="input-tip input-tip-warning"></span>
-                    </li>
-					<li>
-						<label class="lb-title">招聘内容：</label>					  
-						<textarea rows="5" cols="20" id="j-ui-content" name="job.zpnr00"></textarea>
-						<span class="input-tip input-tip-warning"></span>
+                    	<img id="j-images" src="<%=basePath%>js/common/uploadify/icon_photo_small.jpg" style="width:219px;height: 162px;"/>
                     </li>
                     <li><button type="button" id="jobdata-form" class="btn btn-success btn-large g-btn-add">确认发布</button></li>
                   </ul>
+                  
               </form>
             </div>
             <!--/create info-->
@@ -184,13 +156,29 @@
       <!--/main row-->
     </div>
     <!--/container980-->
-    <script type="text/javascript">
-        UE.getEditor('j-ui-content',{
-            //focus时自动清空初始化时的内容
-            autoClearinitialContent:true,
-            //默认的编辑区域高度
-            initialFrameHeight:300
-        })
-    </script>
 </body>
+  <script language="javascript" type="text/javascript">
+  $(function() {
+		$('#fileInput').uploadify({
+			'swf'      :'<%=basePath%>js/common/uploadify/uploadify.swf',
+			'uploader' : '<%=basePath%>system/imgUpload.shtml;jsessionid=<%=session.getId()%>',
+			'fileObjName':'fileInput',
+			'buttonText'  : '上传图片',
+			'removeTimeout' : 0,
+			'width': 60,
+			'height': 20,
+			'queueSizeLimit':1,
+			'multi': false,
+			'fileTypeDesc': 'Image files',    
+			'fileTypeExts':'*.jpg;*.jpeg;*.png;',
+			'progressData': 'percentage',
+			'onUploadSuccess': function (file, data, response){
+				var url=eval("("+data+")");
+				var	s=url.msg;
+				$("#j-images").attr("src","<%=basePath%>"+s);
+	           	$("#j-ui-images").attr("value",s);
+	        }
+		});
+	});
+  </script>
 </html>
