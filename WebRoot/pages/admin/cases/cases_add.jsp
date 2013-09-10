@@ -21,10 +21,11 @@
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
     <link href="<%=basePath%>js/common/uploadify/uploadify.css" rel="stylesheet"  type="text/css" >
-    <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
+    
+    <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
     <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-	<script src="<%=basePath%>js/common/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+	<script src="<%=basePath%>js/common/uploadify/jquery.uploadify.js" type="text/javascript"></script>
 	<script src="<%=basePath%>js/admin/cases/cases_add.js" type="text/javascript"></script>
 </head>
 
@@ -109,43 +110,49 @@
             <div class="g-create-info">
               <h3 class="title">发布案例</h3>
               <form id="job-form">
-              
-                 <ul style="width:60%">                
-                    <li>
-                      <label class="lb-title">案例名称：</label>
-                      <input id="j-ui-title" class="input-large" type="text" name="">
-                      <span class="input-tip input-tip-warning"></span>
-                    </li>
-                    <li>
-                      <label class="lb-title">案例背景：</label>
-                      <textarea rows="3" cols="40" ></textarea>
-                      <span class="input-tip input-tip-warning"></span>
-                    </li>
-                    
-                    <li>
-                      <label class="lb-title">案例规模：</label>
-                      <textarea rows="3" cols="40" ></textarea>
-                      <span class="input-tip input-tip-warning"></span>
-                    </li>
-                   
-                    <li>
-                      <label class="lb-title">案例成效：</label>
-                      <textarea rows="3" cols="40" ></textarea>
-                      <span class="input-tip input-tip-warning"></span>
-                    </li>
-                    
-                    <li>
-                      <label class="lb-title">案例例图：</label>
-                      <input id="fileInput" name="fileInput" type="file" multiple="true">
-                      <input id="j-ui-images" class="input-large" type="hidden" name="">
-                      <span class="input-tip input-tip-warning"></span>
-                    </li>
-                    <li>
-                    	<img id="j-images" src="<%=basePath%>js/common/uploadify/icon_photo_small.jpg" style="width:219px;height: 162px;"/>
-                    </li>
-                    <li><button type="button" id="jobdata-form" class="btn btn-success btn-large g-btn-add">确认发布</button></li>
-                  </ul>
-                  
+              	<div class="container-fluid">
+					<div class="row-fluid">
+						<div class="span8">
+							<ul>                
+			                    <li>
+			                      <label class="lb-title">案例名称：</label>
+			                      <input id="j-ui-title" class="input-large" type="text" name="">
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>
+			                    <li>
+			                      <label class="lb-title">案例背景：</label>
+			                      <textarea rows="3" cols="40" ></textarea>
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>
+			                    
+			                    <li>
+			                      <label class="lb-title">案例规模：</label>
+			                      <textarea rows="3" cols="40" ></textarea>
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>
+			                   
+			                    <li>
+			                      <label class="lb-title">案例成效：</label>
+			                      <textarea rows="3" cols="40" ></textarea>
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>
+			                    <li><button type="button" id="jobdata-form" class="btn btn-success btn-large g-btn-add">确认发布</button></li>
+			                  </ul>
+				 		</div>
+						 <div class="span4">
+							<ul>                
+			                   <li >
+			                     <img  id="j-images" src="<%=basePath%>js/common/uploadify/icon_photo_small.jpg" style="width:219px;height:162px;"/>
+			                   </li>
+			                   <li style="text-align:center;">
+			                      <input id="fileInput" name="fileInput" type="file" multiple="true">
+			                      <input id="j-ui-images" class="input-large" type="hidden" name="">
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>
+			                  </ul>		
+						</div>
+				</div>
+				</div>                 
               </form>
             </div>
             <!--/create info-->
@@ -157,21 +164,19 @@
     </div>
     <!--/container980-->
 </body>
-  <script language="javascript" type="text/javascript">
+  <script type="text/javascript">
   $(function() {
 		$('#fileInput').uploadify({
 			'swf'      :'<%=basePath%>js/common/uploadify/uploadify.swf',
-			'uploader' : '<%=basePath%>system/imgUpload.shtml;jsessionid=<%=session.getId()%>',
+			'uploader' : 'system/imgUpload.shtml;jsessionid='+'<%=session.getId()%>',
 			'fileObjName':'fileInput',
-			'buttonText'  : '上传图片',
+			'buttonText' : '点击上传',
 			'removeTimeout' : 0,
 			'width': 60,
 			'height': 20,
 			'queueSizeLimit':1,
-			'multi': false,
-			'fileTypeDesc': 'Image files',    
+			'fileTypeDesc': '图片',    
 			'fileTypeExts':'*.jpg;*.jpeg;*.png;',
-			'progressData': 'percentage',
 			'onUploadSuccess': function (file, data, response){
 				var url=eval("("+data+")");
 				var	s=url.msg;
