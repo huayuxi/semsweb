@@ -45,6 +45,9 @@
 				<value>classpath:com/model/Cases.hbm.xml</value>
 				<value>classpath:com/model/CasesDetail.hbm.xml</value>
 				<value>classpath:com/model/CasesRes.hbm.xml</value>
+				<value>classpath:com/model/SolutionDetail.hbm.xml</value>
+				<value>classpath:com/model/SolutionRes.hbm.xml</value>
+				<value>classpath:com/model/Solution.hbm.xml</value>
 				<value>classpath:com/model/News.hbm.xml</value>
 				<value>classpath:com/model/NewsContent.hbm.xml</value>
 				<value>classpath:com/model/NewsDetail.hbm.xml</value>
@@ -98,6 +101,12 @@
 		</property>
 	</bean>
 	
+	<bean id="solutionAction" class="com.action.SolutionAction">
+		<property name="solutionService">
+			<ref bean="solutionService" />
+		</property>
+	</bean>
+	
 	<bean id="casesAction" class="com.action.CasesAction">
 		<property name="casesService">
 			<ref bean="casesService" />
@@ -141,6 +150,18 @@
 		</property>
 	</bean>
 	
+	<bean id="solutionService" class="com.service.impl.SolutionServiceImpl">
+		<property name="solutionDao">
+			<ref bean="solutionDao" />
+		</property>
+		<property name="solutionResDao">
+			<ref bean="solutionResDao" />
+		</property>
+		<property name="solutionDetailDao">
+			<ref bean="solutionDetailDao" />
+		</property>
+	</bean>
+	
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
 		<property name="sysUserDao">
 			<ref bean="sysUserDao" />
@@ -167,6 +188,23 @@
 	</bean>
 	
 	<bean id="casesDetailDao" class="com.dao.impl.CasesDetailDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="solutionDao" class="com.dao.impl.SolutionDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="solutionResDao" class="com.dao.impl.SolutionResDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="solutionDetailDao" class="com.dao.impl.SolutionDetailDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

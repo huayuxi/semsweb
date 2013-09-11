@@ -8,21 +8,21 @@ package com.model;
 public class Solution implements java.io.Serializable {
 	
     private static final long serialVersionUID = 7388040383799728326L;
-	private Integer faid00;
+	private Integer jjfaid;
 	private String famc00;
 	private String fanr00;
 	private String fbsj00;
 	private Integer fbz000;
 	private Integer pxqz00;
 	
-	public Integer getFaid00() {
-		return faid00;
+	public Integer getJjfaid() {
+		return jjfaid;
 	}
-	
-	public void setFaid00(Integer faid00) {
-		this.faid00 = faid00;
+
+	public void setJjfaid(Integer jjfaid) {
+		this.jjfaid = jjfaid;
 	}
-	
+
 	public String getFamc00() {
 		return famc00;
 	}

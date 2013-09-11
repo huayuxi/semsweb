@@ -111,5 +111,26 @@
 			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
 		</action>
 	<!--案例模块end  -->	
+	<!--解决方案模块begin  -->
+		<action name="addSolutin" class="solutionAction" method="addSolutin">
+			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+		</action>
+		
+		<action name="updateSolution" class="solutionAction" method="updateSolution">
+			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+		</action>
+		
+		<action name="deleteSolution" class="solutionAction" method="deleteSolution">
+			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+		</action>
+		
+		<action name="querySolution" class="solutionAction" method="querySolution">
+			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+		</action>
+		
+		<action name="querySolutionDetail" class="solutionAction" method="querySolutionDetail">
+			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+		</action>
+	<!--解决方案模块end  -->	
 	</package>
 	</struts>

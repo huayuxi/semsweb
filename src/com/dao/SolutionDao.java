@@ -22,9 +22,9 @@ public interface SolutionDao {
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
 	 * @param solution 解决方案
-	 * @return true or false
+	 * @return 解决方案
 	 */
-	public boolean addSolution(Solution solution);
+	public Integer addSolution(Solution solution);
 	
 	/**
 	 * @description: 删除解决方案
@@ -45,7 +45,7 @@ public interface SolutionDao {
 	public boolean updateSolution(Solution solution);
 	
 	/**
-	 * @description: 根据登陆帐号查询解决方案
+	 * @description: 根据解决方案ID查询解决方案
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
 	 * @param faid00 解决方案ID

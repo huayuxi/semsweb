@@ -5,10 +5,18 @@
  */
 package com.action;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.model.Solution;
 import com.model.SolutionRes;
+import com.model.SysUser;
 import com.service.SolutionService;
 import com.util.BaseAction;
 
@@ -18,7 +26,7 @@ import com.util.BaseAction;
  * @author: lintz
  */
 @SuppressWarnings("rawtypes")
-public class SolutionAction extends BaseAction{
+public class SolutionAction extends BaseAction {
 
 	private static final long serialVersionUID = -7725068953723892865L;
 	private Solution solution;
@@ -29,86 +37,152 @@ public class SolutionAction extends BaseAction{
 	private int pageSize;
 	private int pageNo;
 	private String msg;
+
 	/**
 	 * @description: 新增解决方案
 	 * @date: 2013-9-11 下午12:00:45
 	 * @author： lintz
 	 * @return
 	 */
-	public String addSolution(){return SUCCESS;}
+	public String addSolution() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
+		if (solution != null && solutionRes != null) {
+			solution.setFbz000(sysUserSession.getYhid00());
+			if (solutionService.addSolution(solution, solutionRes)) {
+				msg = "success";
+			} else {
+				msg = "error_error";
+			}
+		}
+		return SUCCESS;
+	}
+
 	/**
 	 * @description: 删除解决方案
 	 * @date: 2013-9-11 下午12:00:49
 	 * @author： lintz
 	 * @return
 	 */
-	public String deleteSolution(){return SUCCESS;}
+	public String deleteSolution() {
+		return SUCCESS;
+	}
+
 	/**
 	 * @description: 更新解决方案
 	 * @date: 2013-9-11 下午12:00:54
 	 * @author： lintz
 	 * @return
 	 */
-	public String updateSolution(){return SUCCESS;}
+	public String updateSolution() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
+		if (solution != null && solutionRes != null) {
+			solution.setFbz000(sysUserSession.getYhid00());
+			if (solutionService.updateSolution(solution, solutionRes)) {
+				msg = "success";
+			} else {
+				msg = "error_error";
+			}
+		}
+		return SUCCESS;
+	}
+
 	/**
 	 * @description: 查询解决方案
 	 * @date: 2013-9-11 下午12:00:58
 	 * @author： lintz
 	 * @return
 	 */
-	public String querySolution(){return SUCCESS;}
-	
-	
-	
+	public String querySolution() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String pageindex = req.getParameter("pageNo");
+		String pagesize = req.getParameter("pageSize");
+		Map properties = req.getParameterMap();
+		if (pageindex != null && !pageindex.equals("")) {
+			pageNo = Integer.valueOf(pageindex).intValue();
+		} else {
+			pageNo = 1;
+		}
+		if (pagesize != null && !pagesize.equals("")) {
+			pageSize = Integer.valueOf(pagesize).intValue();
+		} else {
+			pageSize = 10;
+		}
+		totalRecords = this.solutionService.countSolution(properties);
+		if (totalRecords != 0) {
+			list = solutionService.querySolution(properties, pageNo, pageSize);
+		} else {
+			list = new ArrayList();
+		}
+		return SUCCESS;
+	}
+
 	/*------------------------------------set and get menthod-------------------------------*/
 	public Solution getSolution() {
 		return solution;
 	}
+
 	public void setSolution(Solution solution) {
 		this.solution = solution;
 	}
+
 	public SolutionRes getSolutionRes() {
 		return solutionRes;
 	}
+
 	public void setSolutionRes(SolutionRes solutionRes) {
 		this.solutionRes = solutionRes;
 	}
+
 	public SolutionService getSolutionService() {
 		return solutionService;
 	}
+
 	public void setSolutionService(SolutionService solutionService) {
 		this.solutionService = solutionService;
 	}
+
 	public List getList() {
 		return list;
 	}
+
 	public void setList(List list) {
 		this.list = list;
 	}
+
 	public int getTotalRecords() {
 		return totalRecords;
 	}
+
 	public void setTotalRecords(int totalRecords) {
 		this.totalRecords = totalRecords;
 	}
+
 	public int getPageSize() {
 		return pageSize;
 	}
+
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
+
 	public int getPageNo() {
 		return pageNo;
 	}
+
 	public void setPageNo(int pageNo) {
 		this.pageNo = pageNo;
 	}
+
 	public String getMsg() {
 		return msg;
 	}
+
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
 
-	
 }

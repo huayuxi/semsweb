@@ -18,9 +18,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 jQuery(function($){
 	$('#ad img').attr("width",$(document).width());
 	$('#ad').slideBox({
-		duration :3,//滚动持续时间，单位：秒
+		duration :1,//滚动持续时间，单位：秒
 		easing : 'linear',//swing,linear//滚动特效
-		delay : 5,//滚动延迟时间，单位：秒
+		delay : 1,//滚动延迟时间，单位：秒
 		hideClickBar : false,//不自动隐藏点选按键
 		clickBarRadius : 10
 	});
@@ -58,9 +58,8 @@ jQuery(function($){
     	<ul class="items">
     		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/1.jpg"></a></li>
     		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/3.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/4.jpg"></a></li>
   		</ul>
     </div>	
 </div>

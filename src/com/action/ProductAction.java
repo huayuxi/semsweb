@@ -6,7 +6,7 @@
 package com.action;
 
 /**
- * @description: 
+ * @description: 产品管理Action类
  * @date: 2013-9-10 下午2:31:08
  * @author: lintz
  */

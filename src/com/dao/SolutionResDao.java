@@ -44,8 +44,8 @@ public interface SolutionResDao {
 	 * @description: 根据解决方案资源ID查询解决方案资源
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
-	 * @param faid00 解决方案资源ID
+	 * @param jjfaid 解决方案资源ID
 	 * @return 解决方案资源
 	 */
-	public SolutionRes querySolutionRes(int faid00);
+	public SolutionRes querySolutionRes(int jjfaid);
 }

@@ -67,7 +67,7 @@ function goUpdate(alid00){
 	var basePath=$("#basePath").val();
 	window.location.href=basePath+"pages/admin/cases/cases_editor.jsp?alid00="+alid00;
 }
-//删除新闻
+//删除案例
 function goDel(alid00){
 	var param = "alid00="+alid00;
 	$.ajax( {

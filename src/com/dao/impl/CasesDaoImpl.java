@@ -29,7 +29,7 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
 	 * @param cases 案例
-	 * @return true or false
+	 * @return 案例ID
 	 */
 	public Integer addCases(Cases cases){
 		int id=0;
