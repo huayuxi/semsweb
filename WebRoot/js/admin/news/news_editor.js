@@ -8,8 +8,6 @@ function getQueryString(name) {
 }
 $(function() {
 	getNewsData();
-	
-
 });
 function initData(){
 	var basePath=$("#basePath").val();

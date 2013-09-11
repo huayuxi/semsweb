@@ -27,6 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <input type="hidden" value="<%=basePath%>" id="basePath"/>
     <!--container980-->
     <div class="container container-full">
       <!--topbar row-->
@@ -109,34 +110,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <!--/action panel-->
             <!--table-->
-            <table class="table g-table" id="cases_list">
-              <thead>
-                <tr>
-                  <th class="g-tl" width="60%">
-					<input class="g-checkbox" id="j-ad-all" type="checkbox">案例名称
-				  </th> 
-                  <th width="10%">发布者</th>
-                  <th width="20%">发布时间</th>
-				  <th width="10%">相关操作</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						Java工程师
-					  </a>
-                    </label>
-                  </td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>	
-              </tbody>
-            </table>
+            <table class="table g-table" id="cases_list"></table>
             <!--/table-->
             <!--page-->
             <div class="pagination pagination-centered">

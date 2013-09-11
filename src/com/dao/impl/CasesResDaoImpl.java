@@ -44,12 +44,19 @@ public class CasesResDaoImpl extends BasicHibernateDao implements CasesResDao{
 	 * @return true or false
 	 */
 	public boolean delCasesRes(CasesRes casesRes){
-		try {
-			this.getSession().delete(casesRes);
-		} catch (Exception e) {
-			return false;
-		}
-		return true;
+		Query query = this.getSession().createQuery("from CasesRes where alid00=?");
+		query.setLong(0, casesRes.getAlid00());
+        List<CasesRes> list = query.list();
+        casesRes=list.size() == 0 ? null : list.get(0);
+        if(casesRes!=null){
+			try {
+				this.getSession().delete(casesRes);
+			} catch (Exception e) {
+				return false;
+			}
+			return true;
+        }
+        return false;
 	}
 	
 	/**

@@ -23,9 +23,9 @@ public interface CasesDao {
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
 	 * @param cases 案例
-	 * @return true or false
+	 * @return 案例ID
 	 */
-	public boolean addCases(Cases cases);
+	public Integer addCases(Cases cases);
 	
 	/**
 	 * @description: 删除案例
@@ -47,7 +47,7 @@ public interface CasesDao {
 	
 	
 	/**
-	 * @description: 根据登陆帐号查询案例
+	 * @description: 根据案例ID查询案例
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
 	 * @param alid00 案例ID

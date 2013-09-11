@@ -34,8 +34,8 @@ function getData(pageNo){
 								+"</span></td><td><span class=\"g-col-grn\">" +
 								n.fbsj00
 								+"</span></td><td>" +
-								"<a href=\"javascript:goUpdate('" +n.zpid00+"')\">编辑</a>&nbsp;|&nbsp;" +
-								"<a href=\"javascript:goDel(" +n.zpid00+");\">删除</a></td></tr>";
+								"<a href=\"javascript:goUpdate('" +n.alid00+"')\">编辑</a>&nbsp;|&nbsp;" +
+								"<a href=\"javascript:goDel(" +n.alid00+");\">删除</a></td></tr>";
 				});
 				div=div+"</tbody>";
 				$("#cases_list").html(div);
@@ -51,7 +51,7 @@ function getData(pageNo){
 					link_to : "javascript:void(0)"
 				});
 			}else{
-				$("#job_list").html("<span style=\"color:red\">很遗憾未找到相关记录！</span>");
+				$("#cases_list").html("<span style=\"color:red\">很遗憾未找到相关记录！</span>");
 				$("#Pagination").html("");
 			}
 		}

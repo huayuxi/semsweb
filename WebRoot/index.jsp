@@ -11,6 +11,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>">
 <title>智联信通欢迎您</title>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
+<link href="<%=basePath%>js/common/jquery.slideBox/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.min.js" type="text/javascript"></script>
+<script>
+jQuery(function($){
+	$('#ad img').attr("width",$(document).width());
+	$('#ad').slideBox({
+		duration :3,//滚动持续时间，单位：秒
+		easing : 'linear',//swing,linear//滚动特效
+		delay : 5,//滚动延迟时间，单位：秒
+		hideClickBar : false,//不自动隐藏点选按键
+		clickBarRadius : 10
+	});
+});
+</script>
 </head>
 
 <body>
@@ -39,18 +54,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
 </div>
 <div class="pcList">
-	<div class="slide-index">
-    	<div class="slides">
-        	<div class="slide autoMaxWidth">
-            	<div id="bi_2" class="image">
-            	<a target="_blank" href="#">
-                	<img src="images/2.jpg" name="02" style="left:-252px; position:relative;">
-                </a>
-            </div>
-        </div>
-        <div class="control">
-            <a class="active" href="#"></a>
-        </div>
+	<div class="slideBox" id="ad">
+    	<ul class="items">
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/1.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
+  		</ul>
     </div>	
 </div>
 <div class="latest-slogin-index">

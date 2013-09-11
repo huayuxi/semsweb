@@ -42,6 +42,9 @@
 			<list>
 				<value>classpath:com/model/SysUser.hbm.xml</value>
 				<value>classpath:com/model/Job.hbm.xml</value>
+				<value>classpath:com/model/Cases.hbm.xml</value>
+				<value>classpath:com/model/CasesDetail.hbm.xml</value>
+				<value>classpath:com/model/CasesRes.hbm.xml</value>
 				<value>classpath:com/model/News.hbm.xml</value>
 				<value>classpath:com/model/NewsContent.hbm.xml</value>
 				<value>classpath:com/model/NewsDetail.hbm.xml</value>
@@ -95,6 +98,12 @@
 		</property>
 	</bean>
 	
+	<bean id="casesAction" class="com.action.CasesAction">
+		<property name="casesService">
+			<ref bean="casesService" />
+		</property>
+	</bean>
+	
 	<bean id="sysUserAction" class="com.action.SysUserAction">
 		<property name="sysUserService">
 			<ref bean="sysUserService" />
@@ -120,6 +129,18 @@
 		</property>
 	</bean>
 	
+	<bean id="casesService" class="com.service.impl.CasesServiceImpl">
+		<property name="casesDao">
+			<ref bean="casesDao" />
+		</property>
+		<property name="casesResDao">
+			<ref bean="casesResDao" />
+		</property>
+		<property name="casesDetailDao">
+			<ref bean="casesDetailDao" />
+		</property>
+	</bean>
+	
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
 		<property name="sysUserDao">
 			<ref bean="sysUserDao" />
@@ -128,6 +149,24 @@
 	
 	<!-- DAO配置 -->
 	<bean id="jobDao" class="com.dao.impl.JobDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="casesDao" class="com.dao.impl.CasesDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="casesResDao" class="com.dao.impl.CasesResDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="casesDetailDao" class="com.dao.impl.CasesDetailDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

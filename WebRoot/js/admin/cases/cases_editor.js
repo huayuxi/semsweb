@@ -1,3 +1,37 @@
+//获取URL参数
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null)
+		return unescape(r[2]);
+	return null;
+}
+
+function getCasesData() {
+	var alid00=getQueryString("alid00");
+	if(alid00!=null){
+		var param="alid00="+alid00
+		$.ajax( {
+			type : "POST",
+			dataType : "json",
+			url : 'system/queryCasesDetail.shtml',
+			data:param,
+			success : function(data) {
+				var obj=data.casesDetail;
+				$("#j-ui-id").val(obj.alid00);
+				$("#j-ui-zyid").val(obj.alzyid);
+				$("#j-ui-name").val(obj.almc00);
+				$("#j-ui-bj").text(obj.albj00);
+				$("#j-ui-gm").text(obj.algm00);
+				$("#j-ui-cx").text(obj.alcx00);
+				$("#j-ui-images").val(obj.zylj00);
+				$("#j-images").attr("src",$("#basePath").val()+obj.zylj00);
+				init();
+			}
+		});	
+	}
+}
+
 function init(){
 	var basePath=$("#basePath").val();	
 	$("#casesdata-form").bind("click",function(){
@@ -12,7 +46,7 @@ function init(){
 			$.ajax( {
 				type : "POST",
 				dataType : "json",
-				url : 'system/addCases.shtml',
+				url : 'system/updateCases.shtml',
 				data:param,
 				success : function(data) {
 					if(data.msg=="error_sys"){

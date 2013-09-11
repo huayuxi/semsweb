@@ -31,13 +31,14 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @param cases 案例
 	 * @return true or false
 	 */
-	public boolean addCases(Cases cases){
+	public Integer addCases(Cases cases){
+		int id=0;
 		try {
-			this.getSession().save(cases);
+			id = (Integer) this.getSession().save(cases);
 		} catch (Exception e) {
-			return false;
+			return id;
 		}
-		return true;
+		return id;
 	}
 	
 	/**

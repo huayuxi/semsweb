@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<base href="<%=basePath%>">
-	<title>智联信通-发布案例</title>
+	<title>智联信通-编辑案例</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
@@ -26,7 +26,7 @@
     <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
 	<script src="<%=basePath%>js/common/uploadify/jquery.uploadify.js" type="text/javascript"></script>
-	<script src="<%=basePath%>js/admin/cases/cases_add.js" type="text/javascript"></script>
+	<script src="<%=basePath%>js/admin/cases/cases_editor.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -107,8 +107,10 @@
           <div class="g-main-box">
             <!--create info-->
             <div class="g-create-info">
-              <h3 class="title">发布案例</h3>
+              <h3 class="title">编辑案例</h3>
               <form id="cases-form">
+              <input type="hidden" id="j-ui-id" name="cases.alid00"/>
+              <input type="hidden" id="j-ui-zyid" name="casesRes.alzyid"/>
               	<div class="container-fluid">
 					<div class="row-fluid">
 						<div class="span7">
@@ -184,7 +186,7 @@
 	           	$("#j-ui-images").next(".input-tip").removeClass("input-tip-warning").addClass("input-tip-success").text("填写正确").fadeIn(100);
 	        }
 		});
-		init();
+		getCasesData();
 	});
   </script>
 </html>

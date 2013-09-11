@@ -6,7 +6,7 @@
 	<display-name>semsweb</display-name>
 	
 	
-	<!-- 用户过滤器
+	<!-- 用户过滤器-->
 	<filter>
 		<filter-name>authFilter</filter-name>
 		<filter-class>com.util.AuthFilter</filter-class>
@@ -16,7 +16,7 @@
 		<url-pattern>*.shtml</url-pattern>
 		<url-pattern>*.jsp</url-pattern>
 	</filter-mapping>
-	 -->
+	 
 	<!-- struts2过滤器 -->
 	<filter>
 		<filter-name>struts2</filter-name>

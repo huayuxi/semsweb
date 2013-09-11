@@ -90,5 +90,26 @@
 			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
 		</action>
 	<!--招聘模块end  -->	
+	<!--案例模块begin  -->
+		<action name="addCases" class="casesAction" method="addCases">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+		
+		<action name="updateCases" class="casesAction" method="updateCases">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+		
+		<action name="deleteCases" class="casesAction" method="deleteCases">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+		
+		<action name="queryCases" class="casesAction" method="queryCases">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+		
+		<action name="queryCasesDetail" class="casesAction" method="queryCasesDetail">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+	<!--案例模块end  -->	
 	</package>
 	</struts>

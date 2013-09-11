@@ -43,6 +43,10 @@ public class ImageUpload extends BaseAction {
 		String savePath = ServletActionContext.getServletContext().getRealPath("");
 		
 		savePath = savePath + "/uploads/";
+		File file=new File(savePath);
+		if(!file.exists()){
+			file.mkdir();
+		}
 		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setCharacterEncoding("utf-8");
 		

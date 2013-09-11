@@ -10,11 +10,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 
 import com.model.Cases;
+import com.model.CasesDetail;
 import com.model.CasesRes;
+import com.model.SysUser;
 import com.service.CasesService;
 import com.util.BaseAction;
 
@@ -29,6 +32,7 @@ public class CasesAction extends BaseAction {
 	private static final long serialVersionUID = 3819397639498069493L;
 	private Cases cases;
 	private CasesRes casesRes;
+	private CasesDetail casesDetail;
 	private CasesService casesService;
 	private List list;
 	private int totalRecords;
@@ -43,6 +47,17 @@ public class CasesAction extends BaseAction {
 	 * @return
 	 */
 	public String addCases() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
+		if(cases!=null&&casesRes!=null){
+			cases.setFbz000(sysUserSession.getYhid00());
+			if (casesService.addCases(cases, casesRes)) {
+				msg = "success";
+			} else {
+				msg = "error_error";
+			}
+		}		
 		return SUCCESS;
 	}
 	
@@ -53,6 +68,17 @@ public class CasesAction extends BaseAction {
 	 * @return
 	 */
 	public String updateCases() {
+		HttpServletRequest req = getRequest();
+		HttpSession session = req.getSession();
+		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
+		if(cases!=null&&casesRes!=null){
+			cases.setFbz000(sysUserSession.getYhid00());
+			if (casesService.updateCases(cases, casesRes)) {
+				msg = "success";
+			} else {
+				msg = "error_error";
+			}
+		}		
 		return SUCCESS;
 	}
 	
@@ -108,7 +134,21 @@ public class CasesAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
-	
+	/**
+	 * @description: 查询案例详情
+	 * @date: 2013-8-28 上午11:13:13
+	 * @author： lintz
+	 * @return
+	 */
+	public String queryCasesDetail() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String alid = req.getParameter("alid00");
+		int alid00=Integer.parseInt(alid);
+		casesDetail = casesService.queryCasesDetail(alid00);
+		if (casesDetail != null)
+			return SUCCESS;
+		return ERROR;
+	}
 	/*------------------------------------set and get menthod-------------------------------*/
 	public Cases getCases() {
 		return cases;
@@ -126,6 +166,14 @@ public class CasesAction extends BaseAction {
 		this.casesRes = casesRes;
 	}
 	
+	public CasesDetail getCasesDetail() {
+		return casesDetail;
+	}
+
+	public void setCasesDetail(CasesDetail casesDetail) {
+		this.casesDetail = casesDetail;
+	}
+
 	public CasesService getCasesService() {
 		return casesService;
 	}
