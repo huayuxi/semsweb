@@ -13,7 +13,6 @@ package com.model;
 public class NewsDetail {
 	private Integer xwid00;
 	private String xwlx00;
-	private String lmlx00;
 	private String xwbt00;
 	private String xwnr00;
 	private Integer xwzz00;
@@ -36,14 +35,6 @@ public class NewsDetail {
 	
 	public void setXwlx00(String xwlx00) {
 		this.xwlx00 = xwlx00;
-	}
-	
-	public String getLmlx00() {
-		return lmlx00;
-	}
-	
-	public void setLmlx00(String lmlx00) {
-		this.lmlx00 = lmlx00;
 	}
 	
 	public String getXwbt00() {

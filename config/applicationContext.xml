@@ -45,8 +45,6 @@
 				<value>classpath:com/model/Cases.hbm.xml</value>
 				<value>classpath:com/model/CasesDetail.hbm.xml</value>
 				<value>classpath:com/model/CasesRes.hbm.xml</value>
-				<value>classpath:com/model/SolutionDetail.hbm.xml</value>
-				<value>classpath:com/model/SolutionRes.hbm.xml</value>
 				<value>classpath:com/model/Solution.hbm.xml</value>
 				<value>classpath:com/model/News.hbm.xml</value>
 				<value>classpath:com/model/NewsContent.hbm.xml</value>
@@ -154,12 +152,6 @@
 		<property name="solutionDao">
 			<ref bean="solutionDao" />
 		</property>
-		<property name="solutionResDao">
-			<ref bean="solutionResDao" />
-		</property>
-		<property name="solutionDetailDao">
-			<ref bean="solutionDetailDao" />
-		</property>
 	</bean>
 	
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
@@ -197,19 +189,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	
-	<bean id="solutionResDao" class="com.dao.impl.SolutionResDaoImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	
-	<bean id="solutionDetailDao" class="com.dao.impl.SolutionDetailDaoImpl">
-		<property name="sessionFactory">
-			<ref bean="sessionFactory" />
-		</property>
-	</bean>
-	
+		
 	<bean id="newsDao" class="com.dao.impl.NewsDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />

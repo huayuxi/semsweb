@@ -25,18 +25,16 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
 	 * @description: 新增解决方案
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param solution
-	 *            解决方案
+	 * @param solution 解决方案
 	 * @return 解决方案
 	 */
-	public Integer addSolution(Solution solution) {
-		int id = 0;
+	public boolean addSolution(Solution solution) {
 		try {
-			id = (Integer) this.getSession().save(solution);
+			this.getSession().save(solution);
 		} catch (Exception e) {
-			return id;
+			return false;
 		}
-		return id;
+		return true;
 	}
 
 	/**
@@ -77,14 +75,14 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
 	 * @description: 根据解决方案ID查询解决方案
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
-	 * @param faid00
+	 * @param jjfaid
 	 *            解决方案ID
 	 * @return 解决方案
 	 */
-	public Solution querySolution(int faid00) {
+	public Solution querySolution(int jjfaid) {
 		Query query = this.getSession().createQuery(
-				"from Solution where faid00=?");
-		query.setLong(0, faid00);
+				"from Solution where jjfaid=?");
+		query.setLong(0, jjfaid);
 		List<Solution> list = query.list();
 		return list.size() == 0 ? null : list.get(0);
 	}

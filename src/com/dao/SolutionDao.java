@@ -24,7 +24,7 @@ public interface SolutionDao {
 	 * @param solution 解决方案
 	 * @return 解决方案
 	 */
-	public Integer addSolution(Solution solution);
+	public boolean addSolution(Solution solution);
 	
 	/**
 	 * @description: 删除解决方案
@@ -48,10 +48,10 @@ public interface SolutionDao {
 	 * @description: 根据解决方案ID查询解决方案
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
-	 * @param faid00 解决方案ID
+	 * @param jjfaid 解决方案ID
 	 * @return 解决方案
 	 */
-	public Solution querySolution(int faid00);
+	public Solution querySolution(int jjfaid);
 	
 	/**
 	 * @description:查询全部解决方案

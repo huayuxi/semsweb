@@ -15,7 +15,6 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 
 import com.model.Solution;
-import com.model.SolutionRes;
 import com.model.SysUser;
 import com.service.SolutionService;
 import com.util.BaseAction;
@@ -30,7 +29,6 @@ public class SolutionAction extends BaseAction {
 
 	private static final long serialVersionUID = -7725068953723892865L;
 	private Solution solution;
-	private SolutionRes solutionRes;
 	private SolutionService solutionService;
 	private List list;
 	private int totalRecords;
@@ -48,9 +46,9 @@ public class SolutionAction extends BaseAction {
 		HttpServletRequest req = getRequest();
 		HttpSession session = req.getSession();
 		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
-		if (solution != null && solutionRes != null) {
+		if (solution != null) {
 			solution.setFbz000(sysUserSession.getYhid00());
-			if (solutionService.addSolution(solution, solutionRes)) {
+			if (solutionService.addSolution(solution)){
 				msg = "success";
 			} else {
 				msg = "error_error";
@@ -79,9 +77,9 @@ public class SolutionAction extends BaseAction {
 		HttpServletRequest req = getRequest();
 		HttpSession session = req.getSession();
 		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
-		if (solution != null && solutionRes != null) {
+		if (solution != null) {
 			solution.setFbz000(sysUserSession.getYhid00());
-			if (solutionService.updateSolution(solution, solutionRes)) {
+			if (solutionService.updateSolution(solution)) {
 				msg = "success";
 			} else {
 				msg = "error_error";
@@ -119,7 +117,20 @@ public class SolutionAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
-
+	/**
+	 * @description: 查询案例详情
+	 * @date: 2013-8-28 上午11:13:13
+	 * @author： lintz
+	 * @return
+	 */
+	public String querySolutionDetail() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String jjfaid = req.getParameter("jjfaid");
+		solution = solutionService.querySolution(Integer.parseInt(jjfaid));
+		if (solution != null)
+			return SUCCESS;
+		return ERROR;
+	}
 	/*------------------------------------set and get menthod-------------------------------*/
 	public Solution getSolution() {
 		return solution;
@@ -127,14 +138,6 @@ public class SolutionAction extends BaseAction {
 
 	public void setSolution(Solution solution) {
 		this.solution = solution;
-	}
-
-	public SolutionRes getSolutionRes() {
-		return solutionRes;
-	}
-
-	public void setSolutionRes(SolutionRes solutionRes) {
-		this.solutionRes = solutionRes;
 	}
 
 	public SolutionService getSolutionService() {

@@ -28,7 +28,7 @@ function getData(pageNo){
 								"<a href=\""+
 								$("#basePath").val()+"pages/front/solution/solution_detail.jsp?jjfaid="+n.jjfaid
 								+"\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
-								n.almc00
+								n.famc00
 								+"</a></label></td><td><span class=\"g-col-org\">" +
 								n.fbz000
 								+"</span></td><td><span class=\"g-col-grn\">" +

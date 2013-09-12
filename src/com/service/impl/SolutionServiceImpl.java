@@ -7,11 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.dao.SolutionDao;
-import com.dao.SolutionDetailDao;
-import com.dao.SolutionResDao;
 import com.model.Solution;
-import com.model.SolutionDetail;
-import com.model.SolutionRes;
 import com.service.SolutionService;
 
 /**
@@ -22,20 +18,15 @@ import com.service.SolutionService;
 @SuppressWarnings("rawtypes")
 public class SolutionServiceImpl implements SolutionService{
 	private SolutionDao solutionDao;
-	private SolutionResDao solutionResDao;
-	private SolutionDetailDao solutionDetailDao;
 	/**
 	 * @description: 新增解决方案
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
 	 * @param solution 解决方案
-	 * @param solutionRes 解决方案资源
 	 * @return true or false
 	 */
-	public boolean addSolution(Solution solution,SolutionRes solutionRes){
-		Integer jjfaid = solutionDao.addSolution(solution);
-		solutionRes.setJjfaid(jjfaid);
-		return solutionResDao.addSolutionRes(solutionRes);
+	public boolean addSolution(Solution solution){
+		return solutionDao.addSolution(solution);
 	}
 	
 	/**
@@ -46,9 +37,7 @@ public class SolutionServiceImpl implements SolutionService{
 	 * @return true or false
 	 */
 	public boolean delSolution(Solution solution){
-		SolutionRes solutionRes =new SolutionRes();
-		solutionRes.setJjfaid(solution.getJjfaid());
-		return solutionDao.delSolution(solution)&&solutionResDao.delSolutionRes(solutionRes);
+		return solutionDao.delSolution(solution);
 	}
 	
 	/**
@@ -56,33 +45,21 @@ public class SolutionServiceImpl implements SolutionService{
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
 	 * @param solution 解决方案
-	 * @param solutionRes 解决方案资源
 	 * @return true or false
 	 */
-	public boolean updateSolution(Solution solution,SolutionRes solutionRes){
-		return solutionDao.updateSolution(solution)&&solutionResDao.updateSolutionRes(solutionRes);
+	public boolean updateSolution(Solution solution){
+		return solutionDao.updateSolution(solution);
 	}
 	
 	/**
 	 * @description: 根据解决方案ID查询解决方案
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
-	 * @param faid00 解决方案ID
+	 * @param jjfaid 解决方案ID
 	 * @return 解决方案
 	 */
-	public Solution querySolution(int faid00){
-		return solutionDao.querySolution(faid00);
-	}
-	
-	/**
-	 * @description: 根据解决方案ID查询解决方案详情
-	 * @date: 2013-8-23 下午5:00:51
-	 * @author： lintz
-	 * @param jjfaid 解决方案ID
-	 * @return 解决方案详情
-	 */
-	public SolutionDetail querySolutionDetail(int jjfaid){
-		return solutionDetailDao.querySolutionDetail(jjfaid);
+	public Solution querySolution(int jjfaid){
+		return solutionDao.querySolution(jjfaid);
 	}
 	
 	/**
@@ -116,23 +93,5 @@ public class SolutionServiceImpl implements SolutionService{
 
 	public void setSolutionDao(SolutionDao solutionDao) {
 		this.solutionDao = solutionDao;
-	}
-
-	public SolutionResDao getSolutionResDao() {
-		return solutionResDao;
-	}
-
-	public void setSolutionResDao(SolutionResDao solutionResDao) {
-		this.solutionResDao = solutionResDao;
-	}
-
-	public SolutionDetailDao getSolutionDetailDao() {
-		return solutionDetailDao;
-	}
-
-	public void setSolutionDetailDao(SolutionDetailDao solutionDetailDao) {
-		this.solutionDetailDao = solutionDetailDao;
-	}
-
-	
+	}	
 }

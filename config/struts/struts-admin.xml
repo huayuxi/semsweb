@@ -112,7 +112,7 @@
 		</action>
 	<!--案例模块end  -->	
 	<!--解决方案模块begin  -->
-		<action name="addSolutin" class="solutionAction" method="addSolutin">
+		<action name="addSolution" class="solutionAction" method="addSolution">
 			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
 		</action>
 		
@@ -127,9 +127,8 @@
 		<action name="querySolution" class="solutionAction" method="querySolution">
 			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
 		</action>
-		
 		<action name="querySolutionDetail" class="solutionAction" method="querySolutionDetail">
-			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+			<result name="success" type="json"><param name="excludeProperties">solutionService,list,msg</param></result>
 		</action>
 	<!--解决方案模块end  -->	
 	</package>
