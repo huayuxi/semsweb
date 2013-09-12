@@ -84,4 +84,23 @@ public interface CasesService {
 	 * @return 统计数
 	 */
 	public int countCases(Map properties);	
+	/**
+	 * @description:查询全部案例详情
+	 * @date: 2013-8-23 下午5:03:52
+	 * @author： lintz
+	 * @param properties 条件
+	 * @param pageNo 页数
+	 * @param pageSize 每页记录数
+	 * @return 全部案例详情
+	 */
+    public List<CasesDetail> queryCasesDetail(Map properties, int pageNo, int pageSize);
+	
+	/**
+	 * @description:统计全部案例详情
+	 * @date: 2013-8-28 上午10:21:09
+	 * @author： lintz
+	 * @param properties 条件
+	 * @return 统计数
+	 */
+	public int countCasesDetail(Map properties);
 }

@@ -12,7 +12,7 @@
 			<result name="success" type="json"><param name="excludeProperties">newsService,list,msg,totalRecords,pageSize,pageNo</param></result>
 		</action>
 	<!--新闻模块end  -->
-		<!--招聘模块begin  -->		
+	<!--招聘模块begin  -->		
 		<action name="queryJob" class="jobAction" method="queryJob">
 			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
 		</action>
@@ -20,6 +20,26 @@
 		<action name="queryJobDetail" class="jobAction" method="queryJobDetail">
 			<result name="success" type="json"><param name="excludeProperties">jobService</param></result>
 		</action>
-	<!--招聘模块end  -->		
+	<!--招聘模块end  -->	
+	<!--解决方案模块begin  -->
+		<action name="querySolution" class="solutionAction" method="querySolution">
+			<result name="success" type="json"><param name="excludeProperties">solutionService</param></result>
+		</action>
+		<action name="querySolutionDetail" class="solutionAction" method="querySolutionDetail">
+			<result name="success" type="json"><param name="excludeProperties">solutionService,list,msg</param></result>
+		</action>
+	<!--解决方案模块end  -->
+	<!--案例模块begin  -->
+		<action name="queryCases" class="casesAction" method="queryCases">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+		
+		<action name="queryCasesDetailList" class="casesAction" method="queryCasesDetailList">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+		<action name="queryCasesDetail" class="casesAction" method="queryCasesDetail">
+			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
+		</action>
+	<!--案例模块end  -->		
 	</package>
 	</struts>

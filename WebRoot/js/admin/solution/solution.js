@@ -26,7 +26,7 @@ function getData(pageNo){
 						div=div+"<tr class=\"g-app-row\"><td><label class=\"g-ad-title\">" +
 								"<input class=\"g-checkbox\" type=\"checkbox\">" +
 								"<a href=\""+
-								$("#basePath").val()+"pages/front/solution/solution_detail.jsp?jjfaid="+n.jjfaid
+								$("#basePath").val()+"pages/front/solution/solution.jsp?jjfaid="+n.jjfaid
 								+"\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
 								n.famc00
 								+"</a></label></td><td><span class=\"g-col-org\">" +

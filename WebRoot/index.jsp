@@ -14,7 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="<%=basePath%>js/common/jquery.slideBox/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.min.js" type="text/javascript"></script>
-<script>
+<script type="text/javascript">
 jQuery(function($){
 	$('#ad img').attr("width",$(document).width());
 	$('#ad').slideBox({
@@ -36,7 +36,7 @@ jQuery(function($){
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="#">智联信通</a></div>
+    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -86,20 +86,16 @@ jQuery(function($){
                 <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
                 <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
                 <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-				<p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
             </div>
         </div>
         <div class="video_media">
         	<div class="content">
-        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="682" height="423"> 
+        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="682" height="300"> 
 				<param name="movie" value="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" /> 
 				<!--[if !IE]>--> 
 				<object type="application/x-shockwave-flash" 
 				data="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" 
-				width="682" height="423"> 
+				width="682" height="300"> 
 				<!--<![endif]--> 
 				<p>Alternative content</p> 
 				<!--[if !IE]>--> 
@@ -114,10 +110,10 @@ jQuery(function($){
 <div class="demo-mode">
 	<div class="bound">
     	<ul>
-        	<li><a href="#"><img src="images/tunnelsystem.gif"  /><span>隧道系统演示</span></a></li>
-            <li><a href="#"><img src="images/landscapesystems.gif"  /><span>隧道系统演示</span></a></li>
-            <li><a href="#"><img src="images/solarsystem.gif"  /><span>隧道系统演示</span></a></li>
-            <li><a href="#"><img src="images/streetlightingsystem.gif"  /><span>隧道系统演示</span></a></li>
+        	<li><a href="javascript:void(0)"><img src="images/tunnelsystem.gif"  /><span>隧道系统演示</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/landscapesystems.gif"  /><span>隧道系统演示</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/solarsystem.gif"  /><span>隧道系统演示</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/streetlightingsystem.gif"  /><span>隧道系统演示</span></a></li>
         </ul>
     </div>
 </div>

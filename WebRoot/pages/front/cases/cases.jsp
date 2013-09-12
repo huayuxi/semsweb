@@ -17,10 +17,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
+<link href="<%=basePath%>js/common/pagination/pagination.css" rel="stylesheet" />
+
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/common/pagination/jquery.pagination-front.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/front/cases/cases.js" type="text/javascript"></script>
 
 </head>
   
   <body>
+      <input type="hidden" value="<%=basePath%>" id="basePath"/>
     <div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -28,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="#">智联信通</a></div>
+    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -77,76 +83,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </div>
                         <span class="r noprint">
                         	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-<span id="bdshare" class="bdshare_b"></span>
+							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
-                    <span style="display:none" class="detail-more">			                    </span>
-                   <div class="new_content">
-                   		<div class="case_item">
-                            <div class="case_item_left">
-                            <img width="219" height="162" src="images/case_001.gif">
-                            </div>
-                            <div class="case_item_right">
-                            <p>
-                            <strong>
-                            <a href="case/case_detail.html">重点案例之甘肃兰州隧道LED灯智能控制项目</a>
-                            </strong>
-                            </p>
-                            <p>
-                            <strong>项目背景：</strong>
-                            </p>
-                            <p>采古隧道等五条隧道建设项目隶属于甘肃省重点项目-宕迭项目。</p>
-                            <p>甘肃省政府意将把宕迭项目的交通道路修成一条真正意义上资源节</p>
-                            <p>约型、环境友好型的生态环保路。</p>
-                            </div>
-                      </div>
-                      <div class="case_item">
-                            <div class="case_item_left">
-                            <img width="219" height="162" src="images/case_002.gif">
-                            </div>
-                            <div class="case_item_right">
-                            <p>
-                            <strong>
-                            <a href="#">重点案例之青海西宁全城景观亮化智能控制项目</a>
-                            </strong>
-                            </p>
-                            <p>
-                            <strong>项目背景：</strong>
-                            </p>
-                           <p>青海西宁已建成的景观亮化项目有效提升了城市美观形象度，但同时</p>
-<p>在运行中，由于缺乏智能化的管理系统，出现了不能集中管理、能源</p>
-<p>浪费、光污染等现象。</p>
-                          </div>
-                      </div>
-                      <div class="case_item">
-                            <div class="case_item_left">
-                            <img width="219" height="162" src="images/case_003.gif">
-                            </div>
-                            <div class="case_item_right">
-                            <p>
-                            <strong>
-                            <a href="#">土耳其伊斯坦布尔单灯控制项目，2000盏钠灯，4000盏LED</a>
-                            </strong>
-                            </p>
-                            <p>
-                            <strong>项目背景：</strong>
-                            </p>
-                            <p>福建省城市道路照明节能改造示范工程，采用LED路灯配合最</p>
-<p>新一代单灯智能控制系统，以合同能源管理模式，不仅实现政府零</p>
-<p>投入，还实现了节能盈利。</p>
-<p></p>
-                            </div>
-                      </div>	 
-                   <div class="clear"></div> 
+                    <span style="display:none" class="detail-more"></span>
+                   <div class="product_content" > 
+                   	<div id="cases_list"></div>
+                   	<div class="clear"></div> 
                    </div>
                 <!--end detail-->
-                 <div class="pager">
-                    	<span class="active">1</span>
-                            <a class="ablue num" href="#">2</a>
-                            <a class="ablue num" href="#">3</a>
-                            <a class="ablue" href="#">..</a>
-                            <a class="ablue" href="#">下一页</a>
-                  </div>
+                <div class="pager pagination"  id="Pagination"></div>
             </div>
 			<!--end right_news-->
             <div class="clear"></div>

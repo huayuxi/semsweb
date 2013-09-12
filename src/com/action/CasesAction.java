@@ -149,6 +149,35 @@ public class CasesAction extends BaseAction {
 			return SUCCESS;
 		return ERROR;
 	}
+	/**
+	 * @description: 查询案例详情
+	 * @date: 2013-8-28 上午11:13:13
+	 * @author： lintz
+	 * @return
+	 */
+	public String queryCasesDetailList() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String pageindex = req.getParameter("pageNo");
+		String pagesize = req.getParameter("pageSize");
+		Map properties = req.getParameterMap();
+		if (pageindex != null && !pageindex.equals("")) {
+			pageNo = Integer.valueOf(pageindex).intValue();
+		} else {
+			pageNo = 1;
+		}
+		if (pagesize != null && !pagesize.equals("")) {
+			pageSize = Integer.valueOf(pagesize).intValue();
+		} else {
+			pageSize = 10;
+		}
+		totalRecords = this.casesService.countCasesDetail(properties);
+		if (totalRecords != 0) {
+			list = casesService.queryCasesDetail(properties, pageNo, pageSize);
+		} else {
+			list = new ArrayList();
+		}
+		return SUCCESS;
+	}
 	/*------------------------------------set and get menthod-------------------------------*/
 	public Cases getCases() {
 		return cases;

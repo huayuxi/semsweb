@@ -835,6 +835,7 @@ a:hover {
    font-size: 12px; 
    line-height: 22px; 
    }
+   
 .main .right .detail .hd{ 
   line-height: 32px; 
   }
@@ -1016,7 +1017,6 @@ a:hover {
 .pic{ width:128px; height:128px; margin:8px auto;}
 .box h2{ text-align:center; color:#5e5e5e;} 
 .detail{ height:100px;}
-
 .divcenter{ width:500px; margin:0 auto;}
 /**-----product page------*/
 .product_ul .content { position: absolute; z-index: 1000; color: #fff; top: 50px; left: 0px; }
@@ -1194,25 +1194,25 @@ input.submitbutton {
 
 
 /*case css*/
-.case_item{ width:780px;}
-.case_item p{ width:700px;}
-.case_item{ _width:700px;}
-.case_item_left{ width:230px; height:161px; float:left;}
-.case_item_right{ width:480px; height:161px; float:right;}
-.case_item_right{ _width:470px; height:161px; float:right;}
-.case_item_right p{ text-indent:2em; margin:8px 0; font-size:13px; color:#707070;}
+.case_item{ width:710px; overflow:hidden;}
+.case_item{ _width:700px; overflow:hidden;}
+.case_item_left{ width:230px; float:left;}
+.case_item_right{ width:475px; float:left;}
+.case_item_right{ _width:450px; float:left;}
+.case_item_right p{ text-indent:2em; margin:8px 0; font-size:13px;}
 .contact_item { background:url(images/contact_linebg.gif) repeat-x; height:30px; line-height:30px;  margin-top:30px;}
 .contact_item h2{text-align:left;font-size:13px; font-weight:700; line-height:30px; padding-top:5px; }
 
 
-.product_item{ width:710px; overflow:hidden; margin:20px 0; height:250px; border:1px solid #e6e9ed;}
-.product_item{ _width:700px; overflow:hidden; margin:20px 0; height:230px; border:1px solid #e6e9ed;}
-.product_item_left{ width:450px; float:left; margin-left:20px;}
-.product_item_left{ width:450px; float:left; _margin-left:10px;}
-.product_item_right{ width:240px; float:right;height:230px;overflow:hidden; }
-.product_item_right{ _width:230px; float:right; height:230px; overflow:hidden;}
-.product_item_right p{ margin:8px 0; font-size:12px; color:#707070;}
-.product_item_right .solutions{ font-size:16px;}
+
+.product_item{ width:700px; overflow:hidden; margin:20px 0; height:250px; border:1px solid #e6e9ed;}
+.product_item{ _width:698px; margin:20px 0; height:230px; border:1px solid #e6e9ed;}
+.product_item_l{ width:450px; float:left; margin-left:20px;}
+.product_item_l{ width:450px; float:left; _margin-left:10px;}
+.product_item_r{ width:230px; float:left;height:230px;overflow:hidden; }
+.product_item_r{ _width:225px; float:left; height:230px; overflow:hidden;}
+.product_item_r p{ margin:8px 0; font-size:12px; color:#707070; text-align:left;}
+.product_item_r .solutions{ font-size:16px;}
 
 
 .contentarea ul li a{ color:#000000;}

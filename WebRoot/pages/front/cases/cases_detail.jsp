@@ -17,10 +17,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
-
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/front/cases/cases_detail.js" type="text/javascript"></script>
 </head>
   
   <body>
+     <input type="hidden" value="<%=basePath%>" id="basePath"/>
 <div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -79,36 +81,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                    <div class="new_content">
                    		<div class="case_item">
                            	<div class="case_item_left">
-                                <img width="219" height="162" src="../images/case_001.gif">
+                                <img width="219" height="162" id="j-images">
                                 </div>
                                 <div class="case_item_right">
                                 <p>
                                 <strong>
-                                <a href="case10.html">重点案例之广深高速单灯智能控制项目</a>
+                                <a href="javascript:viod(0)" id="j-ui-name"></a>
                                 </strong>
                                 </p>
                                 <p>
                                 <strong>项目背景：</strong>
                                 </p>
-                                <p>广深高速全长122.8公里，全封闭、全立交，全线设有路灯照明。</p>
-                                <p>作为国内较为先进的高速公路，经历了三代照明控制系统的变更，</p>
-                                <p>目前采用的是由我司提供的第四代单灯智能控制系统方案，是目前</p>
-                                <p>全世界具备最先进照明监控科技的高速公路项目。</p>
+                                <p id="j-ui-bj"></p>
                                 <p>
                                 <strong>项目规模：</strong>
                                 </p>
-                                <p>全程7000多盏路灯，均采用智联信通单灯控制器及集中控制器。</p>
+                                <p id="j-ui-gm"></p>
                                 <p>
                                 <strong>项目成效：</strong>
                                 </p>
-                                <p>该项目为高速公路照明节能改造项目，采用了由智联信通提供的</p>
-                                <p>单灯控制系统方案后，达到了如下成效——</p>
-                                <p>1、 节能环保。实现按需照明，节省30%的照明用电，创造城市</p>
-                                <p>2、 便捷维护。单灯故障报警，免人工巡线，节省维护成本，提高</p>
-                                <p>运维效率。</p>
-                                <p>3、 安全防护。线路破损或设施被盗即时报警，防止出现财产损失</p>
-                                <p>4、智慧管理。采用监控中心、平板电脑及手机即可随时随地对每盏 </p>
-                                <p>灯进行监控管理；</p>
+                                <p id="j-ui-cx"></p>
                                 <p></p>
                                 <p></p>
                             </div> 

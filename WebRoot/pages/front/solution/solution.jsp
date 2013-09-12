@@ -17,10 +17,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
-
+<script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/front/solution/solution.js" type="text/javascript"></script>
+<style type="">
+	#solution_data img{
+		  margin:auto; 
+	}
+</style>
 </head>
   
-  <body>
+<body>
+    <input type="hidden" value="<%=basePath%>" id="basePath"/>
    <div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -49,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main">
     	<div class="content-wrapper">
         	<div class="content">
-                <ul class="menus solution_ul">
+                <ul class="menus solution_ul" id="solution_list">
                 	<li class="menu active">
                     	<a href="case.html">行业能耗动态监测</a>
                     </li>
@@ -70,81 +77,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>解决方案>行业能耗动态监测解决方案</div>
-                <div id="about-title1" class="title">行业能耗动态监测解决方案</div>
-                <div class="line1"></div>
-                <div class="detail">
-                	<div class="share">
-                    	<div class="print-btn">
-                        	<a class="blue noprint" onclick="window.print();" href="javascript:void(0);"><span></span>打印</a>
-                        </div>
-                        <div class="share-btn">
-                        	<a class="blue noprint shareto_button" href="javascript:void(0);"><span></span>分享</a>
-                        </div>
-                        <span class="r noprint">
-                        	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-<span id="bdshare" class="bdshare_b"></span>
-                        </span>
-                    </div>
-                    <span style="display:none" class="detail-more">			                    </span>
-                   <div class="new_content">
-                   		<div class="case_item">
-                            <div class="case_item_left">
-                            <img width="219" height="162" src="images/solutions_001.gif">
-                            </div>
-                            <div class="case_item_right">
-                            <p>
-                            <strong class="solutions">SEMS智能照明监控系统与LED等高效照明产品对接,将是解决</strong>
-                            </p>
-                            <p>
-                            <strong class="solutions">照明节能的最优方案</strong>
-                            </p>
-                            <br>
-                            <p>系统更侧重于远程组网开闭控制、自动或人工干预远程多级调光、灵活组</p>
-                            <p>合亮灯、远程监控与维护。</p>
-                            </div>
-                          </div>
-                          <div class="case_item">
-                            <div class="case_item_left">
-                            <img width="219" height="162" src="images/solutions_002.gif">
-                            </div>
-                            <div class="case_item_right">
-                            <p>
-                            <strong class="solutions">SEMS智能照明监控系统基于电力线载波通信技术,更利于在隧道</strong>
-                            </p>
-                            <p>
-                            <strong class="solutions">等特殊环境下进行照明控制</strong>
-                            </p>
-                            <br>
-                            <p>系统更侧重于黑灯检测以保证亮灯率,通过传感器技术判断车流状况以确定亮灯</p>
-                            <p>比例或调光控制。</p>
-                            </div>
-                          </div>
-                          <div class="case_item">
-                            <div class="case_item_left">
-                            <img width="219" height="162" src="images/solutions_003.gif">
-                            </div>
-                            <div class="case_item_right">
-                            <p>
-                            <strong class="solutions">SEMS智能照明监控系统对于码头、货场等使用大功率照明的场</strong>
-                            </p>
-                            <p>
-                            <strong class="solutions">所更能提供最佳的指向性照明要求</strong>
-                            </p>
-                            <br>
-                            <p>系统更侧重于通过单灯控制与作业区域的联动来保证最佳的指向性照明,既保证</p>
-                            <p>最佳工作照度,又能可靠、低投入的实现节能目的。</p>
-                            </div>
-                          </div>
-                    </div>	 
-                   <div class="clear"></div> 
-                    <div class="pager">
-                    	<span class="active">1</span>
-                            <a class="ablue num" href="#">2</a>
-                            <a class="ablue num" href="#">3</a>
-                            <a class="ablue" href="#">..</a>
-                            <a class="ablue" href="#">下一页</a>
-                  </div>
+                	<a class="blue" href="<%=basePath%>">首页</a>>解决方案><span id="about_logo_title"></span></div>
+                	<div id="about-title1" class="title"></div>
+                	<div class="line1"></div>
+                	<div class="detail">
+	                	<div class="share">
+	                    	<div class="print-btn">
+	                        	<a class="blue noprint" onclick="window.print();" href="javascript:void(0);"><span></span>打印</a>
+	                        </div>
+	                        <div class="share-btn">
+	                        	<a class="blue noprint shareto_button" href="javascript:void(0);"><span></span>分享</a>
+	                        </div>
+	                        <span class="r noprint">
+	                        	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);"></a>
+								<span id="bdshare" class="bdshare_b"></span>
+	                        </span>
+	                    </div>
+	                    <span style="display:none" class="detail-more"></span>
+	                   	<div id="solution_data"></div> 
+	                   <div class="clear"></div> 
                    </div>
                 <!--end detail-->
                 
