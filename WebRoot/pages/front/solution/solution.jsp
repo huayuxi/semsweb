@@ -57,21 +57,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div class="content-wrapper">
         	<div class="content">
                 <ul class="menus solution_ul" id="solution_list">
-                	<li class="menu active">
-                    	<a href="case.html">行业能耗动态监测</a>
-                    </li>
-                    <li class="menu">
-                    	<a href="case.html">LED远程智能监控</a>
-                    </li>
-                    <li class="menu">
-                    	<a href="case.html">回路控制方案</a>
-                    </li>
-                    <li class="menu">
-                    	<a href="case.html">太阳能LED路灯监控</a>
-                    </li>
-                    <li class="menu">
-                    	<a href="case.html">水泵房远程管理监控</a>
-                    </li>
                 </ul>
             </div>
             <div class="right product">

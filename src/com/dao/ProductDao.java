@@ -21,28 +21,28 @@ public interface ProductDao {
 	 * @description: 新增产品
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param Product 产品
-	 * @return true or false
+	 * @param product 产品
+	 * @return 产品ID
 	 */
-	public boolean addProduct(Product Product);
+	public Integer addProduct(Product product);
 	
 	/**
 	 * @description: 删除产品
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param Product 产品
+	 * @param product 产品
 	 * @return true or false
 	 */
-	public boolean delProduct(Product Product);
+	public boolean delProduct(Product product);
 	
 	/**
 	 * @description: 更新产品
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param Product 产品
+	 * @param product 产品
 	 * @return true or false
 	 */
-	public boolean updateProduct(Product Product);
+	public boolean updateProduct(Product product);
 	
 	
 	/**

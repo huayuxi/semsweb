@@ -51,6 +51,7 @@
 				<value>classpath:com/model/NewsDetail.hbm.xml</value>
 				<value>classpath:com/model/Product.hbm.xml</value>
 				<value>classpath:com/model/ProductRes.hbm.xml</value>
+				<value>classpath:com/model/ProductContent.hbm.xml</value>
 				<value>classpath:com/model/SysCode.hbm.xml</value>
 			</list>
 		</property>
@@ -93,6 +94,12 @@
 		</property>
 	</bean>
 	
+	<bean id="productAction" class="com.action.ProductAction">
+		<property name="productService">
+			<ref bean="productService" />
+		</property>
+	</bean>
+	
 	<bean id="jobAction" class="com.action.JobAction">
 		<property name="jobService">
 			<ref bean="jobService" />
@@ -127,6 +134,17 @@
 		</property>
 		<property name="newsDetailDao">
 			<ref bean="newsDetailDao" />
+		</property>
+	</bean>
+	<bean id="productService" class="com.service.impl.ProductServiceImpl">
+		<property name="productDao">
+			<ref bean="productDao" />
+		</property>
+		<property name="productResDao">
+			<ref bean="productResDao" />
+		</property>
+		<property name="productContentDao">
+			<ref bean="productContentDao" />
 		</property>
 	</bean>
 	
@@ -189,7 +207,25 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-		
+	
+	<bean id="productDao" class="com.dao.impl.ProductDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="productResDao" class="com.dao.impl.ProductResDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	
+	<bean id="productContentDao" class="com.dao.impl.ProductContentDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
 	<bean id="newsDao" class="com.dao.impl.NewsDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />

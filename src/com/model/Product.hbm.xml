@@ -20,5 +20,30 @@
                 <comment>产品类型</comment>
             </column>
         </property>
+          <property name="cplm00" type="java.lang.String">
+            <column name="cplm00" length="6">
+                <comment>产品栏目</comment>
+            </column>
+        </property>
+                <property name="fbsj00" type="java.lang.String">
+            <column name="fbsj00" length="14">
+                <comment>发布时间</comment>
+            </column>
+        </property>
+        <property name="gxsj00" type="java.lang.String">
+            <column name="gxsj00" length="14">
+                <comment>更新时间</comment>
+            </column>
+        </property>
+        <property name="llsl00" type="java.lang.Integer">
+            <column name="llsl00">
+                <comment>浏览数量</comment>
+            </column>
+        </property>
+        <property name="pxqz00" type="java.lang.Integer">
+            <column name="pxqz00">
+                <comment>排序权值</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

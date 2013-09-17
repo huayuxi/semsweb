@@ -13,16 +13,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
 <link href="<%=basePath%>js/common/jquery.slideBox/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
-<script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.js" type="text/javascript"></script>
 <script type="text/javascript">
 jQuery(function($){
-	$('#ad img').attr("width",$(document).width());
+	//$('#ad img').attr("width",$(document).width());
 	$('#ad').slideBox({
-		duration :1,//滚动持续时间，单位：秒
 		easing : 'linear',//swing,linear//滚动特效
-		delay : 1,//滚动延迟时间，单位：秒
-		hideClickBar : false,//不自动隐藏点选按键
-		clickBarRadius : 10
+		delay : 5,//滚动延迟时间，单位：秒
+		hideBottomBar : true//隐藏底栏
 	});
 });
 </script>
@@ -56,10 +54,10 @@ jQuery(function($){
 <div class="pcList">
 	<div class="slideBox" id="ad">
     	<ul class="items">
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/1.jpg"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/3.jpg"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/4.jpg"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/1.jpg" style="left: -252px;position: relative;"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg" style="left: -252px;position: relative;"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/3.jpg" style="left: -252px;position: relative;"></a></li>
+    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/4.jpg" style="left: -252px;position: relative;"></a></li>
   		</ul>
     </div>	
 </div>

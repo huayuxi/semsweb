@@ -1,4 +1,11 @@
 $(function() {
+	document.onkeydown = function(e){ 
+	    var ev = document.all ? window.event : e;
+	    if(ev.keyCode==13) {
+	    	$("#login-form").click();
+	     }
+	}
+	
 	var COOKIE_NAME = 'username';
 	var basePath=$("#basePath").val();
 	if ($.cookie(COOKIE_NAME)) {

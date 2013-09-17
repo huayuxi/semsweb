@@ -22,7 +22,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="<%=basePath%>bootstrap/css/custom.css" rel="stylesheet" media="screen">
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
-    <script src="<%=basePath%>bootstrap/js/action.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/common/pagination/jquery.pagination.js" type="text/javascript"></script>
+    <script src="<%=basePath%>js/admin/product/product.js" type="text/javascript"></script>
   </head>
   
   <body>
@@ -103,198 +104,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <div class="g-main-box">
             <!--action panel-->
             <div class="g-action-panel">
-              <a href="news_add.html" class="btn btn-success pull-right" type="button">发布新品</a>
+              <a href="<%=basePath%>pages/admin/product/product_add.jsp" class="btn btn-success pull-right" type="button">发布新品</a>
               <button class="btn btn-danger" type="button">批量删除</button>
             </div>
             <!--/action panel-->
             <!--table-->
-            <table class="table g-table">
-              <thead>
-                <tr>
-                  <th class="g-tl" width="40%">
-					<input class="g-checkbox" id="j-ad-all" type="checkbox">新闻标题
-				  </th> 
-				  <th width="10%">新闻栏目</th>
-				  <th width="10%">排序号</th>
-                  <th width="10%">发布者</th>
-                  <th width="20%">发布时间</th>
-				  <th width="10%">相关操作</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-                        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-				        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-				        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-				        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-				        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-				        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td><a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a></td>
-                </tr>
-				        <tr class="g-app-row">
-                  <td>
-                    <label class="g-ad-title">
-                      <input class="g-checkbox" type="checkbox">
-                      <a href="news_detail.html">
-						<img class="g-appimg" src="bootstrap/img/new.gif">
-						智联信通盛大亮相2013广州光亚展（全球最大照明展）
-					  </a>
-                    </label>
-                  </td>
-                  <td>
-					公司新闻
-				  </td>
-                  <td>999</td>
-                  <td><span class="g-col-org">超级管理员</span></td>
-                  <td><span class="g-col-grn">2013-08-29</span></td>
-				  <td>
-					<a href="">编辑</a>&nbsp;|&nbsp;<a href="">删除</a>
-				  </td>
-                </tr>
-              </tbody>
-            </table>
+            <table class="table g-table" id="product_list"></table>
             <!--/table-->
             <!--page-->
             <div class="pagination pagination-centered">
-              <ul>
-                <li class="disabled">
-                  <a href="#">上一页</a>
-                </li>
-                <li class="active">
-                  <a href="#">1</a>
-                </li>
-                <li>
-                  <a href="#">2</a>
-                </li>
-                <li>
-                  <a href="#">3</a>
-                </li>
-                <li>
-                  <a href="#">4</a>
-                </li>
-                <li>
-                  <a href="#">5</a>
-                </li>
-                <li>
-                  <a href="#">下一页</a>
-                </li>
+              <ul id="Pagination">
               </ul>
             </div>
             <!--/page-->

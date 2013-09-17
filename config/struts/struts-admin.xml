@@ -131,5 +131,26 @@
 			<result name="success" type="json"><param name="excludeProperties">solutionService,list,msg</param></result>
 		</action>
 	<!--解决方案模块end  -->	
+	<!--产品模块begin  -->
+		<action name="addProduct" class="productAction" method="addProduct">
+			<result name="success" type="json"><param name="excludeProperties">productService</param></result>
+		</action>
+		
+		<action name="updateProduct" class="productAction" method="updateProduct">
+			<result name="success" type="json"><param name="excludeProperties">productService</param></result>
+		</action>
+		
+		<action name="deleteProduct" class="productAction" method="deleteProduct">
+			<result name="success" type="json"><param name="excludeProperties">productService</param></result>
+		</action>
+		
+		<action name="queryProduct" class="productAction" method="queryProduct">
+			<result name="success" type="json"><param name="excludeProperties">productService</param></result>
+		</action>
+		
+		<action name="queryProductDetail" class="productAction" method="queryProductDetail">
+			<result name="success" type="json"><param name="excludeProperties">productService</param></result>
+		</action>
+	<!--产品模块end  -->
 	</package>
 	</struts>
