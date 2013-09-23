@@ -15,7 +15,7 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="新闻发布">
+	<meta http-equiv="description" content="产品发布">
 
     <!-- Bootstrap -->
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">

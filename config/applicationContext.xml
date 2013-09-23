@@ -52,6 +52,7 @@
 				<value>classpath:com/model/Product.hbm.xml</value>
 				<value>classpath:com/model/ProductRes.hbm.xml</value>
 				<value>classpath:com/model/ProductContent.hbm.xml</value>
+				<value>classpath:com/model/ProductDetail.hbm.xml</value>
 				<value>classpath:com/model/SysCode.hbm.xml</value>
 			</list>
 		</property>
@@ -124,6 +125,11 @@
 		</property>
 	</bean>
 	
+	<bean id="code" class="com.util.CodeListener"
+		factory-method="setCommonQueryService" depends-on="commonQueryService">
+		<constructor-arg ref="commonQueryService"></constructor-arg>
+	</bean>
+	
 	<!-- Service配置 -->
 	<bean id="newsService" class="com.service.impl.NewsServiceImpl">
 		<property name="newsDao">
@@ -145,6 +151,9 @@
 		</property>
 		<property name="productContentDao">
 			<ref bean="productContentDao" />
+		</property>
+		<property name="productDetailDao">
+			<ref bean="productDetailDao" />
 		</property>
 	</bean>
 	
@@ -175,6 +184,12 @@
 	<bean id="sysUserService" class="com.service.impl.SysUserServiceImpl">
 		<property name="sysUserDao">
 			<ref bean="sysUserDao" />
+		</property>
+	</bean>
+	
+	<bean id="commonQueryService" class="com.service.impl.CommonQueryServiceImpl">
+		<property name="commonQueryDao">
+			<ref bean="commonQueryDao" />
 		</property>
 	</bean>
 	
@@ -226,6 +241,11 @@
 		</property>
 	</bean>
 	
+	<bean id="productDetailDao" class="com.dao.impl.ProductDetailDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	<bean id="newsDao" class="com.dao.impl.NewsDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
@@ -245,6 +265,12 @@
 	</bean>
 	
 	<bean id="newsDetailDao" class="com.dao.impl.NewsDetailDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="commonQueryDao" class="com.dao.CommonQueryDao">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>

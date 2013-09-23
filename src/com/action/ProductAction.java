@@ -15,6 +15,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.model.Product;
 import com.model.ProductContent;
+import com.model.ProductDetail;
 import com.model.ProductRes;
 import com.service.ProductService;
 import com.util.BaseAction;
@@ -33,12 +34,14 @@ public class ProductAction extends BaseAction {
 	private Product product;
 	private ProductRes productRes;
 	private ProductContent productContent;
+	private ProductDetail productDetail;
 	private ProductService productService;
 	private List list;
 	private int totalRecords;
 	private int pageSize;
 	private int pageNo;
 	private String msg;
+	
 	/**
 	 * @description: 新增产品
 	 * @date: 2013-9-16 下午4:30:22
@@ -46,15 +49,17 @@ public class ProductAction extends BaseAction {
 	 * @return
 	 */
 	public String addProduct() {
-		if(product!=null&&productRes!=null&&productContent!=null){
-			if (productService.addProduct(product,productRes, productContent)) {
+		if (product != null && productRes != null && productContent != null) {
+			
+			if (productService.addProduct(product, productRes, productContent)) {
 				msg = "success";
 			} else {
 				msg = "error_error";
 			}
-		}		
+		}
 		return SUCCESS;
 	}
+	
 	/**
 	 * @description: 删除产品
 	 * @date: 2013-9-16 下午4:30:39
@@ -63,7 +68,7 @@ public class ProductAction extends BaseAction {
 	 */
 	public String deleteProduct() {
 		HttpServletRequest req = getRequest();
-		int cpid00 =Integer.parseInt(req.getParameter("cpid00"));
+		int cpid00 = Integer.parseInt(req.getParameter("cpid00"));
 		if (cpid00 != 0) {
 			Product product = new Product();
 			product.setCpid00(cpid00);
@@ -77,6 +82,7 @@ public class ProductAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
+	
 	/**
 	 * @description: 更新产品
 	 * @date: 2013-9-16 下午4:30:54
@@ -84,15 +90,18 @@ public class ProductAction extends BaseAction {
 	 * @return
 	 */
 	public String updateProduct() {
-		if(product!=null&&productRes!=null&&productContent!=null){
-			if (productService.updateProduct(product,productRes, productContent)) {
+		if (product != null && productRes != null && productContent != null) {
+			productRes.setCpid00(product.getCpid00());
+			productContent.setCpnrid(product.getCpid00());
+			if (productService.updateProduct(product, productRes, productContent)) {
 				msg = "success";
 			} else {
 				msg = "error_error";
 			}
-		}		
+		}
 		return SUCCESS;
 	}
+	
 	/**
 	 * @description: 查询产品
 	 * @date: 2013-9-16 下午4:31:18
@@ -122,6 +131,7 @@ public class ProductAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
+	
 	/**
 	 * @description: 产品详情
 	 * @date: 2013-9-16 下午4:31:32
@@ -129,78 +139,94 @@ public class ProductAction extends BaseAction {
 	 * @return
 	 */
 	public String queryProductDetail() {
-		return SUCCESS;
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String cpid = req.getParameter("cpid00");
+		Integer cpid00 = Integer.parseInt(cpid);
+		productDetail = productService.queryProductDetail(cpid00);
+		if (productDetail != null)
+			return SUCCESS;
+		return ERROR;
 	}
-
+	
 	/*---------------------set and get method----------------------------------*/
 	public Product getProduct() {
 		return product;
 	}
-
+	
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-
+	
 	public ProductRes getProductRes() {
 		return productRes;
 	}
-
+	
 	public void setProductRes(ProductRes productRes) {
 		this.productRes = productRes;
 	}
-
+	
 	public ProductContent getProductContent() {
 		return productContent;
 	}
-
+	
 	public void setProductContent(ProductContent productContent) {
 		this.productContent = productContent;
 	}
-
+	
+	public ProductDetail getProductDetail() {
+		return productDetail;
+	}
+	
+	public void setProductDetail(ProductDetail productDetail) {
+		this.productDetail = productDetail;
+	}
+	
 	public ProductService getProductService() {
 		return productService;
 	}
+	
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
 	}
+	
 	public List getList() {
 		return list;
 	}
-
+	
 	public void setList(List list) {
 		this.list = list;
 	}
-
+	
 	public int getTotalRecords() {
 		return totalRecords;
 	}
-
+	
 	public void setTotalRecords(int totalRecords) {
 		this.totalRecords = totalRecords;
 	}
-
+	
 	public int getPageSize() {
 		return pageSize;
 	}
-
+	
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
-
+	
 	public int getPageNo() {
 		return pageNo;
 	}
-
+	
 	public void setPageNo(int pageNo) {
 		this.pageNo = pageNo;
 	}
-
+	
 	public String getMsg() {
 		return msg;
 	}
-
+	
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-
+	
 }

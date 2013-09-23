@@ -21,7 +21,7 @@ function getData(pageNo){
 				"<input class=\"g-checkbox\" id=\"j-ad-all\" type=\"checkbox\">产品名称</th>" +
 				"<th width=\"10%\">产品栏目</th>" +
 				"<th width=\"10%\">产品类型</th>" +
-				"<th width=\"20%\">发布者</th>" +
+				"<th width=\"20%\">排序权值</th>" +
 				"<th width=\"10%\">发布时间</th>" +
 				"<th width=\"10%\">相关操作</th></tr></thead><tbody>";
 				$.each(myData, function(i, n) {
@@ -37,7 +37,7 @@ function getData(pageNo){
 								+"</td><td>" +
 								n.cplx00
 								+"</td><td><span class=\"g-col-org\">" +
-								n.xwzz00
+								n.pxqz00
 								+"</span></td><td><span class=\"g-col-grn\">" +
 								n.fbsj00Str
 								+"</span></td><td>" +

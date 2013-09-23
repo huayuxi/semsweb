@@ -175,7 +175,7 @@
 			'height': 20,
 			'queueSizeLimit':1,
 			'fileTypeDesc': '图片',    
-			'fileTypeExts':'*.jpg;*.jpeg;*.png;',
+			'fileTypeExts':'*.jpg;*.jpeg;*.png;*.gif;',
 			'onUploadSuccess': function (file, data, response){
 				var url=eval("("+data+")");
 				var	s=url.msg;

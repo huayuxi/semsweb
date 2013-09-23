@@ -3,6 +3,7 @@
  */
 package com.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ import org.hibernate.SQLQuery;
 import com.dao.SolutionDao;
 import com.model.Solution;
 import com.util.BasicHibernateDao;
+import com.util.DateUtil;
 import com.util.LikeQueryUtil;
 
 /**
@@ -20,7 +22,7 @@ import com.util.LikeQueryUtil;
  * @author: lintz
  */
 @SuppressWarnings({ "unchecked", "rawtypes" })
-public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
+public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao {
 	/**
 	 * @description: 新增解决方案
 	 * @date: 2013-8-23 下午4:59:47
@@ -30,19 +32,20 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
 	 */
 	public boolean addSolution(Solution solution) {
 		try {
+			Date nowDate = new Date();
+			solution.setFbsj00(DateUtil.dateToString14(nowDate));
 			this.getSession().save(solution);
 		} catch (Exception e) {
 			return false;
 		}
 		return true;
 	}
-
+	
 	/**
 	 * @description: 删除解决方案
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param solution
-	 *            解决方案
+	 * @param solution 解决方案
 	 * @return true or false
 	 */
 	public boolean delSolution(Solution solution) {
@@ -53,13 +56,12 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
 		}
 		return true;
 	}
-
+	
 	/**
 	 * @description: 更新解决方案
 	 * @date: 2013-8-23 下午4:59:47
 	 * @author： lintz
-	 * @param solution
-	 *            解决方案
+	 * @param solution 解决方案
 	 * @return true or false
 	 */
 	public boolean updateSolution(Solution solution) {
@@ -70,33 +72,28 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
 		}
 		return true;
 	}
-
+	
 	/**
 	 * @description: 根据解决方案ID查询解决方案
 	 * @date: 2013-8-23 下午5:00:51
 	 * @author： lintz
-	 * @param jjfaid
-	 *            解决方案ID
+	 * @param jjfaid 解决方案ID
 	 * @return 解决方案
 	 */
 	public Solution querySolution(int jjfaid) {
-		Query query = this.getSession().createQuery(
-				"from Solution where jjfaid=?");
+		Query query = this.getSession().createQuery("from Solution where jjfaid=?");
 		query.setLong(0, jjfaid);
 		List<Solution> list = query.list();
 		return list.size() == 0 ? null : list.get(0);
 	}
-
+	
 	/**
 	 * @description:查询全部解决方案
 	 * @date: 2013-8-23 下午5:03:52
 	 * @author： lintz
-	 * @param properties
-	 *            条件
-	 * @param pageNo
-	 *            页数
-	 * @param pageSize
-	 *            每页记录数
+	 * @param properties 条件
+	 * @param pageNo 页数
+	 * @param pageSize 每页记录数
 	 * @return 全部解决方案
 	 */
 	public List<Solution> querySolution(Map properties, int pageNo, int pageSize) {
@@ -108,20 +105,18 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao{
 		sqlQuery.setMaxResults(pageSize);
 		return sqlQuery.list();
 	}
-
+	
 	/**
 	 * @description:统计全部解决方案
 	 * @date: 2013-8-28 上午10:21:09
 	 * @author： lintz
-	 * @param properties
-	 *            条件
+	 * @param properties 条件
 	 * @return 统计数
 	 */
 	public int countSolution(Map properties) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
 		String sql = "select count(*) from tab_solution where 1=1" + like;
-		String countStr = this.getSession().createSQLQuery(sql).uniqueResult()
-				.toString();
+		String countStr = this.getSession().createSQLQuery(sql).uniqueResult().toString();
 		int count = Integer.valueOf(countStr).intValue();
 		return count;
 	}

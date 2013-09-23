@@ -3,6 +3,7 @@
  */
 package com.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ import org.hibernate.SQLQuery;
 import com.dao.ProductDao;
 import com.model.Product;
 import com.util.BasicHibernateDao;
+import com.util.DateUtil;
 import com.util.LikeQueryUtil;
 
 /**
@@ -20,7 +22,7 @@ import com.util.LikeQueryUtil;
  * @author: lintz
  */
 @SuppressWarnings({ "rawtypes", "unchecked" })
-public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
+public class ProductDaoImpl extends BasicHibernateDao implements ProductDao {
 	/**
 	 * @description: 新增产品
 	 * @date: 2013-8-23 下午4:59:47
@@ -28,8 +30,11 @@ public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
 	 * @param product 产品
 	 * @return 产品ID
 	 */
-	public Integer addProduct(Product product){
+	public Integer addProduct(Product product) {
 		Integer id = 0;
+		Date nowDate = new Date();
+		product.setFbsj00(DateUtil.dateToString14(nowDate));
+		product.setGxsj00(DateUtil.dateToString14(nowDate));
 		try {
 			id = (Integer) this.getSession().save(product);
 		} catch (Exception e) {
@@ -46,9 +51,9 @@ public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
 	 * @param product 产品
 	 * @return true or false
 	 */
-	public boolean delProduct(Product product){
+	public boolean delProduct(Product product) {
 		try {
-			this.getSession().delete(product);		
+			this.getSession().delete(product);
 		} catch (Exception e) {
 			return false;
 		}
@@ -62,15 +67,26 @@ public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
 	 * @param product 产品
 	 * @return true or false
 	 */
-	public boolean updateProduct(Product product){
-		try {
-			this.getSession().update(product);
-		} catch (Exception e) {
-			return false;
+	public boolean updateProduct(Product product) {
+		Query query = this.getSession().createQuery("from Product where cpid00=?");
+		query.setLong(0, product.getCpid00());
+		List<Product> list = query.list();
+		if (list.size() != 0) {
+			Product productRs = list.get(0);
+			product.setFbsj00(productRs.getFbsj00());
+			product.setLlsl00(productRs.getLlsl00());
+			Date nowDate = new Date();
+			product.setGxsj00(DateUtil.dateToString14(nowDate));
+			try {
+				this.getSession().clear();
+				this.getSession().update(product);
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
 		}
-		return true;
+		return false;
 	}
-	
 	
 	/**
 	 * @description: 根据产品ID查询产品
@@ -79,7 +95,7 @@ public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
 	 * @param cpid00 产品ID
 	 * @return 产品
 	 */
-	public Product queryProduct(int cpid00){
+	public Product queryProduct(int cpid00) {
 		Query query = this.getSession().createQuery("from Product where cpid00=?");
 		query.setLong(0, cpid00);
 		List<Product> list = query.list();
@@ -95,14 +111,14 @@ public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
 	 * @param pageSize 每页记录数
 	 * @return 全部产品
 	 */
-	public List<Product> queryProduct(Map properties, int pageNo, int pageSize){
+	public List<Product> queryProduct(Map properties, int pageNo, int pageSize) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
 		String sql = "select * from tab_product where 1=1" + like;
 		SQLQuery sqlQuery = this.getSession().createSQLQuery(sql);
 		sqlQuery.addEntity(Product.class);
 		sqlQuery.setFirstResult((pageNo - 1) * pageSize);
 		sqlQuery.setMaxResults(pageSize);
-		return sqlQuery.list();	
+		return sqlQuery.list();
 	}
 	
 	/**
@@ -112,7 +128,7 @@ public class ProductDaoImpl extends BasicHibernateDao implements ProductDao{
 	 * @param properties 条件
 	 * @return 统计数
 	 */
-	public int countProduct(Map properties){
+	public int countProduct(Map properties) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
 		String sql = "select count(*) from tab_product where 1=1" + like;
 		String countStr = this.getSession().createSQLQuery(sql).uniqueResult().toString();

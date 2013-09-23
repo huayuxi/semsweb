@@ -5,6 +5,7 @@
  */
 package com.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +15,7 @@ import org.hibernate.SQLQuery;
 import com.dao.CasesDao;
 import com.model.Cases;
 import com.util.BasicHibernateDao;
+import com.util.DateUtil;
 import com.util.LikeQueryUtil;
 
 /**
@@ -34,6 +36,8 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	public Integer addCases(Cases cases){
 		int id=0;
 		try {
+			Date nowDate = new Date();
+			cases.setFbsj00(DateUtil.dateToString14(nowDate));
 			id = (Integer) this.getSession().save(cases);
 		} catch (Exception e) {
 			return id;
