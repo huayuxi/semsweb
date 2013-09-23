@@ -41,5 +41,13 @@
 			<result name="success" type="json"><param name="excludeProperties">casesService</param></result>
 		</action>
 	<!--案例模块end  -->		
+	<!--产品模块begin  -->
+		<action name="queryProductList" class="productAction" method="queryProductList">
+			<result name="success" type="json"><param name="excludeProperties">productService</param></result>
+		</action>
+		<action name="queryProductDetail" class="productAction" method="queryProductDetail">
+			<result name="success" type="json"><param name="excludeProperties">productService,list,msg</param></result>
+		</action>
+	<!--产品模块end  -->
 	</package>
 	</struts>

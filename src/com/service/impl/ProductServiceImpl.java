@@ -110,7 +110,28 @@ public class ProductServiceImpl implements ProductService {
 	public ProductDetail queryProductDetail(Integer cpid00) {
 		return productDetailDao.queryProductDetail(cpid00);
 	}
-	
+	/**
+	 * @description:查询全部产品详情列表
+	 * @date: 2013-8-23 下午5:03:52
+	 * @author： lintz
+	 * @param properties 条件
+	 * @param pageNo 页数
+	 * @param pageSize 每页记录数
+	 * @return 全部产品详情列表
+	 */
+	public List<ProductDetail> queryProductDetail(Map properties, int pageNo, int pageSize){
+		return productDetailDao.queryProductDetail(properties, pageNo, pageSize);
+	}
+	/**
+	 * @description:统计全部产品详情列表
+	 * @date: 2013-8-28 上午10:21:09
+	 * @author： lintz
+	 * @param properties 条件
+	 * @return 统计数
+	 */
+	public int countProductDetail(Map properties){
+		return productDetailDao.countProductDetail(properties);
+	}
 	/*-----------------------------------------------set and get method----------------------------------*/
 	public ProductDao getProductDao() {
 		return productDao;

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <base href="<%=basePath%>"/>
-<title>智联信通-市场动态</title>
+<title>智联信通-产品世界</title>
 
 <meta http-equiv="pragma" content="no-cache"/>
 <meta http-equiv="cache-control" content="no-cache"/>
@@ -35,6 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
   
   <body>
+    <input type="hidden" value="<%=basePath%>" id="basePath"/>
     <div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -71,22 +72,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 		<a href="javascript:void(0)">产品目录</a>
                 		<ul id="j-ui-proStyle" style="display:none;">
 	                        <li>
-								<a href="javascript:void(0)">电力载波终端控制器</a>
+								<a href="javascript:product_list(100000)">电力载波终端控制器</a>
 	                        </li>
 	                        <li>
-								<a href="javascript:void(0)">集中控制器</a>
+								<a href="javascript:product_list(100001)">集中控制器</a>
 	                        </li>
 	                        <li>
-	                        	<a href="javascript:void(0)">无线太阳能路灯控制器</a>
+	                        	<a href="javascript:product_list(100002)">无线太阳能路灯控制器</a>
 	                        </li>
 	                        <li>
-	                        	<a href="javascript:void(0)">防盗扩展模块及防盗终端</a>
+	                        	<a href="javascript:product_list(100003)">防盗扩展模块及防盗终端</a>
 	                        </li>
 	                        <li>
-	                        	<a href="javascript:void(0)">输入输出扩展模块</a>
+	                        	<a href="javascript:product_list(100004)">输入输出扩展模块</a>
 	                        </li>
 	                        <li>
-	                        	<a href="javascript:void(0)">光照采集器</a>
+	                        	<a href="javascript:product_list(100005)">光照采集器</a>
 	                        </li>
                     	</ul>
                 	</li>

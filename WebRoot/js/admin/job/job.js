@@ -2,7 +2,12 @@ $(function() {
 	getData(0);
 });
 
-
+function dateFormate(date){
+	if(date!=null){
+		return date.substr(0,4)+"-"+date.substr(4,2)+"-"+date.substr(6,2);
+	}
+	return "";
+}
 //分页显示
 function getData(pageNo){
 	var param="pageNo="+(pageNo+1)+"&pageSize=10";
@@ -38,7 +43,7 @@ function getData(pageNo){
 								+"</td><td><span class=\"g-col-org\">" +
 								n.fbz000
 								+"</span></td><td><span class=\"g-col-grn\">" +
-								n.fbsj00
+								dateFormate(n.fbsj00)
 								+"</span></td><td>" +
 								"<a href=\"javascript:goUpdate('" +n.zpid00+"')\">编辑</a>&nbsp;|&nbsp;" +
 								"<a href=\"javascript:goDel(" +n.zpid00+");\">删除</a></td></tr>";

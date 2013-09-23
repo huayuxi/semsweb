@@ -133,6 +133,35 @@ public class ProductAction extends BaseAction {
 	}
 	
 	/**
+	 * @description: 查询产品详情列表
+	 * @date: 2013-9-16 下午4:31:18
+	 * @author： lintz
+	 * @return
+	 */
+	public String queryProductList() {
+		HttpServletRequest req = ServletActionContext.getRequest();
+		String pageindex = req.getParameter("pageNo");
+		String pagesize = req.getParameter("pageSize");
+		Map properties = req.getParameterMap();
+		if (pageindex != null && !pageindex.equals("")) {
+			pageNo = Integer.valueOf(pageindex).intValue();
+		} else {
+			pageNo = 1;
+		}
+		if (pagesize != null && !pagesize.equals("")) {
+			pageSize = Integer.valueOf(pagesize).intValue();
+		} else {
+			pageSize = 10;
+		}
+		totalRecords = this.productService.countProductDetail(properties);
+		if (totalRecords != 0) {
+			list = productService.queryProductDetail(properties, pageNo, pageSize);
+		} else {
+			list = new ArrayList();
+		}
+		return SUCCESS;
+	}
+	/**
 	 * @description: 产品详情
 	 * @date: 2013-9-16 下午4:31:32
 	 * @author： lintz

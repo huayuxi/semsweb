@@ -174,12 +174,12 @@
 							<span class="caret"></span>
 						</button>
                         <ul class="dropdown-menu" id="lx-menu">
-                          	<li class="100001"><a href="javascript:void(0)">电力载波终端控制器</a></li>
-                          	<li class="100002"><a href="javascript:void(0)">集中控制器</a></li>
-                            <li class="100003"><a href="javascript:void(0)">无线太阳能路灯控制器</a></li>
-                          	<li class="100004"><a href="javascript:void(0)">防盗扩展模块及防盗终端</a></li>
-                            <li class="100005"><a href="javascript:void(0)">输入输出扩展模块</a></li>
-                          	<li class="100006"><a href="javascript:void(0)">光照采集器</a></li>
+                      	<li class="100000"><a href="javascript:void(0)">电力载波终端控制器</a></li>
+                          	<li class="100001"><a href="javascript:void(0)">集中控制器</a></li>
+                            <li class="100002"><a href="javascript:void(0)">无线太阳能路灯控制器</a></li>
+                          	<li class="100003"><a href="javascript:void(0)">防盗扩展模块及防盗终端</a></li>
+                            <li class="100004"><a href="javascript:void(0)">输入输出扩展模块</a></li>
+                          	<li class="100005"><a href="javascript:void(0)">光照采集器</a></li>
                         </ul>
                       </div>
                       <span class="input-tip input-tip-warning"></span>
