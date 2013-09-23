@@ -35,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	}
 </style>
 <!--[if lte IE 6]>
-<script src="../js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
     <script type="text/javascript">
         DD_belatedPNG.fix('div, ul, img, li, input , a,span');
     </script>
@@ -78,7 +78,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	</li>                
                 	<li class="menu active" id="product">
                 		<a href="javascript:void(0)">产品目录</a>
-                		<ul id="j-ui-proStyle" style="display:none;">
+                		<ul id="j-ui-proStyle" >
 	                       <li>
 								<a href="javascript:product_list(100000)">电力载波终端控制器</a>
 	                        </li>

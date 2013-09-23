@@ -17,7 +17,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
-
+<!--[if lte IE 6]>
+<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
+    </script>
+<![endif]--> 
 </head>
   
   <body>

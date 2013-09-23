@@ -9,7 +9,7 @@ var data_1="<h2>核心一：节能环保</h2><p class=\"indentation\">按2万盏
 		   "煤使用量 11687.5 吨；</p><p>一年可减低二氧化碳 25712.5 吨；</p><p>一年可降低酸雨排放量 128.6 吨;</p><p><span>使用智联信通" +
 		   "的高压钠灯智控调光方案(加电子镇流器，节电40%) ——</span></p><p>假设一个城市有10万盏路灯, 每度电按照0.8元</p><p>一年可节" +
 		   "电4000万元；</p><p>一年可减少煤使用量 18700 吨；</p><p>一年可减低二氧化碳 41140 吨；</p><p>一年可降低酸雨排放量 205.7 吨" +
-		   "</p><div class=\"clear\"></div>";
+		   "</p><div class=\"clear\"></div><div class=\"clear\"></div>";
 
 var data_2="<h2>核心二：五遥功能</h2><p class=\"indentation\">体验一机在手，轻松掌控！智联信通采用超越传统“三遥”功能的“五遥”功能，" +
 			"电脑、平板电脑及手机即可随时随地进行监控管理——</p><p class=\"indentation\"><span>> 遥控功能－－</span></p><p class=" +
@@ -19,7 +19,7 @@ var data_2="<h2>核心二：五遥功能</h2><p class=\"indentation\">体验一�
 			"位置等。</span></p><p class=\"indentation\"><span>> 遥调功能－－</span></p><p class=\"indentation\"> －远程调节，接受" +
 			"并执行遥调命令，调节节点输出比率（LED灯头和多灯头适用）。</p><p class=\"indentation\"><span>> 遥视功能－－</span></p><p " +
 			"class=\"indentation\">在重点地段或有夜景景观的地点安装摄像机，在监控中心可以直观地监视夜景及其控制情况。</p><div " +
-			"class=\"clear\"></div>";
+			"class=\"clear\"></div><div class=\"clear\"></div>";
 
 var data_3="<h2>核心三：安全防护</h2><p class=\"indentation\">城市路灯覆盖面积大，管理手段落后，无法准确发现电缆破损漏电、盗割、" +
 			"灯头被盗和断路，一旦出现以上情况，势必给社会带来巨大的经济损失，以及危害人民群众的生命财产安全。</p><p " +
@@ -29,7 +29,7 @@ var data_3="<h2>核心三：安全防护</h2><p class=\"indentation\">城市路�
 			"提醒功能；</p><p class=\"indentation\">> 具有意外开灯、意外关灯报警功能；</p><p class=\"indentation\">> " +
 			"具有三相电压缺相报警功能；</p><p class=\"indentation\">> 超负荷检测：可以设定线路最大允许负荷，当负载超限时提" +
 			"供报警；</p><p class=\"indentation\">> 门磁检测：支持门磁开关量检测，当控制柜被开启时产生报警。</p><div " +
-			"class=\"clear\"></div>";
+			"class=\"clear\"></div><div class=\"clear\"></div>";
 
 var data_4="<h2>核心四：智慧管理</h2><p class=\"indentation\">智联信通的智慧照明监控系统实现时控+光控+经纬度控制+手" +
 			"动控制的智能综合控制，可以根据所在城市经纬度、不同天气季节的光照变化、特殊照明需求（如配合交通路口、公安交警摄像" +
@@ -38,7 +38,7 @@ var data_4="<h2>核心四：智慧管理</h2><p class=\"indentation\">智联信�
 			"内容等，并对各类查询、统计报表的样式等进行编辑和管理：</p><p class=\"indentation\"><span>1、实现对集中控制器、" +
 			"组、节点的查询功能；</span></p><p class=\"indentation\"><span>2、自动计算、统计、查询照明配电箱的用电量、亮灯率" +
 			"等数据；</span></p><p class=\"indentation\"><span>3、支持远程抄表，方便统计电费。</span></p><div " +
-			"class=\"clear\"></div>";
+			"class=\"clear\"></div><div class=\"clear\"></div>";
 
 var data_5="<h2>核心五：便捷维护</h2><p class=\"indentation\">目前大多数城市照明设施管理工作主要采用人工巡查模式，" +
 		"不能实时、准确、全面地监控全城的路灯运行状况，缺乏有效的故障预警机制。不仅工作量大，还浪费人力、物力、财力。" +
@@ -46,7 +46,7 @@ var data_5="<h2>核心五：便捷维护</h2><p class=\"indentation\">目前大�
 		"/GIS地理信息系统等强大功能。</p><p class=\"indentation\">该系统对电线、路灯故障具备监测功能，操作员极易发现" +
 		"线路故障的地点和位置，只要通知维修人员，就能及时排除故障。如：原有的路灯维修，白天时间需要开着所有路灯，一个一" +
 		"个查找故障，或者晚上彻夜巡线，不仅工作效率低且浪费人力、财力。现在只要登陆微机查看，记下故障灯杆号，就可直奔该灯" +
-		"杆进行检修，目标明确，工作效率大大提高。</p> <div class=\"clear\"></div>";
+		"杆进行检修，目标明确，工作效率大大提高。</p> <div class=\"clear\"></div><div class=\"clear\"></div>";
 
 
 $(function() {

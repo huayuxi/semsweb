@@ -22,7 +22,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/pagination/jquery.pagination-front.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/front/job/job.js" type="text/javascript"></script>
-
+<!--[if lte IE 6]>
+<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
+    </script>
+<![endif]--> 
 </head>
   
   <body>

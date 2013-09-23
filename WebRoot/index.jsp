@@ -11,11 +11,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <base href="<%=basePath%>">
 <title>智联信通欢迎您</title>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
+<link href="<%=basePath%>css/index.css" rel="stylesheet" />
 <link href="<%=basePath%>js/common/jquery.slideBox/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.js" type="text/javascript"></script>
 <script type="text/javascript">
 jQuery(function($){
+	$('.chat_f1_expr').animate({height:'186px'}, 1000 );
+	$('#close').click(function(){
+		$('#chat_f1').hide();
+		$('#chat_f2').show();
+	})
+	$('#chat_f2').click(function(){
+		$(this).hide();
+		$('#chat_f1').show();
+	})
+	$('.name').hover(function(){
+		$(this).children('.detail').show();
+		$(this).children('.arrow').css('color','#a00');
+		},function(){
+		$(this).children('.detail').hide();	
+		$(this).children('.arrow').css('color','#fff');
+	})
 	//$('#ad img').attr("width",$(document).width());
 	$('#ad').slideBox({
 		easing : 'linear',//swing,linear//滚动特效
@@ -144,5 +161,57 @@ jQuery(function($){
         <p>4008-090-880</p>
     </div>
 </div>
+<!--代码开始-->
+<div id="chat_f1">
+	<div id="chat_f1_main">
+		<div id="close"></div>
+       	<a title="点击咨询在线客服" href="http://wpa.qq.com/msgrd?v=3&uin=1625574787&site=qq&menu=yes" class="a_kf"></a>
+		<a title="点击咨询售后" href="http://wpa.qq.com/msgrd?v=3&uin=1625574787&site=qq&menu=yes" class="a_sh"></a> 
+	</div>
+	<div class="chat_f1_expr">
+		<div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="华南片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=1625574787&site=qq&menu=yes>");</SCRIPT>华南片区</a>
+			</div>
+			
+		</div>
+		<div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="华东片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=459481521&site=qq&menu=yes>");</SCRIPT>华东片区</a>
+
+			</div>
+		</div>
+		<div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="华北/东北区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=177492&site=qq&menu=yes>");</SCRIPT>华北/东北区</a>
+			</div>
+		</div>
+		<div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="西南片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=3324443&site=qq&menu=yes>");</SCRIPT>西南片区</a>
+			</div>
+		</div>
+		<div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="西北片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=85152351&site=qq&menu=yes>");</SCRIPT>西北片区</a>
+			</div>
+		</div>
+		<div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="闽/赣/徽片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=343431094&site=qq&menu=yes>");</SCRIPT>闽/赣/徽片区</a>
+				
+			</div>
+		</div>
+        <div class="list">
+			<div class="name">
+            	<span class="arrow">&bull;</span><a title="海外片区区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=1692858376&site=qq&menu=yes>");</SCRIPT>海外片区</a>
+         
+			</div>
+		</div>
+	</div>
+	<div id="chat_f1_bottom"></div>
+</div>
+<div id="chat_f2" style="display:none;">我要咨询</div>
+<!--代码结束-->
 </body>
 </html>

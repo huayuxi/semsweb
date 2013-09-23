@@ -31,7 +31,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 	font-size: 14px;
 	}
 </style>
-
+<!--[if lte IE 6]>
+<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
+    </script>
+<![endif]--> 
 </head>
   
   <body>

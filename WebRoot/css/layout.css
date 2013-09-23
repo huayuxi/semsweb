@@ -835,7 +835,6 @@ a:hover {
    font-size: 12px; 
    line-height: 22px; 
    }
-   
 .main .right .detail .hd{ 
   line-height: 32px; 
   }
@@ -1017,6 +1016,7 @@ a:hover {
 .pic{ width:128px; height:128px; margin:8px auto;}
 .box h2{ text-align:center; color:#5e5e5e;} 
 .detail{ height:100px;}
+
 .divcenter{ width:500px; margin:0 auto;}
 /**-----product page------*/
 .product_ul .content { position: absolute; z-index: 1000; color: #fff; top: 50px; left: 0px; }
