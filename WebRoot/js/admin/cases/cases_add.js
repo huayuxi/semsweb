@@ -1,5 +1,12 @@
 function init(){
 	var basePath=$("#basePath").val();	
+	$(".dropdown .dropdown-menu li").bind("click",function(){
+		var val= $(this).find("a").text();
+		$(this).parent().parent().find(".data_value").val($(this).attr('class'));
+		$(this).parent().parent().find(".value").html(val);
+		$(this).parent().parent().removeClass("open");
+		return false;
+	});
 	$("#casesdata-form").bind("click",function(){
 		var valid = true;
 		!userInfoCheck("j-ui-name","name")&& (valid = false);

@@ -121,6 +121,22 @@
 			                      <span class="input-tip input-tip-warning"></span>
 			                    </li>
 			                    <li>
+			                      <label class="lb-title">案例类型：</label>
+			                      
+			                      <div class="btn-group dropdown" id="create-type-dropdown">
+			                     	 <input id="j-ui-type" type="hidden" name="cases.allx00" class="data_value"/>
+			                        <button data-toggle="dropdown" class="btn dropdown-toggle">
+										<span class="value" id="create-app-type">请选择</span>
+										<span class="caret"></span>
+									</button>
+			                        <ul class="dropdown-menu">
+			                          <li class="100000"><a href="javascript:void(0)">国内案例</a></li>
+			                          <li class="100001"><a href="javascript:void(0)">国外案例</a></li>
+			                        </ul>
+			                      </div>
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>			                    
+			                    <li>
 			                      <label class="lb-title">案例背景：</label>
 			                      <textarea id="j-ui-bj" rows="3" cols="40"  class="textarea-large" name="cases.albj00"></textarea>
 			                      <span class="input-tip input-tip-warning"></span>

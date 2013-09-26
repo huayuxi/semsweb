@@ -9,6 +9,7 @@ public class Cases implements java.io.Serializable {
 	
 	private static final long serialVersionUID = -7095069299960394727L;
 	private Integer alid00;
+	private Integer allx00;
 	private String almc00;
 	private String albj00;
 	private String algm00;
@@ -25,6 +26,14 @@ public class Cases implements java.io.Serializable {
 		this.alid00 = alid00;
 	}
 	
+	public Integer getAllx00() {
+		return allx00;
+	}
+
+	public void setAllx00(Integer allx00) {
+		this.allx00 = allx00;
+	}
+
 	public String getAlmc00() {
 		return almc00;
 	}

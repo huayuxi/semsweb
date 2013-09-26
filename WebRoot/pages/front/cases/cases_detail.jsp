@@ -57,10 +57,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main">
     	<div class="content-wrapper">
         	<div class="content">
-            	<h2 class="blue">全球案例</h2>
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="case.html">全球案例</a>
+                    	<a href="<%=basePath%>pages/front/cases/cases.jsp?allx00=100000">国内案例</a>
+                    </li>
+                    <li class="menu">
+                    	<a href="<%=basePath%>pages/front/cases/cases.jsp?allx00=100001">海外案例</a>
                     </li>
                 </ul>
             </div>

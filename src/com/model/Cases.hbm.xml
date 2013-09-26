@@ -7,6 +7,11 @@
             <column name="alid00" />
             <generator class="identity" />
         </id>
+        <property name="allx00" type="java.lang.Integer">
+            <column name="allx00">
+                <comment>案例类型</comment>
+            </column>
+        </property>
         <property name="almc00" type="java.lang.String">
             <column name="almc00" length="1000">
                 <comment>案例名称</comment>

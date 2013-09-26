@@ -28,6 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         DD_belatedPNG.fix('div, ul, img, li, input , a,span');
     </script>
 <![endif]--> 
+
 </head>
   
   <body>
@@ -62,13 +63,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="<%=basePath%>pages/front/job/job.jsp">社会招聘</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp?zplx00=100000">社会招聘</a>
                     </li>
 					 <li class="menu">
-                    	<a href="<%=basePath%>pages/front/job/job.jsp">校团招聘</a>
-                    </li>
-                     <li class="menu">
-                    	<a href="<%=basePath%>pages/front/job/job.jsp">职位搜索</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp?zplx00=100001">校团招聘</a>
                     </li>
                 </ul>
             </div>

@@ -19,24 +19,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/front/product/product_detail.js" type="text/javascript"></script>
-<style type="">
-	#product{
-		height: auto;
-	}
-	#product ul{
-		padding-left: 5px;
-	}
-	#product ul li a{
-	 	color: #000;
-	 	font-size: 14px;
-	}
-</style>
-	<!--[if lte IE 6]>
-	<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
-	    <script type="text/javascript">
-	        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
-	    </script>
-	<![endif]--> 
+<!--[if lte IE 6]>
+<script src="../js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
+    </script>
+<![endif]--> 
 </head>
   
   <body>
@@ -47,7 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
+    	<div id="logo"><a href="#">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -68,7 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main">
     	<div class="content-wrapper">
         	<div class="content">
-              	<ul class="menu product_ul">
+              	<ul class="menu">
                 <li><h3 class="blue">核心价值</h3></li>
                 
                 <li class="cate active">
@@ -117,10 +105,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </div>
                         <span class="r noprint">
                         	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-							<span id="bdshare" class="bdshare_b"></span>
+<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
-                    <span style="display:none" class="detail-more"></span>
+                    <span style="display:none" class="detail-more">			                    </span>
                    <div class="product_content">
                    		<div class="case_item">
                         	<div class="product_item">

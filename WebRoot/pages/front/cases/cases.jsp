@@ -10,7 +10,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <base href="<%=basePath%>"/>
 <title>智联信通-市场动态</title>
-
 <meta http-equiv="pragma" content="no-cache"/>
 <meta http-equiv="cache-control" content="no-cache"/>
 <meta http-equiv="expires" content="0"/>
@@ -18,7 +17,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="description" content="This is my page"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
 <link href="<%=basePath%>js/common/pagination/pagination.css" rel="stylesheet" />
-
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/pagination/jquery.pagination-front.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/front/cases/cases.js" type="text/javascript"></script>
@@ -62,10 +60,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="<%=basePath%>pages/front/cases/cases.jsp">国内案例</a>
+                    	<a href="<%=basePath%>pages/front/cases/cases.jsp?allx00=100000">国内案例</a>
                     </li>
                     <li class="menu">
-                    	<a href="<%=basePath%>pages/front/cases/cases.jsp">海外案例</a>
+                    	<a href="<%=basePath%>pages/front/cases/cases.jsp?allx00=100001">海外案例</a>
                     </li>
                 </ul>
             </div>

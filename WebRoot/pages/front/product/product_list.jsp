@@ -21,21 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/pagination/jquery.pagination-front.js" type="text/javascript"></script>
-<script src="<%=basePath%>js/front/product/product_list.js" type="text/javascript"></script>
-<style type="">
-	#product{
-		height: auto;
-	}
-	#product ul{
-		padding-left: 5px;
-	}
-	#product ul li a{
-	 	color: #000;
-	 	font-size: 14px;
-	}
-</style>
+
 <!--[if lte IE 6]>
-<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+<script src="../js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
     <script type="text/javascript">
         DD_belatedPNG.fix('div, ul, img, li, input , a,span');
     </script>
@@ -77,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 		<a href="<%=basePath%>pages/front/product/product.jsp">核心价值</a>
                 	</li>                
                 	<li class="menu active" id="product">
-                		<a href="javascript:void(0)">产品目录</a>
+                		<a  href="javascript:void(0)" class="blue">产品目录</a>
                 		<ul id="j-ui-proStyle" >
 	                       <li>
 								<a href="javascript:product_list(100000)">电力载波终端控制器</a>

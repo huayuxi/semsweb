@@ -1,10 +1,22 @@
 $(function() {
 	getData(0);
 });
-
+//获取URL参数
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null)
+		return unescape(r[2]);
+	return null;
+}
 //分页显示
 function getData(pageNo){
-	var param="pageNo="+(pageNo+1)+"&pageSize=10";
+	var allx00=getQueryString("allx00");
+	var key="";
+	if(allx00!=null&&allx00!=""){
+		key="&key_allx00="+allx00;
+	}
+	var param="pageNo="+(pageNo+1)+"&pageSize=10"+key;
 	$.ajax( {
 		type : "POST",
 		dataType : "json",

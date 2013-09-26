@@ -3,7 +3,6 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -61,17 +60,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="mbody">
 	<div class="main">
     	<div class="content-wrapper">
-        	<div class="content">
-                <ul class="menus solution_ul" id="solution_list">
+			<div class="content">
+                <ul class="menus active" id="solution_list">
+
                 </ul>
             </div>
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="<%=basePath%>">首页</a>>解决方案><span id="about_logo_title"></span></div>
-                	<div id="about-title1" class="title"></div>
-                	<div class="line1"></div>
-                	<div class="detail">
+                	<a class="blue" href="<%=basePath%>">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/solution/solution.jsp">解决方案</a>>
+					<span id="about_logo_title"></span>
+				</div>
+				 <div id="about-title1" class="title"></div>
+                 <div class="line1"></div>
+                 <div class="detail">
 	                	<div class="share">
 	                    	<div class="print-btn">
 	                        	<a class="blue noprint" onclick="window.print();" href="javascript:void(0);"><span></span>打印</a>

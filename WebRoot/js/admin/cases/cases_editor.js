@@ -19,6 +19,7 @@ function getCasesData() {
 			success : function(data) {
 				var obj=data.casesDetail;
 				$("#j-ui-id").val(obj.alid00);
+				$("#j-ui-type").val(obj.allx00);
 				$("#j-ui-zyid").val(obj.alzyid);
 				$("#j-ui-name").val(obj.almc00);
 				$("#j-ui-bj").text(obj.albj00);
@@ -34,6 +35,13 @@ function getCasesData() {
 
 function init(){
 	var basePath=$("#basePath").val();	
+	$(".dropdown .dropdown-menu li").bind("click",function(){
+		var val= $(this).find("a").text();
+		$(this).parent().parent().find(".data_value").val($(this).attr('class'));
+		$(this).parent().parent().find(".value").html(val);
+		$(this).parent().parent().removeClass("open");
+		return false;
+	});
 	$("#casesdata-form").bind("click",function(){
 		var valid = true;
 		!userInfoCheck("j-ui-name","name")&& (valid = false);

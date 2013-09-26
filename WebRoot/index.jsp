@@ -15,6 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="<%=basePath%>js/common/jquery.slideBox/css/jquery.slideBox.css" rel="stylesheet" type="text/css" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.js" type="text/javascript"></script>
+<script src="<%=basePath%>js/index.js" type="text/javascript"></script>
 <script type="text/javascript">
 jQuery(function($){
 	$('.chat_f1_expr').animate({height:'186px'}, 1000 );
@@ -39,6 +40,8 @@ jQuery(function($){
 		delay : 5,//滚动延迟时间，单位：秒
 		hideBottomBar : true//隐藏底栏
 	});
+	getNewsData();
+	getCasesData()
 });
 </script>
 </head>
@@ -91,16 +94,11 @@ jQuery(function($){
         	<div class="title">
             	<h3>头条新闻<span><a href="<%=basePath%>pages/front/news/news.jsp">&gt;&nbsp;more</a></span></h3>
             </div>
-            <div class="content">
-            	<a href="#" class="image">
+            <div class="content" >
+            	<a href="javascript:void(0)" class="image">
             		<img src="images/iotcomm_001news.jpg"  />
                 </a>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-				<p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
-                <p>· 智联信通盛大亮相2013广州光展<span>......</span></p>
+                <span id="news_list"></span>
             </div>
         </div>
         <div class="video_media">
@@ -141,11 +139,7 @@ jQuery(function($){
             </div>
             <div class="case_content">
           		<h3>全球案例</h3> 
-                <p><span></span>广深高速单灯智能控制项目</p>
-                <p><span></span>沈阳大四环新建路段照明智能控制项目</p>
-                <p><span></span>福建省示范项目云霄县照明节能改造</p>
-                <p><span></span>甘肃兰州隧道LED灯智能控制项目</p>
-                <p><span></span>青海西宁全城景观亮化智能控制项目</p>
+          		<span id="cases_list"></span>
                 <div class="case_title">
                 	<a href=<%=basePath%>pages/front/cases/cases.jsp"><span style="padding-right:20px;">全球案例</span></a>
                 </div>

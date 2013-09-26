@@ -19,24 +19,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/front/product/product.js" type="text/javascript"></script>
-<style type="">
-	#product{
-		height: auto;
-	}
-	#product ul{
-		padding-left: 5px;
-	}
-	#product ul li a{
-	 	color: #000;
-	 	font-size: 14px;
-	}
-</style>
 <!--[if lte IE 6]>
 <script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
     <script type="text/javascript">
         DD_belatedPNG.fix('div, ul, img, li, input , a,span');
     </script>
 <![endif]--> 
+
 </head>
   
   <body>
