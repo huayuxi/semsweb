@@ -22,6 +22,15 @@ function getCasesData() {
 			success : function(data) {
 				var obj=data.casesDetail;
 				$("#j-ui-name").html(obj.almc00);
+				var allx=obj.allx00;
+				if(allx!=null&&allx!=""){
+					if(allx=="100001"){
+						$("#about-title").html("海外案例");
+						$("#about-title1").html("海外案例");
+						$(".menus li").parent().find("li").addClass("active");
+						$(".menus li").parent().find("li").first().removeClass("active");
+					}
+				}
 				$("#j-ui-bj").html(obj.albj00);
 				$("#j-ui-gm").html(obj.algm00);
 				$("#j-ui-cx").html(obj.alcx00);

@@ -63,10 +63,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="<%=basePath%>pages/front/job/job.jsp?zplx00=100000">社会招聘</a>
+                    	<a href="javascript:job_list(100000)">社会招聘</a>
                     </li>
 					 <li class="menu">
-                    	<a href="<%=basePath%>pages/front/job/job.jsp?zplx00=100001">校团招聘</a>
+                    	<a href="javascript:job_list(100001)">校园招聘</a>
                     </li>
                 </ul>
             </div>
@@ -74,8 +74,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<div class="feature-pic"></div>
                 <div class="page-pos">
                 	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
-					<a class="blue" href="<%=basePath%>pages/front/job/job.jsp">人才招聘</a>>社会招聘</div>
-					
+					<a class="blue" href="<%=basePath%>pages/front/job/job.jsp">人才招聘</a>>
+					<span id="about-title">社会招聘</span></div>
 	                <div id="about-title1" class="title">社会招聘</div>
 	                <div class="line1"></div>
 	                <div class="detail">

@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="#">智联信通</a></div>
+    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -62,10 +62,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="<%=basePath%>pages/front/news/news.jsp">公司新闻</a>
+                    	<a href="javascript:news_list(100000)">公司新闻</a>
                     </li>
 					 <li class="menu">
-                    	<a href="<%=basePath%>pages/front/news/news.jsp">行业新闻</a>
+                    	<a href="javascript:news_list(100001)">行业新闻</a>
                     </li>
                 </ul>
             </div>

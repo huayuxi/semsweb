@@ -6,6 +6,7 @@ function getQueryString(name) {
 		return unescape(r[2]);
 	return null;
 }
+
 $(function() {
 	getJobData();
 });
@@ -23,7 +24,20 @@ function getJobData() {
 				var obj=data.job;
 				$("#data-zpgw").html(obj.zpgw00);
 				$("#data-fbsj").html(obj.fbsj00);
-				$("#data-zplx").html(obj.zplx00);
+				
+				var zplx=obj.zplx00;
+				
+				if(zplx=="100001"){
+					$("#about-title").html("校园招聘");
+					$("#about-title1").html("校园招聘");
+					$("#data-zplx").html("校园招聘");
+					$(".menus li").parent().find("li").addClass("active");
+					$(".menus li").parent().find("li").first().removeClass("active");
+				}else{
+					$("#data-zplx").html("社会招聘");
+				}
+				
+				
 				$("#data-gzlb").html(obj.gzlb00);
 				$("#data-gzdd").html(obj.gzdd00);
 				$("#data-zprs").html(obj.zprs00);

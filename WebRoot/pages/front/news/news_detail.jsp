@@ -59,10 +59,10 @@
         	<div class="content">
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="<%=basePath%>pages/front/news/news.jsp">公司新闻</a>
+                    	<a href="<%=basePath%>pages/front/news/news.jsp?xwlx00=100000">公司新闻</a>
                     </li>
 					 <li class="menu">
-                    	<a href="<%=basePath%>pages/front/news/news.jsp">行业新闻</a>
+                    	<a href="<%=basePath%>pages/front/news/news.jsp?xwlx00=100001">行业新闻</a>
                     </li>
                 </ul>
             </div>

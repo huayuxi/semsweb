@@ -14,8 +14,8 @@ function getNewsData(){
 			if(totalcount!=0){
 				$.each(myData, function(i, n) {
 					var xwbt=n.xwbt00;
-					if(xwbt.length>16){
-						xwbt.substr(0,15)+"..."
+					if(xwbt.length>19){
+						xwbt=xwbt.substr(0,18)+"..."
 					}
 					div=div+"<p>· " +xwbt+"</p>";
 				});
@@ -41,7 +41,11 @@ function getCasesData(){
 			var div ="";
 			if(totalcount!=0){
 				$.each(myData, function(i, n) {
-						div=div+"<p><span></span>" +n.almc00+"</p>";
+					var almc=n.almc00;
+					if(almc.length>21){
+						almc=almc.substr(0,21)+"...";
+					}
+					div=div+"<p><span></span>" +almc+"</p>";
 				});
 				$("#cases_list").html(div);
 			}

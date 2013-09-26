@@ -21,6 +21,15 @@ function getNewsData() {
 			data:param,
 			success : function(data) {
 				var obj=data.newsDetail;
+				var xwlx=obj.xwlx00;
+				if(xwlx!=null&&xwlx!=""){
+					if(xwlx=="100001"){
+						$("#about-title").html("行业新闻");
+						$("#about-title1").html("行业新闻");
+						$(".menus li").parent().find("li").addClass("active");
+						$(".menus li").parent().find("li").first().removeClass("active");
+					}
+				}
 				$("#about-title1").html(obj.xwbt00);
 				$("#new_content").html(obj.xwnr00);
 			}

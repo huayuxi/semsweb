@@ -1,6 +1,36 @@
+var key="";
+
 $(function() {
+
+	$(".menus li").bind("click",function(){
+		$(this).parent().find("li").removeClass("active");
+		$("#about-title").html($(this).html());
+		$("#about-title1").html($(this).html());
+		$(this).addClass("active");
+	});
+	get_reback_data();
 	getData(0);
 });
+
+//处理返回页的参数
+function get_reback_data(){
+	var allx=getQueryString("allx00");
+	if(allx!=null&&allx!=""){
+		key="&key_allx00="+allx;
+		if(allx=="100001"){
+			$("#about-title").html("海外案例");
+			$("#about-title1").html("海外案例");
+			$(".menus li").parent().find("li").addClass("active");
+			$(".menus li").parent().find("li").first().removeClass("active");
+		}
+	}
+}
+//分类型查询
+function cases_list(allx00){
+	key="&key_allx00="+allx00;
+	getData(0);
+}
+
 //获取URL参数
 function getQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -9,12 +39,11 @@ function getQueryString(name) {
 		return unescape(r[2]);
 	return null;
 }
+
 //分页显示
 function getData(pageNo){
-	var allx00=getQueryString("allx00");
-	var key="";
-	if(allx00!=null&&allx00!=""){
-		key="&key_allx00="+allx00;
+	if(key==""){
+		key="&key_allx00=100000";
 	}
 	var param="pageNo="+(pageNo+1)+"&pageSize=10"+key;
 	$.ajax( {

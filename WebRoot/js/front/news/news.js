@@ -1,10 +1,49 @@
+var key="";
+
 $(function() {
+	get_reback_data()
 	getData(0);
+	$(".menus li").bind("click",function(){
+		$(this).parent().find("li").removeClass("active");
+		$("#about-title").html($(this).html());
+		$("#about-title1").html($(this).html());
+		$(this).addClass("active");
+	});
 });
 
+//处理返回页的参数
+function get_reback_data(){
+	var xwlx=getQueryString("xwlx00");
+	if(xwlx!=null&&xwlx!=""){
+		key="&key_xwlx00="+xwlx;
+		if(xwlx=="100001"){
+			$("#about-title").html("行业新闻");
+			$("#about-title1").html("行业新闻");
+			$(".menus li").parent().find("li").addClass("active");
+			$(".menus li").parent().find("li").first().removeClass("active");
+		}
+	}
+}
+
+function news_list(xwlx00){
+	key="&key_xwlx00="+xwlx00;
+	getData(0);
+}
+
+//获取URL参数
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null)
+		return unescape(r[2]);
+	return null;
+}
 //分页显示
 function getData(pageNo){
-	var param="pageNo="+(pageNo+1)+"&pageSize=10";
+	if(key==""){
+		key="&key_xwlx00=100000";
+	}
+	var param="pageNo="+(pageNo+1)+"&pageSize=10"+key;
 	$.ajax( {
 		type : "POST",
 		dataType : "json",

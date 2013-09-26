@@ -56,16 +56,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="main">
     	<div class="content-wrapper">
         	<div class="content">
-            	<h2 class="blue">人才招聘</h2>
                 <ul class="menus">
                 	<li class="menu active">
-                    	<a href="job.html">社会招聘</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp?zplx00=100000">社会招聘</a>
                     </li>
 					 <li class="menu">
-                    	<a href="job.html">校团招聘</a>
-                    </li>
-                     <li class="menu">
-                    	<a href="job.html">职位搜索</a>
+                    	<a href="<%=basePath%>pages/front/job/job.jsp?zplx00=100001">校园招聘</a>
                     </li>
                 </ul>
             </div>
@@ -73,8 +69,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<div class="feature-pic"></div>
                 <div class="page-pos">
                 	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
-					<a class="blue" href="<%=basePath%>pages/front/job/job.jsp">人才招聘</a>>社会招聘</div>
-                <div id="about-title1" class="title">社会招聘</div>
+					<a class="blue" href="<%=basePath%>pages/front/job/job.jsp" >人才招聘</a>>
+						<span id="about-title">社会招聘</span>
+					</div>
+                	<div id="about-title1" class="title">社会招聘</div>
                 <div class="line1"></div>
                 <div class="detail">
                 	<div class="share">
@@ -86,10 +84,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </div>
                         <span class="r noprint">
                         	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-<span id="bdshare" class="bdshare_b"></span>
+							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
-                    <span style="display:none" class="detail-more">			                    </span>
+                    <span style="display:none" class="detail-more"></span>
                    <div class="joblist">
                    		<div class="head">
                             	职位详情：<span  id="data-zpgw"></span>

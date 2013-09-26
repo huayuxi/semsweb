@@ -69,8 +69,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right news">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>全球案例>全球案例</div>
-                	<div id="about-title1" class="title">全球案例</div>
+                	<a class="blue" href="index.html">首页</a>>
+                	<a class="blue" href="<%=basePath%>pages/front/cases/cases.jsp">全球案例</a>>
+                	<span id="about-title">国内案例</span>
+                </div>
+                	<div id="about-title1" class="title">国内案例</div>
                 <div class="line1"></div>
                 <div class="detail">
                 	<div class="share">
@@ -81,11 +84,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         	<a class="blue noprint shareto_button" href="javascript:void(0);"><span></span>分享</a>
                         </div>
                         <span class="r noprint">
-                        	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
+                        	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);"></a>
 							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
-                    <span style="display:none" class="detail-more">			                    </span>
+                    <span style="display:none" class="detail-more"></span>
                    <div class="new_content">
                    		<div class="case_item">
                            	<div class="case_item_left">

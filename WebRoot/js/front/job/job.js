@@ -1,6 +1,35 @@
+var key="";
+
 $(function() {
+	$(".menus li").bind("click",function(){
+		$(this).parent().find("li").removeClass("active");
+		$("#about-title").html($(this).html());
+		$("#about-title1").html($(this).html());
+		$(this).addClass("active");
+	});
+	get_reback_data();
 	getData(0);
 });
+
+//处理返回页的参数
+function get_reback_data(){
+	var zplx=getQueryString("zplx00");
+	if(zplx!=null&&zplx!=""){
+		key="&key_zplx00="+zplx;
+		if(zplx=="100001"){
+			$("#about-title").html("校园招聘");
+			$("#about-title1").html("校园招聘");
+			$(".menus li").parent().find("li").addClass("active");
+			$(".menus li").parent().find("li").first().removeClass("active");
+		}
+	}
+}
+
+function job_list(zplx00){
+	key="&key_zplx00="+zplx00;
+	getData(0);
+}
+
 //获取URL参数
 function getQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -9,13 +38,10 @@ function getQueryString(name) {
 		return unescape(r[2]);
 	return null;
 }
-
 //分页显示
-function getData(pageNo){
-	var zplx00=getQueryString("zplx00");
-	var key="";
-	if(zplx00!=null&&zplx00!=""){
-		key="&key_zplx00="+zplx00;
+function getData(pageNo){;
+	if(key==""){
+		key="&key_zplx00=100000";
 	}
 	var param="pageNo="+(pageNo+1)+"&pageSize=10"+key;
 	$.ajax( {
