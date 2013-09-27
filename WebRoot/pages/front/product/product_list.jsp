@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="cache-control" content="no-cache"/>
 <meta http-equiv="expires" content="0"/>
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
-<meta http-equiv="description" content="This is my page"/>
+<meta http-equiv="description" content="产品世界"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
 <link href="<%=basePath%>js/common/pagination/pagination.css" rel="stylesheet" />
 
@@ -95,9 +95,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-                    <a class="blue" href="index.html">产品目录</a>>
-                    <span>电力载波终端控制器</span></div>
+                	<a class="blue" href="<%=basePath%>">首页</a>>
+                    <a class="blue" href="<%=basePath%>pages/front/product/product_list.jsp">产品目录</a>>
+                    <span id="about-title">电力载波终端控制器</span></div>
                 	<div id="about-title1" class="title">电力载波终端控制器</div>
                 <div class="line1"></div>
                 <div class="detail">

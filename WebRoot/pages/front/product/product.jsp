@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="#">智联信通</a></div>
+    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -93,8 +93,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">产品世界</a>>
+                	<a class="blue" href="<%=basePath%>">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/product/product_list.jsp">产品世界</a>>
                     <span id="about-title">核心价值</span>
                 </div>
                 <div id="about-title1" class="title">核心价值</div>

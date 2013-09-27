@@ -136,6 +136,7 @@ function getProductData() {
 				$("#j-ui-lm").val(obj.cplm00);
 				$("#j-ui-lx").val(obj.cplx00);
 				$("#j-ui-title").val(obj.cpmc00);
+				$("#j-ui-jj").text(obj.cpjj00);
 				$("#j-ui-sno").val(obj.pxqz00);
 				$("#j-ui-content").text(obj.cpnr00);
 				$("#j-ui-images").val(obj.zylj00);

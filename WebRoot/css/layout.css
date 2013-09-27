@@ -1,4 +1,4 @@
-@charset "utf-8";
+divquestion1@charset "utf-8";
 
 html{
 overflow:auto;  /*这个可以去掉IE6,7的滚动*/
@@ -498,8 +498,13 @@ a img{
 .bound #menu li a{ font-size:14px; font-weight:700; color:#707070;}
 
 .nav a {
-	 color: #333333; 
+	 color: #666666; 
 	 cursor: pointer;
+	  }
+.nav a  span{
+	 text-shadow:1px 1px 0 #FFFFFF; 
+	 cursor: pointer;
+	 font-size:14px;
 	  }
 a:hover {
 	color: #3188fd;
@@ -1186,7 +1191,7 @@ min-width:1000px;
  
 /*divquestion1 css*/
 .divquestion1{ width:740px; margin:auto;} 
-.divquestion1  li{ float:left; width:350px; margin:8px 10px;}
+.divquestion1  li{ float:left; width:350px; margin:8px 10px; list-style:none;}
 .divquestion1 .button{ text-align:center;}
 input.submitbutton {
     background: none repeat scroll 0 0 #F17819;
