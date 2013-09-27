@@ -17,6 +17,7 @@ public class ProductDetail implements java.io.Serializable{
 	private Integer cpzyid;
 	private String cpnr00;
 	private Integer cpid00;
+	private String cpjj00;
 	private String cpmc00;
 	private String cplx00;
 	private String cplm00;
@@ -55,6 +56,14 @@ public class ProductDetail implements java.io.Serializable{
 
 	public void setCpid00(Integer cpid00) {
 		this.cpid00 = cpid00;
+	}
+
+	public String getCpjj00() {
+		return cpjj00;
+	}
+
+	public void setCpjj00(String cpjj00) {
+		this.cpjj00 = cpjj00;
 	}
 
 	public String getCpmc00() {

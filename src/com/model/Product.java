@@ -11,6 +11,7 @@ public class Product implements java.io.Serializable {
 	private static final long serialVersionUID = -3757694378168347490L;
 	private Integer cpid00;
 	private String cpmc00;
+	private String cpjj00;
 	private String cplx00;
 	private String cplm00;
 	private String fbsj00;
@@ -32,6 +33,14 @@ public class Product implements java.io.Serializable {
 
 	public void setCpmc00(String cpmc00) {
 		this.cpmc00 = cpmc00;
+	}
+
+	public String getCpjj00() {
+		return cpjj00;
+	}
+
+	public void setCpjj00(String cpjj00) {
+		this.cpjj00 = cpjj00;
 	}
 
 	public String getCplx00() {

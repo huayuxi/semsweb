@@ -14,10 +14,12 @@ function getNewsData(){
 			if(totalcount!=0){
 				$.each(myData, function(i, n) {
 					var xwbt=n.xwbt00;
-					if(xwbt.length>19){
-						xwbt=xwbt.substr(0,18)+"..."
+					if(xwbt.length>17){
+						xwbt=xwbt.substr(0,17)+"..."
 					}
-					div=div+"<p>· " +xwbt+"</p>";
+					div=div+"<a href=\""+
+						$("#basePath").val()+"pages/front/news/news_detail.jsp?xwid00="+n.xwid00
+						+"\"><p>· " +xwbt+"</p></a>";
 				});
 				$("#news_list").html(div);
 			}
@@ -45,7 +47,9 @@ function getCasesData(){
 					if(almc.length>21){
 						almc=almc.substr(0,21)+"...";
 					}
-					div=div+"<p><span></span>" +almc+"</p>";
+					div=div+"<a href=\""+
+						$("#basePath").val()+"pages/front/cases/cases_detail.jsp?alid00="+n.alid00
+						+"\"><p><span></span>" +almc+"</p>";
 				});
 				$("#cases_list").html(div);
 			}

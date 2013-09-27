@@ -15,7 +15,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="cache-control" content="no-cache"/>
 <meta http-equiv="expires" content="0"/>
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3"/>
-<meta http-equiv="description" content="This is my page"/>
+<meta http-equiv="description" content="产品世界"/>
 <link href="<%=basePath%>css/layout.css" rel="stylesheet" />
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/front/product/product_detail.js" type="text/javascript"></script>
@@ -57,34 +57,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div class="content-wrapper">
         	<div class="content">
               	<ul class="menu">
-                <li><h3 class="blue">核心价值</h3></li>
-                
-                <li class="cate active">
-                	<h3 class="blue"><a href="product/productlist.html">产品目录</a></h3>
-                    <ul>
-                        <li>
-                        <a href="#">电力载波终端控制器</a>
-                        </li>
-                        <li>
-                        <a href="#">集中控制器</a>
-                        </li>
-                        <li>
-                        <a href="#">无线太阳能路灯控制器</a>
-                        </li>
-                        <li>
-                        <a href="#">防盗扩展模块及防盗终端</a>
-                        </li>
-                        <li>
-                        <a href="#">输入输出扩展模块</a>
-                        </li>
-                        <li>
-                        <a href="#">光照采集器</a>
-                        </li>
-                    </ul>
-                </li>
-                <li><h3 class="blue">管理平台</h3></li>
-                <li><h3 class="blue">软件功能</h3></li>
-             
+               		<li class="menu">
+                		<a href="<%=basePath%>pages/front/product/product.jsp">核心价值</a>
+                	</li>                
+                	<li class="menu active" id="product">
+                		<a  href="javascript:void(0)" class="blue">产品目录</a>
+                		<ul id="j-ui-proStyle" >
+	                       <li>
+								<a href="javascript:product_list(100000)">电力载波终端控制器</a>
+	                        </li>
+	                        <li>
+								<a href="javascript:product_list(100001)">集中控制器</a>
+	                        </li>
+	                        <li>
+	                        	<a href="javascript:product_list(100002)">无线太阳能路灯控制器</a>
+	                        </li>
+	                        <li>
+	                        	<a href="javascript:product_list(100003)">防盗扩展模块及防盗终端</a>
+	                        </li>
+	                        <li>
+	                        	<a href="javascript:product_list(100004)">输入输出扩展模块</a>
+	                        </li>
+	                        <li>
+	                        	<a href="javascript:product_list(100005)">光照采集器</a>
+	                        </li>
+                    	</ul>
+                	</li>
+                	<li class="menu">
+                		<a href="javascript:void(0)">管理平台</a>
+                	</li> 
                 </ul>	
             </div>
             <div class="right product">
@@ -105,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </div>
                         <span class="r noprint">
                         	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-<span id="bdshare" class="bdshare_b"></span>
+							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
                     <span style="display:none" class="detail-more">			                    </span>

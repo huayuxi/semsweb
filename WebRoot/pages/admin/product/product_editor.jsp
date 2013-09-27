@@ -189,7 +189,11 @@
                       <input  id="j-ui-sno" class="input-large" type="text" name="product.pxqz00">
                       <span class="input-tip input-tip-warning"></span>
                     </li>
-					
+					<li>
+                      <label class="lb-title">产品简介：</label>
+                      <textarea id="j-ui-jj" rows="3" cols="40"  class="textarea-large" name="product.cpjj00"></textarea>
+                      <span class="input-tip input-tip-warning"></span>
+                    </li>
                   </ul>
                   </div>
                    <div class="span5">

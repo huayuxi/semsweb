@@ -47,6 +47,7 @@ jQuery(function($){
 </head>
 
 <body>
+   <input type="hidden" value="<%=basePath%>" id="basePath"/>
 	<div class="bgsTabTop_cn">
 	<div class="bgsTabTopNav_cn">
   	 <div class="lng_left">&nbsp;</div><div class="lng_right"><div class="lng_right_mark"><a href="#">中文&nbsp;|&nbsp;English</a></div></div>
@@ -141,7 +142,7 @@ jQuery(function($){
           		<h3>全球案例</h3> 
           		<span id="cases_list"></span>
                 <div class="case_title">
-                	<a href=<%=basePath%>pages/front/cases/cases.jsp"><span style="padding-right:20px;">全球案例</span></a>
+                	<a href="<%=basePath%>pages/front/cases/cases.jsp"><span style="padding-right:20px;">全球案例</span></a>
                 </div>
             </div>
         </div>

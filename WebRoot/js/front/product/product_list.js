@@ -48,7 +48,7 @@ function getData(pageNo){
 								+"\"></div><div class=\"product_item_r\"><p><strong class=\"solutions\">" +
 								n.cpmc00
 								+"</strong></p><br><p>" +
-								n.cpnr00.substr(0,10)
+								n.cpjj00
 								 +"</p></div></div>"
 				});
 				$("#data_list").html(div);
