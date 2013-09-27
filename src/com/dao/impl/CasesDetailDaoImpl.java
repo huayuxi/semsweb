@@ -31,7 +31,6 @@ public class CasesDetailDaoImpl extends BasicHibernateDao implements CasesDetail
 	public CasesDetail queryCasesDetail(int alid00){
 		Query query = this.getSession().createQuery("from CasesDetail where alid00=?");
 		query.setLong(0, alid00);
-        
 		List<CasesDetail> list = query.list();
 		return list.size() == 0 ? null : list.get(0);
 	}

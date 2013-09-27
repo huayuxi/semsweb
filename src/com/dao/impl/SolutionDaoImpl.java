@@ -98,7 +98,7 @@ public class SolutionDaoImpl extends BasicHibernateDao implements SolutionDao {
 	 */
 	public List<Solution> querySolution(Map properties, int pageNo, int pageSize) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
-		String sql = "select * from tab_solution where 1=1" + like;
+		String sql = "select * from tab_solution where 1=1" + like+ " order by pxqz00 DESC";
 		SQLQuery sqlQuery = this.getSession().createSQLQuery(sql);
 		sqlQuery.addEntity(Solution.class);
 		sqlQuery.setFirstResult((pageNo - 1) * pageSize);

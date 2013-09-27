@@ -135,6 +135,11 @@
 			                      <span class="input-tip input-tip-warning"></span>
 			                    </li>
 			                    <li>
+			                      <label class="lb-title">排序权值：</label>
+			                      <input  id="j-ui-sno" class="input-large" type="text" name="cases.pxqz00">
+			                      <span class="input-tip input-tip-warning"></span>
+			                    </li>
+			                    <li>
 			                      <label class="lb-title">案例背景：</label>
 			                      <textarea id="j-ui-bj" rows="3" cols="40"  class="textarea-large" name="cases.albj00"></textarea>
 			                      <span class="input-tip input-tip-warning"></span>

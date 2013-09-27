@@ -6,12 +6,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!--[if lte IE 6]>
-<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
-    </script>
-<![endif]--> 
   <head>
     <base href="<%=basePath%>">
     
@@ -24,7 +18,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	
 	<link href="<%=basePath%>css/layout.css" rel="stylesheet" />
-
+	<!--[if lte IE 6]>
+	<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+	    <script type="text/javascript">
+	        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
+	    </script>
+	<![endif]--> 
   </head>
   
   <body>
@@ -85,10 +84,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </div>
                         <span class="r noprint">
                         	<a class="print" title="打印该页" onclick="window.print();" href="javascript:void(0);">　　</a>
-<span id="bdshare" class="bdshare_b"></span>
+							<span id="bdshare" class="bdshare_b"></span>
                         </span>
                     </div>
-                    <span style="display:none" class="detail-more">			                    </span>
+                    <span style="display:none" class="detail-more"></span>
                    <div class="new_content">
                    	 <p><span>深圳市智联信通科技有限公司成立于2010年3月，注册资金人民币1500万元，是由在美国的华人科学家投资创立的，一家从事通讯技术、智能控制技术和物联网技术研究和应用开发的高科技企业。公司国内运营总部设在厦门，并在美国丹佛、杭州、深圳设立了研发及销售机构，提供包括SEMS智能照明远程监控系统、电力线载波通讯模块、多媒介无缝数据传输技术（以电力线载波通讯技术，ZIGBEE通讯技术、RFID以及DSP/ARM9等处理器技术为核心，把电力线载波通讯、Wi-Fi、Zigbee、以太网、GPRS/3G，RS485/Modbus/DMX等总线数据传输完美衔接在一起）在内的产品和系统服务。</span></p>
 					 <p><span>公司的SEMS智能化城市照明监控系统广泛地应用于城市道路照明控制、隧道照明控制、太阳能照明控制等，能实现远程单灯控制、节能和智慧管理功能，节能效果达到40%以上，日常维护费用节省50%以上，延长灯具寿命25%以上。系统具有自动断电报警、来电提醒功能、具有意外开灯、意外关灯报警功能、缺相报警功能、亮灯率计算、具有经纬度控制、光控、定时控制等回路控制功能、具有内置三相电表提供实时电量、年月日报表等多种功能。能够提供及时有效的数据给客户分析，在节省电量的同时也提供了多种设备维护的信息给客户。投资成本低，投资汇报率高。</span></p>

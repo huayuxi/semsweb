@@ -33,7 +33,7 @@ function getData(pageNo){
 						div=div+"<tr class=\"g-app-row\"><td><label class=\"g-ad-title\">" +
 								"<input class=\"g-checkbox\" type=\"checkbox\">" +
 								"<a href=\""+
-								$("#basePath").val()+"pages/admin/news/news_detail.jsp?xwid00="+n.xwid00
+								$("#basePath").val()+"pages/front/job/job_detail.jsp?zpid00="+n.zpid00
 								+"\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
 								n.zpgw00
 								+"</a></label></td><td>"+
@@ -76,7 +76,7 @@ function pageselectCallback(page_id,jq){
 //前往编辑页面
 function goUpdate(zpid00){
 	var basePath=$("#basePath").val();
-	window.location.href=basePath+"pages/admin/job/job_editor.jsp?xwid00="+zpid00;
+	window.location.href=basePath+"pages/admin/job/job_editor.jsp?zpid00="+zpid00;
 }
 //删除新闻
 function goDel(zpid00){

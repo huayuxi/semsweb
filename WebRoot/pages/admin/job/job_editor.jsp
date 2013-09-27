@@ -10,12 +10,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<base href="<%=basePath%>">
-	<title>智联信通-发布职位</title>
+	<title>智联信通-编辑职位</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="发布职位">
+	<meta http-equiv="description" content="编辑职位">
 
     <!-- Bootstrap -->
     <link href="<%=basePath%>bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -29,7 +29,7 @@
 	</script>
 	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.config.js" type="text/javascript" ></script>
 	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.all.js" type="text/javascript" ></script>
-	<script src="<%=basePath%>js/admin/job/job_add.js" type="text/javascript"></script>
+	<script src="<%=basePath%>js/admin/job/job_editor.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -110,8 +110,9 @@
           <div class="g-main-box">
             <!--create info-->
             <div class="g-create-info">
-              <h3 class="title">发布职位</h3>
+              <h3 class="title">编辑职位</h3>
               <form id="job-form">
+                <input type="hidden" id="j-ui-id" name="cases.alid00"/>
                  <ul>                
                     <li>
                       <label class="lb-title">招聘岗位：</label>
@@ -185,12 +186,15 @@
     </div>
     <!--/container980-->
     <script type="text/javascript">
-        UE.getEditor('j-ui-content',{
-            //focus时自动清空初始化时的内容
-            autoClearinitialContent:true,
-            //默认的编辑区域高度
-            initialFrameHeight:300
-        })
+	var editor = UE.getEditor('j-ui-content',{
+        //focus时自动清空初始化时的内容
+        autoClearinitialContent:true,
+        //默认的编辑区域高度
+        initialFrameHeight:300
+    })
+    editor.addListener("ready", function () {
+    	editor.setContent($("#j-ui-content").text());
+	});
     </script>
 </body>
 </html>

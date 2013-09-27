@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <span style="display:none" class="detail-more">			                    </span>
                    	<div class="joblist" id="job_list"></div>
 					<!--end joblist-->
-                    <div class="pager" id="Pagination"></div>
+                    <div class="pager pagination" id="Pagination"></div>
                 </div>
 				<!--end detail-->
             </div>

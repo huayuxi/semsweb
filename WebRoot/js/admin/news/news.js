@@ -35,7 +35,7 @@ function getData(pageNo){
 						div=div+"<tr class=\"g-app-row\"><td><label class=\"g-ad-title\">" +
 								"<input class=\"g-checkbox\" type=\"checkbox\">" +
 								"<a href=\""+
-								$("#basePath").val()+"pages/admin/news/news_detail.jsp?xwid00="+n.xwid00
+								$("#basePath").val()+"pages/front/news/news_detail.jsp?xwid00="+n.xwid00
 								+"\"><img class=\"g-appimg\" src=\"bootstrap/img/new.gif\">"+
 								xwbt.substr(0,20)
 								+"</a></label></td><td>"+

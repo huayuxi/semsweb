@@ -55,14 +55,16 @@ $(function() {
 				}
 			break;
  			case "sno" :
- 				if($.trim($("#"+selector).val())==""){
- 					$("#"+selector).next(".input-tip").removeClass("input-tip-success").addClass("input-tip-warning").text("排序号不能为空").fadeIn(100);
+ 				var reg = new RegExp("^[0-9]*$");
+ 				var data= $("#"+selector).val();
+ 				if($.trim(data)=="" || !reg.test(data)){
+ 					$("#"+selector).next(".input-tip").removeClass("input-tip-success").addClass("input-tip-warning").text("请输入数字").fadeIn(100);
  					return false;
  				}else{
  					$("#"+selector).next(".input-tip").removeClass("input-tip-warning").addClass("input-tip-success").text("填写正确").fadeIn(100);
  					return true;
  				}
- 			break;
+ 				break;
  			case "content" :
  				var data= $("#"+selector).val();
  				if($.trim(data)==""){

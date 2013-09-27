@@ -63,6 +63,7 @@ public class CasesServiceImpl implements CasesService {
 	 * @return true or false
 	 */
 	public boolean updateCases(Cases cases,CasesRes casesRes){
+		casesRes.setAlid00(cases.getAlid00());
 		return casesDao.updateCases(cases)&&casesResDao.updateCasesRes(casesRes);
 	}
 

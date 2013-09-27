@@ -103,7 +103,7 @@ public class NewsDaoImpl extends BasicHibernateDao implements NewsDao {
 	 */
 	public List<News> queryNews(Map properties, int pageNo, int pageSize) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
-		String sql = "select * from tab_news where 1=1" + like;
+		String sql = "select * from tab_news where 1=1" + like+ " order by pxqz00 DESC";
 		SQLQuery sqlQuery = this.getSession().createSQLQuery(sql);
 		sqlQuery.addEntity(News.class);
 		sqlQuery.setFirstResult((pageNo - 1) * pageSize);

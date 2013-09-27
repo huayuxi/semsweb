@@ -23,8 +23,8 @@ import com.util.LikeQueryUtil;
  * @date: 2013-9-9 下午2:08:01
  * @author: lintz
  */
-@SuppressWarnings({"unchecked","rawtypes"})
-public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
+@SuppressWarnings({ "unchecked", "rawtypes" })
+public class CasesDaoImpl extends BasicHibernateDao implements CasesDao {
 	
 	/**
 	 * @description: 新增案例
@@ -33,8 +33,8 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @param cases 案例
 	 * @return 案例ID
 	 */
-	public Integer addCases(Cases cases){
-		int id=0;
+	public Integer addCases(Cases cases) {
+		int id = 0;
 		try {
 			Date nowDate = new Date();
 			cases.setFbsj00(DateUtil.dateToString14(nowDate));
@@ -52,7 +52,7 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @param cases 案例
 	 * @return true or false
 	 */
-	public boolean delCases(Cases cases){
+	public boolean delCases(Cases cases) {
 		try {
 			this.getSession().delete(cases);
 		} catch (Exception e) {
@@ -69,14 +69,25 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @return true or false
 	 */
 	public boolean updateCases(Cases cases){
-		try {
-			this.getSession().update(cases);
-		} catch (Exception e) {
-			return false;
+		Query query = this.getSession().createQuery("from Cases where alid00=?");
+		query.setLong(0, cases.getAlid00());
+		List<Cases> list = query.list();
+		if(list.size() != 0){
+			Cases casesRs=list.get(0);
+			casesRs.setAlbj00(cases.getAlbj00());
+			casesRs.setAlcx00(cases.getAlcx00());
+			casesRs.setAlgm00(cases.getAlgm00());
+			casesRs.setAllx00(cases.getAllx00());
+			casesRs.setAlmc00(cases.getAlmc00());
+			casesRs.setPxqz00(cases.getPxqz00());
+			try {
+				this.getSession().update(casesRs);
+			} catch (Exception e) {
+				return false;
+			}
 		}
 		return true;
 	}
-	
 	
 	/**
 	 * @description: 根据登陆帐号查询案例
@@ -85,10 +96,10 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @param alid00 案例ID
 	 * @return 案例
 	 */
-	public Cases queryCases(int alid00){
+	public Cases queryCases(int alid00) {
 		Query query = this.getSession().createQuery("from Cases where alid00=?");
 		query.setLong(0, alid00);
-        List<Cases> list = query.list();
+		List<Cases> list = query.list();
 		return list.size() == 0 ? null : list.get(0);
 	}
 	
@@ -101,15 +112,15 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @param pageSize 每页记录数
 	 * @return 全部案例
 	 */
-    public List<Cases> queryCases(Map properties, int pageNo, int pageSize){
-    	String like = LikeQueryUtil.createLikeQuery(properties);
-		String sql = "select * from tab_cases where 1=1" + like;
+	public List<Cases> queryCases(Map properties, int pageNo, int pageSize) {
+		String like = LikeQueryUtil.createLikeQuery(properties);
+		String sql = "select * from tab_cases where 1=1" + like + " order by pxqz00 DESC";
 		SQLQuery sqlQuery = this.getSession().createSQLQuery(sql);
 		sqlQuery.addEntity(Cases.class);
 		sqlQuery.setFirstResult((pageNo - 1) * pageSize);
 		sqlQuery.setMaxResults(pageSize);
 		return sqlQuery.list();
-    }
+	}
 	
 	/**
 	 * @description:统计全部案例
@@ -118,7 +129,7 @@ public class CasesDaoImpl extends BasicHibernateDao implements CasesDao{
 	 * @param properties 条件
 	 * @return 统计数
 	 */
-	public int countCases(Map properties){
+	public int countCases(Map properties) {
 		String like = LikeQueryUtil.createLikeQuery(properties);
 		String sql = "select count(*) from tab_cases where 1=1" + like;
 		String countStr = this.getSession().createSQLQuery(sql).uniqueResult().toString();

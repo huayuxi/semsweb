@@ -25,6 +25,7 @@ function getCasesData() {
 				$("#j-ui-bj").text(obj.albj00);
 				$("#j-ui-gm").text(obj.algm00);
 				$("#j-ui-cx").text(obj.alcx00);
+				$("#j-ui-sno").val(obj.pxqz00);
 				$("#j-ui-images").val(obj.zylj00);
 				$("#j-images").attr("src",$("#basePath").val()+obj.zylj00);
 				init();
@@ -46,6 +47,7 @@ function init(){
 		var valid = true;
 		!userInfoCheck("j-ui-name","name")&& (valid = false);
 		!userInfoCheck("j-ui-bj","bj") && (valid = false);
+		!userInfoCheck("j-ui-sno","sno") && (valid = false);
 		!userInfoCheck("j-ui-cx","cx") && (valid = false);
 		!userInfoCheck("j-ui-gm","gm") && (valid = false);
 		!userInfoCheck("j-ui-images","images") && (valid = false);
@@ -69,7 +71,9 @@ function init(){
 	$("#j-ui-name").bind("blur",function(){
 		userInfoCheck("j-ui-name","name");
 	});
-	
+	$("#j-ui-sno").bind("blur",function(){
+		userInfoCheck("j-ui-sno","sno");
+	});
 	$("#j-ui-bj").bind("blur",function(){
 		userInfoCheck("j-ui-bj","bj");
 	});
@@ -98,6 +102,17 @@ function userInfoCheck(selector,type){
 					return true;
 				}
 			break;
+ 			case "sno" :
+ 				var reg = new RegExp("^[0-9]*$");
+ 				var data= $("#"+selector).val();
+ 				if($.trim(data)=="" || !reg.test(data)){
+ 					$("#"+selector).next(".input-tip").removeClass("input-tip-success").addClass("input-tip-warning").text("请输入数字").fadeIn(100);
+ 					return false;
+ 				}else{
+ 					$("#"+selector).next(".input-tip").removeClass("input-tip-warning").addClass("input-tip-success").text("填写正确").fadeIn(100);
+ 					return true;
+ 				}
+ 				break;
  			case "bj" :
  				if($.trim($("#"+selector).val())==""){
  					$("#"+selector).next(".input-tip").removeClass("input-tip-success").addClass("input-tip-warning").text("案例背景不能为空").fadeIn(100);

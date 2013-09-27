@@ -100,7 +100,7 @@ public class JobDaoImpl extends BasicHibernateDao implements JobDao{
 	 */
 	public List<Job> queryJob(Map properties, int pageNo, int pageSize){
 		String like = LikeQueryUtil.createLikeQuery(properties);
-		String sql = "select * from tab_job where 1=1" + like;
+		String sql = "select * from tab_job where 1=1" + like+ " order by pxqz00 DESC";
 		SQLQuery sqlQuery = this.getSession().createSQLQuery(sql);
 		sqlQuery.addEntity(Job.class);
 		sqlQuery.setFirstResult((pageNo - 1) * pageSize);
