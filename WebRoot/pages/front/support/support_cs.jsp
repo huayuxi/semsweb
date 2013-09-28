@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="#">智联信通</a></div>
+    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -61,17 +61,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <li class="menu active">
                     	<a href="<%=basePath%>pages/front/support/support_cs.jsp">客户服务</a>
                     </li>
-                     <li class="menu">
-                    	<a href="<%=basePath%>pages/front/support/support.jsp">在线留言</a>
-                    </li>
                 </ul>
             </div>
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">在线支持</a>>常见问题</div>
-                <div id="about-title1" class="title">常见问题</div>
+                	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/support/support.jsp">在线支持</a>>客户服务</div>
+                <div id="about-title1" class="title">客户服务</div>
                 <div class="line1"></div>
                 <div class="detail">
                 	<div class="share">
@@ -88,19 +85,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <span style="display:none" class="detail-more">			                    </span>
                    <div class="new_content">
-                   	 <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-					 <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-                    <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-                    <p><span>7月9日，物联网行业协会秘书长、集美大学信息工程学院院长等一行3人受厦门市经济发展局委托，来我司展开物联网产业技术现状调研。</span></p>
-                   <div class="clear"></div>
+                   	<h2>智联信通能为您做些什么？</h2>
+                     <div class="divquestion1">
+                     	<ul>
+                        	<li>
+                            	<input id="q2_1" type="radio" value="1" name="q2">
+								<label for="q2_1">提供第四代智能照明监控系统解决方案</label>
+                            </li>
+                            <li>
+                                <input id="q2_2" type="radio" value="2" name="q2">
+                                <label for="q2_2">提供有关智联信通的新产品信息</label>
+                                </li>
+                             <li>
+                                <input id="q2_3" type="radio" value="2" name="q2">
+                                <label for="q2_3">提供智联信通相关技术革新信息</label>
+                                </li>
+                              <li>
+                                <input id="q2_4" type="radio" value="2" name="q2">
+                                <label for="q2_4">邀请您成为智联信通新产品测试的示范单位</label>
+                                </li>
+                              <li>
+                                <input id="q2_5" type="radio" value="2" name="q2">
+                                <label for="q2_5">邀请您成为智联信通产品代理商</label>
+                                </li>
+                              <li>
+                                <input id="q2_6" type="radio" value="2" name="q2">
+                                <label for="q2_6">其他</label>
+                                </li>
+                              	<div class="button"><input type="button" id="submit_button" onmouseout="this.className='submitbutton';" value="提交答卷" class="submitbutton"></div>
+                        </ul>
+                     </div>
                    </div>
 					<!--end content-->
                     <div class="pager">
-                    	<span class="active">1</span>
-                            <a class="ablue num" href="#">2</a>
-                            <a class="ablue num" href="#">3</a>
-                            <a class="ablue" href="#">..</a>
-                            <a class="ablue" href="#">下一页</a>
                     </div>
                 </div>
 				<!--end detail-->

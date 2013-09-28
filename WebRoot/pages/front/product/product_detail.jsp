@@ -118,10 +118,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <div class="product_item_l">
                                 	<img id="j-ui-images" width="419" height="210" >
                                 </div>
-                                <div class="product_item_r" >    
-                                <p><strong class="solutions" id="j-ui-mc"></strong></p>  
-                                <br><p/>
-                                <p id="j-ui-jj"></p>                   
+                                <div class="product_item_r" > 
+                                 	<div class="product_item_name" id="j-ui-mc"></div>
+                                	<div class="product_introduction" id="j-ui-jj"></div>                     
                                </div>
                              </div>
                              <div class="case_item" id="j-ui-nr">                        

@@ -118,33 +118,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="pic">
                             	<a href="<%=basePath%>pages/front/product/product_worth.jsp?id=1"><img src="images/msw_pro_01.png" /></a>
                             </div>
-                            <a href="<%=basePath%>pages/front/product/product_worth.jsp?id=1">节能环保。实现按需照明，节省30％的照明用电，创造城市低碳生活; </a> 
 						</div>
                         
                         <div class="box">
 							<div class="pic">
                             	<a href="<%=basePath%>pages/front/product/product_worth.jsp?id=2"><img src="images/msw_pro_02.png" /></a>
                             </div>
-                            <a href="<%=basePath%>pages/front/product/product_worth.jsp?id=2">安全防护。线路破损或设施被盗即时报警，防止出现财产损失及公共安全事件。</a>
 						</div>
                         <div class="box">
 							<div class="pic">
                             	<a href="<%=basePath%>pages/front/product/product_worth.jsp?id=3"><img src="images/msw_pro_03.png" /></a>
                             </div>
-                            <a href="<%=basePath%>pages/front/product/product_worth.jsp?id=3">节能环保。实现按需照明，节省30％的照明用电，创造城市低碳生活;</a>
 						</div>
                         <div class="divcenter">
                         <div class="box">
 							<div class="pic">
                             	<a href="<%=basePath%>pages/front/product/product_worth.jsp?id=4"><img src="images/msw_pro_04.png" /></a>
                             </div>
-                           <a href="<%=basePath%>pages/front/product/product_worth.jsp?id=4"> 智慧管理。采用监控中心、平板电脑及手机即可随时随地对每盏灯进行监控管理，实现能耗分析、资产管理的决策系统;</a>
 						</div>
                         <div class="box">
 							<div class="pic">
                             	<a href="<%=basePath%>pages/front/product/product_worth.jsp?id=5"><img src="images/msw_pro_05.png" /></a>
                             </div>
-                            <a href="<%=basePath%>pages/front/product/product_worth.jsp?id=5">便捷维护。单灯故障报警，免人工巡线，节省维护成本，提高运维效率。</a>
 						</div>
                        </div>
                         <div class="clear"></div>

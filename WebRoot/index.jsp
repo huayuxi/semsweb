@@ -16,6 +16,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=basePath%>js/common/jquery-1.8.3.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/common/jquery.slideBox/js/jquery.slideBox.js" type="text/javascript"></script>
 <script src="<%=basePath%>js/index.js" type="text/javascript"></script>
+<!--[if lte IE 6]>
+<script src="<%=basePath%>js/common/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('div, ul, img, li, input , a,span');
+    </script>
+<![endif]--> 
 <script type="text/javascript">
 jQuery(function($){
 	$('.chat_f1_expr').animate({height:'186px'}, 1000 );
@@ -34,11 +40,11 @@ jQuery(function($){
 		$(this).children('.detail').hide();	
 		$(this).children('.arrow').css('color','#fff');
 	})
-	//$('#ad img').attr("width",$(document).width());
+	var ga_w=document.body.clientWidth;
 	$('#ad').slideBox({
-		easing : 'linear',//swing,linear//滚动特效
-		delay : 5,//滚动延迟时间，单位：秒
-		hideBottomBar : true//隐藏底栏
+		hideBottomBar:false,//隐藏底栏
+		width : ga_w,
+		height :396
 	});
 	getNewsData();
 	getCasesData()
@@ -58,7 +64,7 @@ jQuery(function($){
     	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
-				<ul>
+				<ul style="position:relative;">
 					<li class="active"><a  href="<%=basePath%>index.jsp" class="index_home"><span>首页</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/news/news.jsp" class="market_dynamics" ><span>市场动态</span></a></li>
 					<li><a  href="<%=basePath%>pages/front/product/product.jsp" class="productworld" ><span>产品世界</span></a></li>
@@ -75,10 +81,10 @@ jQuery(function($){
 <div class="pcList">
 	<div class="slideBox" id="ad">
     	<ul class="items">
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/1.jpg" style="left: -252px;position: relative;"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/2.jpg" style="left: -252px;position: relative;"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/3.jpg" style="left: -252px;position: relative;"></a></li>
-    		<li><a href="javascript:void(0)" title="智慧照明监控领导者"><img src="images/4.jpg" style="left: -252px;position: relative;"></a></li>
+    		<li><a href="javascript:void(0)" ><img src="images/1.jpg" style=""></a></li>
+    		<li><a href="javascript:void(0)" ><img src="images/2.jpg" style=""></a></li>
+    		<li><a href="javascript:void(0)" ><img src="images/3.jpg" style=""></a></li>
+    		<li><a href="javascript:void(0)"><img src="images/4.jpg" style=""></a></li>
   		</ul>
     </div>	
 </div>
@@ -124,10 +130,10 @@ jQuery(function($){
 <div class="demo-mode">
 	<div class="bound">
     	<ul>
-        	<li><a href="javascript:void(0)"><img src="images/tunnelsystem.gif"  /><span>隧道系统演示</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/landscapesystems.gif"  /><span>隧道系统演示</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/solarsystem.gif"  /><span>隧道系统演示</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/streetlightingsystem.gif"  /><span>隧道系统演示</span></a></li>
+        	<li><a href="javascript:void(0)"><img src="images/tunnelsystem.gif"  /><span>隧道灯智慧无级调光系统</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/landscapesystems.gif"  /><span>城市道路照明智能监控系统</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/solarsystem.gif"  /><span>太阳能照明智能监控系统</span></a></li>
+            <li><a href="javascript:void(0)"><img src="images/streetlightingsystem.gif"  /><span>景观亮化照明智能监控系统</span></a></li>
         </ul>
     </div>
 </div>

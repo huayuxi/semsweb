@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div id="header">
 	<div class="bound">
-    	<div id="logo"><a href="#">智联信通</a></div>
+    	<div id="logo"><a href="<%=basePath%>">智联信通</a></div>
 		<div id="menu">
 			<div class="nav">
 				<ul>
@@ -61,16 +61,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					 <li class="menu">
                     	<a href="<%=basePath%>pages/front/support/support_cs.jsp">客户服务</a>
                     </li>
-                     <li class="menu">
-                    	<a href="<%=basePath%>pages/front/support/support.jsp">在线留言</a>
-                    </li>
                 </ul>
             </div>
             <div class="right product">
             	<div class="feature-pic"></div>
                 <div class="page-pos">
-                	<a class="blue" href="index.html">首页</a>>
-					<a class="blue" href="news.html">在线支持</a>>常见问题</div>
+                	<a class="blue" href="<%=basePath%>index.jsp">首页</a>>
+					<a class="blue" href="<%=basePath%>pages/front/support/support.jsp">在线支持</a>>客户服务</div>
                 <div id="about-title1" class="title">常见问题</div>
                 <div class="line1"></div>
                 <div class="detail">

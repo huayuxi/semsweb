@@ -11,6 +11,13 @@ $(function() {
 	getData(0);
 });
 
+function dateFormate(date){
+	if(date!=null){
+		return date.substr(0,4)+"-"+date.substr(4,2)+"-"+date.substr(6,2);
+	}
+	return "";
+}
+
 //处理返回页的参数
 function get_reback_data(){
 	var zplx=getQueryString("zplx00");
@@ -55,19 +62,20 @@ function getData(pageNo){;
 			var myData = data.list;
 			var div ="";
 			if(totalcount!=0){
-				div= "<div class=\"head\"><div class=\"name\">职位名称</div><div class=\"jobclass\">招聘类型</div>" +
+				div= "<div class=\"head\"><div class=\"name\">职位名称</div><div class=\"jobclass\">岗位类型</div>" +
 						"<div class=\"city\">工作地点</div><div class=\"date\">发布时间</div></div>";
 				$.each(myData, function(i, n) {
+					var gzlb00=n.gzlb00=="100000"?"技术类":"行政类";
 						div=div+ "<div class=\"item\"><div class=\"name\"><a class=\"ablue\" href=\"" +
 								$("#basePath").val()+"pages/front/job/job_detail.jsp?zpid00="+n.zpid00
 								+"\">" +
 								n.zpgw00
 								+"</a></div><div class=\"jobclass\">" +
-								n.zplx00
+								gzlb00
 								+"</div><div class=\"city\">" +
 								n.gzdd00
 								+"</div><div class=\"date\">" +
-								n.fbsj00
+								dateFormate(n.fbsj00)
 								+"</div></div>"
 				});
 				$("#job_list").html(div);

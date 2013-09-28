@@ -50,14 +50,14 @@ public class CasesAction extends BaseAction {
 		HttpServletRequest req = getRequest();
 		HttpSession session = req.getSession();
 		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
-		if(cases!=null&&casesRes!=null){
+		if (cases != null && casesRes != null) {
 			cases.setFbz000(sysUserSession.getYhid00());
 			if (casesService.addCases(cases, casesRes)) {
 				msg = "success";
 			} else {
 				msg = "error_error";
 			}
-		}		
+		}
 		return SUCCESS;
 	}
 	
@@ -71,14 +71,14 @@ public class CasesAction extends BaseAction {
 		HttpServletRequest req = getRequest();
 		HttpSession session = req.getSession();
 		SysUser sysUserSession = (SysUser) session.getAttribute("sysUser");
-		if(cases!=null&&casesRes!=null){
+		if (cases != null && casesRes != null) {
 			cases.setFbz000(sysUserSession.getYhid00());
 			if (casesService.updateCases(cases, casesRes)) {
 				msg = "success";
 			} else {
 				msg = "error_error";
 			}
-		}		
+		}
 		return SUCCESS;
 	}
 	
@@ -90,7 +90,7 @@ public class CasesAction extends BaseAction {
 	 */
 	public String deleteCases() {
 		HttpServletRequest req = getRequest();
-		int alid00 =Integer.parseInt(req.getParameter("alid00"));
+		int alid00 = Integer.parseInt(req.getParameter("alid00"));
 		if (alid00 != 0) {
 			Cases casesObj = new Cases();
 			casesObj.setAlid00(alid00);
@@ -134,6 +134,7 @@ public class CasesAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
+	
 	/**
 	 * @description: 查询案例详情
 	 * @date: 2013-8-28 上午11:13:13
@@ -143,12 +144,13 @@ public class CasesAction extends BaseAction {
 	public String queryCasesDetail() {
 		HttpServletRequest req = ServletActionContext.getRequest();
 		String alid = req.getParameter("alid00");
-		int alid00=Integer.parseInt(alid);
+		int alid00 = Integer.parseInt(alid);
 		casesDetail = casesService.queryCasesDetail(alid00);
 		if (casesDetail != null)
 			return SUCCESS;
 		return ERROR;
 	}
+	
 	/**
 	 * @description: 查询案例详情
 	 * @date: 2013-8-28 上午11:13:13
@@ -178,6 +180,7 @@ public class CasesAction extends BaseAction {
 		}
 		return SUCCESS;
 	}
+	
 	/*------------------------------------set and get menthod-------------------------------*/
 	public Cases getCases() {
 		return cases;
@@ -198,11 +201,11 @@ public class CasesAction extends BaseAction {
 	public CasesDetail getCasesDetail() {
 		return casesDetail;
 	}
-
+	
 	public void setCasesDetail(CasesDetail casesDetail) {
 		this.casesDetail = casesDetail;
 	}
-
+	
 	public CasesService getCasesService() {
 		return casesService;
 	}

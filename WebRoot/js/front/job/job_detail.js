@@ -11,6 +11,13 @@ $(function() {
 	getJobData();
 });
 
+function dateFormate(date){
+	if(date!=null){
+		return date.substr(0,4)+"-"+date.substr(4,2)+"-"+date.substr(6,2);
+	}
+	return "";
+}
+
 function getJobData() {
 	var zpid00=getQueryString("zpid00");
 	if(zpid00!=null){
@@ -23,7 +30,7 @@ function getJobData() {
 			success : function(data) {
 				var obj=data.job;
 				$("#data-zpgw").html(obj.zpgw00);
-				$("#data-fbsj").html(obj.fbsj00);
+				$("#data-fbsj").html(dateFormate(obj.fbsj00));
 				
 				var zplx=obj.zplx00;
 				
@@ -38,7 +45,7 @@ function getJobData() {
 				}
 				
 				
-				$("#data-gzlb").html(obj.gzlb00);
+				$("#data-gzlb").html(obj.gzlb00=="100000"?"技术类":"行政类");
 				$("#data-gzdd").html(obj.gzdd00);
 				$("#data-zprs").html(obj.zprs00);
 				$("#data-zpnr").html(obj.zpnr00);
