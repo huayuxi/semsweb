@@ -96,33 +96,37 @@ jQuery(function($){
     </div>
 </div>
 <div class="latest-news-index">
-	<div class="bound">
-    	<div class="latest-news">
-        	<div class="title">
-            	<h3>头条新闻<span><a href="<%=basePath%>pages/front/news/news.jsp">&gt;&nbsp;more</a></span></h3>
-            </div>
-            <div class="content" >
-            	<a href="javascript:void(0)" class="image">
-            		<img src="images/iotcomm_001news.jpg"  />
-                </a>
-                <span id="news_list"></span>
-            </div>
-        </div>
+<div class="bound">
         <div class="video_media">
-        	<div class="content">
-        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="480" height="283"> 
+        	<div class="video_common">
+        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="469" height="276"> 
 				<param name="movie" value="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" /> 
 				<!--[if !IE]>--> 
 				<object type="application/x-shockwave-flash" 
 				data="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" 
-				width="480" height="283"> 
+				width="469" height="276"> 
 				<!--<![endif]--> 
 				<p>Alternative content</p> 
 				<!--[if !IE]>--> 
 				</object> 
 				<!--<![endif]--> 
 			</object> 
-          </div>
+			</div>
+        </div>
+      <div class="latest-news">
+        	<div class="title">
+            	<div class="news_title">公司新闻</div>
+                <div class="more"><a href="<%=basePath%>pages/front/news/news.jsp">&gt;more</a></div>
+            </div>
+            <hr  class="news_line"/>
+			<div class="content">
+            	<div class="new_images">
+                 	<img src="images/iotcomm_001news.jpg"  /> 	
+                </div>
+                <div class="clear"></div>
+                <div class="news_content" id="news_list">
+                </div>
+            </div>
         </div>
         <div class="clear"></div>
     </div>

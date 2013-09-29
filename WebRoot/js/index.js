@@ -1,6 +1,6 @@
 
 function getNewsData(){
-	var param="pageNo=1&pageSize=6";
+	var param="pageNo=1&pageSize=4";
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
@@ -14,12 +14,13 @@ function getNewsData(){
 			if(totalcount!=0){
 				$.each(myData, function(i, n) {
 					var xwbt=n.xwbt00;
-					if(xwbt.length>17){
-						xwbt=xwbt.substr(0,17)+"..."
+					if(xwbt.length>26){
+						xwbt=xwbt.substr(0,25)+"..."
 					}
-					div=div+"<a href=\""+
+					div=div+"<p><a href=\""+
 						$("#basePath").val()+"pages/front/news/news_detail.jsp?xwid00="+n.xwid00
-						+"\"><p>· " +xwbt+"</p></a>";
+						+"\"> <strong class=\"news_dynamic_intro_name\">· " +xwbt+"</strong><strong class=\"news_dynamic_intro_time\">" +dateFormate(n.fbsj00)+
+								"</strong></a></p>";
 				});
 				$("#news_list").html(div);
 			}
@@ -27,7 +28,12 @@ function getNewsData(){
 	});
 }
 
-
+function dateFormate(date){
+	if(date!=null){
+		return date.substr(0,4)+"-"+date.substr(4,2)+"-"+date.substr(6,2);
+	}
+	return "";
+}
 
 function getCasesData(){
 	var param="pageNo=1&pageSize=5";

@@ -72,7 +72,8 @@ function getReback(){
 }
 //分页显示
 function getData(pageNo){
-	var param="pageNo="+(pageNo+1)+"&pageSize=10&key_cplm00="+getQueryString("key_cplm00")+"&key_cplx00="+getQueryString("key_cplx00");
+	var cplx=getQueryString("key_cplx00")!=null?("&key_cplx00="+getQueryString("key_cplx00")):"";
+	var param="pageNo="+(pageNo+1)+"&pageSize=10&key_cplm00="+getQueryString("key_cplm00")+cplx;
 	$.ajax( {
 		type : "POST",
 		dataType : "json",
