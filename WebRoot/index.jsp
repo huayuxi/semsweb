@@ -110,12 +110,12 @@ jQuery(function($){
         </div>
         <div class="video_media">
         	<div class="content">
-        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="682" height="300"> 
+        	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="480" height="283"> 
 				<param name="movie" value="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" /> 
 				<!--[if !IE]>--> 
 				<object type="application/x-shockwave-flash" 
 				data="http://static.youku.com/qplayer.swf?playMode=mp4&amp;winType=index&amp;VideoIDS=XNjA1NzcxMzQw" 
-				width="682" height="300"> 
+				width="480" height="283"> 
 				<!--<![endif]--> 
 				<p>Alternative content</p> 
 				<!--[if !IE]>--> 

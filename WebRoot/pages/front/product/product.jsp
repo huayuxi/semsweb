@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     	</ul>
                 	</li>
                 	<li class="menu">
-                		<a href="javascript:void(0)">管理平台</a>
+                		<a href="javascript:product_rs()">管理平台</a>
                 	</li>   
                 </ul>	
             </div>

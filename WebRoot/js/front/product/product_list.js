@@ -12,12 +12,30 @@ function product_list(cplx00){
 	window.location.href=basePath+"pages/front/product/product_list.jsp?key_cplm00=100000&key_cplx00="+cplx00;
 }
 
+function product_rs(){
+	var basePath=$("#basePath").val();
+	window.location.href=basePath+"pages/front/product/product_list.jsp?&key_cplm00=100001";
+}
+
 $(function() {
 	getData(0);
 	getReback();
+	$(".menus li").bind("click",function(){
+		$(this).parent().find("li").removeClass("active");
+		$(this).parent().find("li").children("ul").css("display","none");
+		$(this).addClass("active");
+		var next_css=$(this).children("ul").css("display");
+		if(next_css=="none"){
+			$(this).children("ul").css("display","");
+		}else{
+			$(this).children("ul").css("display","none");
+		}
+	});
 });
+
 function getReback(){
 	var cplx00=getQueryString("key_cplx00");
+	var cplm00=getQueryString("key_cplm00");
 	switch(cplx00){
 		case "100000" :
 			$("#about-title").html("电力载波终端控制器");
@@ -44,6 +62,13 @@ function getReback(){
 			$("#about-title1").html("光照采集器");
 		break;
 	};
+	if(cplm00=="100001"){
+		$("#about-title").html("管理平台");
+		$("#about-title1").html("管理平台");
+		$("#product").children("ul").css("display","none");
+		$("#product").removeClass("active");
+		$("#rs").addClass("active");
+	}
 }
 //分页显示
 function getData(pageNo){
@@ -60,7 +85,7 @@ function getData(pageNo){
 			var div ="";
 			if(totalcount!=0){
 				$.each(myData, function(i, n) {
-						div="<div class=\"product_item\"><div class=\"product_item_l\">" +
+						div=div+"<div class=\"product_item\"><div class=\"product_item_l\">" +
 								"<img width=\"419\" height=\"210\" src=\"" +
 								n.zylj00
 								+"\"></div><div class=\"product_item_r\"><p><strong class=\"solutions\"><a href=\""+
