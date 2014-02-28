@@ -23,13 +23,16 @@
     <script src="<%=basePath%>bootstrap/js/jquery.js" type="text/javascript"></script>
     <script src="<%=basePath%>js/common/jquery.form.js" type="text/javascript"></script>
     <script src="<%=basePath%>bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    
 	<script type="text/javascript">
 		window.UEDITOR_HOME_URL = "<%=basePath%>js/common/ueditor-1.2.6.1/";
 		window.BASE_PATH = "<%=basePath%>";
 	</script>
+	
 	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.config.js" type="text/javascript" ></script>
 	<script src="<%=basePath%>js/common/ueditor-1.2.6.1/ueditor.all.js" type="text/javascript" ></script>
 	<script src="<%=basePath%>js/admin/job/job_editor.js" type="text/javascript"></script>
+	
 </head>
 
 <body>

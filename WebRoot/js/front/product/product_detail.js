@@ -32,6 +32,10 @@ function getProductData() {
 			data:param,
 			success : function(data) {
 				var obj=data.productDetail;
+				if(obj.cplm00="100001"){
+					$("#about-title").html("管理平台");
+				}
+				$("#about-title1").html(obj.cpmc00);
 				$("#j-ui-mc").html(obj.cpmc00);
 				$("#j-ui-jj").html(obj.cpjj00);
 				$("#j-ui-nr").html(obj.cpnr00)

@@ -94,8 +94,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<div class="feature-pic"></div>
                 <div class="page-pos">
                 	<a class="blue" href="<%=basePath%>">首页</a>>
-                    <a class="blue" href="<%=basePath%>pages/front/product/product_list.jsp">产品目录</a>>
-                    <span>电力载波终端控制器</span></div>
+                    <a class="blue" href="<%=basePath%>pages/front/product/product_list.jsp" >产品世界</a>>
+                    <span id="about-title">电力载波终端控制器</span></div>
                 	<div id="about-title1" class="title">电力载波终端控制器</div>
                 	<div class="line1"></div>
                 	<div class="detail">

@@ -81,10 +81,10 @@ jQuery(function($){
 <div class="pcList">
 	<div class="slideBox" id="ad">
     	<ul class="items">
-    		<li><a href="javascript:void(0)" ><img src="images/1.jpg" style=""></a></li>
-    		<li><a href="javascript:void(0)" ><img src="images/2.jpg" style=""></a></li>
-    		<li><a href="javascript:void(0)" ><img src="images/3.jpg" style=""></a></li>
-    		<li><a href="javascript:void(0)"><img src="images/4.jpg" style=""></a></li>
+    		<li><a href="<%=basePath%>pages/front/solution/solution.jsp" ><img src="images/1.jpg" style=""></a></li>
+    		<li><a href="<%=basePath%>pages/front/product/product.jsp" ><img src="images/2.jpg" style=""></a></li>
+    		<li><a href="<%=basePath%>pages/front/product/product_list.jsp?&key_cplm00=100001" ><img src="images/3.jpg" style=""></a></li>
+    		<li><a href="<%=basePath%>pages/front/product/product_detail.jsp?cpid00=16"><img src="images/4.jpg" style=""></a></li>
   		</ul>
     </div>	
 </div>
