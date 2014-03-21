@@ -22,9 +22,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         DD_belatedPNG.fix('div, ul, img, li, input , a,span');
     </script>
 <![endif]--> 
+<script type='text/javascript' src='http://tb.53kf.com/kf.php?arg=10057644&style=1'></script>
 <script type="text/javascript">
 jQuery(function($){
-	$('.chat_f1_expr').animate({height:'186px'}, 1000 );
+	$('.chat_f1_expr').animate({height:'211px'}, 1000 );
 	$('#close').click(function(){
 		$('#chat_f1').hide();
 		$('#chat_f2').show();
@@ -134,10 +135,10 @@ jQuery(function($){
 <div class="demo-mode">
 	<div class="bound">
     	<ul>
-        	<li><a href="javascript:void(0)"><img src="images/tunnelsystem.gif"  /><span>隧道灯智慧无级调光系统</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/landscapesystems.gif"  /><span>城市道路照明智能监控系统</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/solarsystem.gif"  /><span>太阳能照明智能监控系统</span></a></li>
-            <li><a href="javascript:void(0)"><img src="images/streetlightingsystem.gif"  /><span>景观亮化照明智能监控系统</span></a></li>
+        	<li><a href="<%=basePath%>pages/front/product/product_detail.jsp?cpid00=22"><img src="images/tunnelsystem.gif"  /><span>隧道灯智慧无级调光系统</span></a></li>
+            <li><a href="<%=basePath%>pages/front/product/product_detail.jsp?cpid00=23"><img src="images/landscapesystems.gif"  /><span>城市道路照明智能监控系统</span></a></li>
+            <li><a href="<%=basePath%>pages/front/product/product_detail.jsp?cpid00=24"><img src="images/solarsystem.gif"  /><span>太阳能照明智能监控系统</span></a></li>
+            <li><a href="<%=basePath%>pages/front/product/product_detail.jsp?cpid00=23"><img src="images/streetlightingsystem.gif"  /><span>景观亮化照明智能监控系统</span></a></li>
         </ul>
     </div>
 </div>
@@ -162,61 +163,9 @@ jQuery(function($){
 <div class="seo-footer">
 	<div class="bound">
     	<p>地址：深圳市南山区高新区南区南环29号留创大厦10</p>
-        <p>copyrights©2010-2013 Iotcomm.com.cn 闽ICP备10052649号</p>
+        <p>copyrights©2010-2013 Iotcomm.com.cn <a href="http://www.miitbeian.gov.cn">粤ICP备10052649号-1</a></p>
         <p>4008-090-880</p>
     </div>
 </div>
-<!--代码开始-->
-<div id="chat_f1">
-	<div id="chat_f1_main">
-		<div id="close"></div>
-       	<a title="点击咨询在线客服" href="http://wpa.qq.com/msgrd?v=3&uin=1625574787&site=qq&menu=yes" class="a_kf"></a>
-		<a title="点击咨询售后" href="http://wpa.qq.com/msgrd?v=3&uin=1625574787&site=qq&menu=yes" class="a_sh"></a> 
-	</div>
-	<div class="chat_f1_expr">
-		<div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="华南片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=1625574787&site=qq&menu=yes>");</SCRIPT>华南片区</a>
-			</div>
-			
-		</div>
-		<div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="华东片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=459481521&site=qq&menu=yes>");</SCRIPT>华东片区</a>
-
-			</div>
-		</div>
-		<div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="华北/东北区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=177492&site=qq&menu=yes>");</SCRIPT>华北/东北区</a>
-			</div>
-		</div>
-		<div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="西南片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=3324443&site=qq&menu=yes>");</SCRIPT>西南片区</a>
-			</div>
-		</div>
-		<div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="西北片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=85152351&site=qq&menu=yes>");</SCRIPT>西北片区</a>
-			</div>
-		</div>
-		<div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="闽/赣/徽片区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=343431094&site=qq&menu=yes>");</SCRIPT>闽/赣/徽片区</a>
-				
-			</div>
-		</div>
-        <div class="list">
-			<div class="name">
-            	<span class="arrow">&bull;</span><a title="海外片区区"><SCRIPT>document.write("<a target=blank href=http://wpa.qq.com/msgrd?v=3&uin=1692858376&site=qq&menu=yes>");</SCRIPT>海外片区</a>
-         
-			</div>
-		</div>
-	</div>
-	<div id="chat_f1_bottom"></div>
-</div>
-<div id="chat_f2" style="display:none;">我要咨询</div>
-<!--代码结束-->
 </body>
 </html>

@@ -83,7 +83,7 @@ function product_list(cplx00){
 	window.location.href=basePath+"pages/front/product/product_list.jsp?key_cplm00=100000&key_cplx00="+cplx00;
 }
 
-function product_rs(){
+function product_rs(cplx00){
 	var basePath=$("#basePath").val();
 	window.location.href=basePath+"pages/front/product/product_list.jsp?&key_cplm00=100001";
 }

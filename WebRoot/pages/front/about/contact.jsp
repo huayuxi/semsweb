@@ -118,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="seo-footer">
 	<div class="bound">
     	<p>地址：深圳市南山区高新区南区南环29号留创大厦10</p>
-        <p>copyrights©2010-2013 Iotcomm.com.cn 闽ICP备10052649号</p>
+        <p>copyrights©2010-2013 Iotcomm.com.cn <a href="http://www.miitbeian.gov.cn">粤ICP备10052649号-1</a></p>
         <p>4008-090-880</p>
     </div>
 </div>

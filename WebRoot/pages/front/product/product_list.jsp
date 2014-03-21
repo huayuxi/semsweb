@@ -96,7 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             	<div class="feature-pic"></div>
                 <div class="page-pos">
                 	<a class="blue" href="<%=basePath%>">首页</a>>
-                    <a class="blue" href="<%=basePath%>pages/front/product/product_list.jsp">产品世界</a>>
+                    <a class="blue" href="<%=basePath%>pages/front/product/product_list.jsp">产品目录</a>>
                     <span id="about-title">电力载波终端控制器</span></div>
                 	<div id="about-title1" class="title">电力载波终端控制器</div>
                 <div class="line1"></div>
@@ -130,7 +130,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="seo-footer">
 	<div class="bound">
     	<p>地址：深圳市南山区高新区南区南环29号留创大厦10</p>
-        <p>copyrights©2010-2013 Iotcomm.com.cn 闽ICP备10052649号</p>
+        <p>copyrights©2010-2013 Iotcomm.com.cn <a href="http://www.miitbeian.gov.cn">粤ICP备10052649号-1</a></p>
         <p>4008-090-880</p>
     </div>
 </div>

@@ -38,11 +38,11 @@
 		<param-value>classpath:log4j.properties</param-value>
 	</context-param>
 	
-	<!-- 系统编码监听器 -->
+	<!-- 系统编码监听器 
 	<listener>
 		<listener-class>com.util.CodeListener</listener-class>
 	</listener>
-	
+	-->
 	<welcome-file-list>
 		<welcome-file>/index.jsp</welcome-file>
 	</welcome-file-list>

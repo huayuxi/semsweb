@@ -1,4 +1,4 @@
-divquestion1@charset "utf-8";
+﻿divquestion1@charset "utf-8";
 
 html{
 overflow:auto;  /*这个可以去掉IE6,7的滚动*/
@@ -703,7 +703,7 @@ a:hover {
 .case_content h3{ 
    text-align:center;
    color:#3188fd;
-   font-size:22px;
+   font-size:16px;
    margin-bottom:10px;
    font-family:microsoft yahei; 
    }
